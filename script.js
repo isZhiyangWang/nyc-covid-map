@@ -15,7 +15,7 @@ const margin = [50,50]
 const svg = d3.selectAll("#nyc-zipcode-map").attr("viewBox", [0,0,width,height])
                 .style("border", "1px solid #000")
 
-const g = svg.append("g").attr("id", "path-group")
+const path_group = svg.append("g").attr("id", "path-group")
 
 let zoom = d3.zoom()
     .scaleExtent([0.5, 2])
@@ -64,21 +64,21 @@ async function makeMap(url) {
     let tooltip = d3.select("#map_container")
         .append("div")
         .style('position', 'absolute')
-        .style('display', 'none')
-        //.style("opacity", 0)
+        .style("opacity", 0)
         .attr("class", "tooltip")
         .style("background-color", "white")
         .style("border", "solid")
         .style("border-width", "2px")
         .style("border-radius", "5px")
         .style("padding", "5px")
+        .style("pointer-events", "none")
 
     let mouseOver = function(e) {
         const zipcode = e.target.id
         if (zipcode_data_hash[zipcode]) {
             tooltip
-                //.style("opacity", 1)
-                .style('display', 'block')
+                .style("opacity", 1)
+
             d3.select(this)
                 .style("stroke", "black")
                 .style("stroke-width", 2)
@@ -101,16 +101,14 @@ async function makeMap(url) {
 
     let mouseLeave = function(e) {
         tooltip
-            .style('display', 'none')
-          //.style("opacity", 0)
+          .style("opacity", 0)
         d3.select(this)
           .style("stroke", "rgb(157, 49, 49)")
           .style("stroke-width", 1)
-          //.style("opacity", 0.8)
       }
 
     // append paths
-    g.selectAll('path')
+    path_group.selectAll('path')
         .data(geojson.features)
         .enter()
         .append('path')
@@ -128,6 +126,9 @@ async function makeMap(url) {
         .on('mouseover', mouseOver)
         .on('mousemove', mouseMove)
         .on('mouseleave', mouseLeave)
+
+    // make a legend    
+    makeLegend(zipcode_data)
     
     // init Zoom-in Zoom-out
     initZoom()
@@ -162,6 +163,63 @@ async function getNewYorkCases(url) {
     ]
     
     return ny_cases
+}
+
+function makeLegend(zipcode_data) {
+    const highestCases = d3.max(zipcode_data, d => d.totals.Cases)
+    var data = [{"color":"#ffffff","value":0},{"color":"#0000ff","value": highestCases}];
+    var extent = d3.extent(data, d => d.value);
+    const paddingL = 10
+    const paddingT = 35
+    const width = 320
+    const innerWidth = width - paddingL * 2
+    const barHeight = 8
+    const height = 28
+
+    let svg = d3.select('svg')
+
+    var xScale = d3.scaleLinear()
+        .range([0, innerWidth])
+        .domain(extent);
+
+    var xTicks = [
+        0,
+        Math.floor(highestCases/6),
+        Math.floor(highestCases/6 * 2),
+        Math.floor(highestCases/6 * 3),
+        Math.floor(highestCases/6 * 4),
+        Math.floor(highestCases/6 * 5),
+        highestCases
+    ]
+    
+    var xAxis = d3.axisBottom(xScale)
+        .tickSize(barHeight * 2)
+        .tickValues(xTicks);
+
+    var g = svg.append("g").attr("transform", "translate(" + paddingL + ","+ paddingT+")");
+
+    let defs = d3.select('svg').append('defs')
+    var linearGradient = defs.append("linearGradient").attr("id", "myGradient");
+    linearGradient.selectAll("stop")
+        .data(data)
+      .enter().append("stop")
+        .attr("offset", d => ((d.value - extent[0]) / (extent[1] - extent[0]) * 100) + "%")
+        .attr("stop-color", d => d.color);
+
+    g.append("rect")
+        .attr("width", innerWidth)
+        .attr("height", barHeight)
+        .style("fill", "url(#myGradient)");
+
+    g.append("g")
+        .call(xAxis)
+        .select(".domain").remove();
+
+    g.append("text")
+        .attr("x", 0)
+        .attr("y", -10)
+        .style("text-anchor", "left")
+        .text("Total Cases");
 }
 
 function initZoom() {
