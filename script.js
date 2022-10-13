@@ -18,7 +18,7 @@ const svg = d3.selectAll("#nyc-zipcode-map").attr("viewBox", [0,0,width,height])
 const g = svg.append("g").attr("id", "path-group")
 
 let zoom = d3.zoom()
-    .scaleExtent([0.2, 2])
+    .scaleExtent([0.5, 2])
     .on('zoom', handleZoom)
 
 makeMap('nyc-zip-code.geojson')
@@ -73,8 +73,8 @@ async function makeMap(url) {
         .style("border-radius", "5px")
         .style("padding", "5px")
 
-    let mouseOver = function(d) {
-        const zipcode = d.target.id
+    let mouseOver = function(e) {
+        const zipcode = e.target.id
         if (zipcode_data_hash[zipcode]) {
             tooltip
                 //.style("opacity", 1)
@@ -87,19 +87,19 @@ async function makeMap(url) {
         }
       }
 
-    let mouseMove = function(d) {
-        const zipcode = d.target.id
+    let mouseMove = function(e) {
+        const zipcode = e.target.id
         if (zipcode_data_hash[zipcode]) {
             const total_cases = zipcode_data_hash[zipcode].totals.Cases
             tooltip
             .html("The exact value of<br>this cell is: " + total_cases)
-            .style("left", (d3.pointer(d)[0]+30) + "px")
-            .style("top", (d3.pointer(d)[1]) + "px")
+            .style("left", e.pageX + 50 + "px")
+            .style("top", e.pageY + "px")
             console.log(total_cases)
         }
     }
 
-    let mouseLeave = function(d) {
+    let mouseLeave = function(e) {
         tooltip
             .style('display', 'none')
           //.style("opacity", 0)
