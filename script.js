@@ -64,7 +64,8 @@ async function makeMap(url) {
     let tooltip = d3.select("#map_container")
         .append("div")
         .style('position', 'absolute')
-        .style("opacity", 0)
+        .style('display', 'none')
+        //.style("opacity", 0)
         .attr("class", "tooltip")
         .style("background-color", "white")
         .style("border", "solid")
@@ -76,7 +77,8 @@ async function makeMap(url) {
         const zipcode = d.target.id
         if (zipcode_data_hash[zipcode]) {
             tooltip
-                .style("opacity", 1)
+                //.style("opacity", 1)
+                .style('display', 'block')
             d3.select(this)
                 .style("stroke", "black")
                 .style("stroke-width", 2)
@@ -99,7 +101,8 @@ async function makeMap(url) {
 
     let mouseLeave = function(d) {
         tooltip
-          .style("opacity", 0)
+            .style('display', 'none')
+          //.style("opacity", 0)
         d3.select(this)
           .style("stroke", "rgb(157, 49, 49)")
           .style("stroke-width", 1)
@@ -115,6 +118,7 @@ async function makeMap(url) {
         .attr('id', d => d.properties.postalCode)
         .style('stroke', 'rgb(157, 49, 49)')
         .style("stroke-width", 1)
+        .style("stroke-linejoin", "round")
         .attr('fill', d => {
             const zipcode = d.properties.postalCode
             const current_zipcode_data = zipcode_data_hash[zipcode]
