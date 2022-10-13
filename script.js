@@ -60,6 +60,51 @@ async function makeMap(url) {
     let geoGenerator = d3.geoPath().projection(projection);
 
     let colorScale = d3.scaleLinear().domain([0, d3.max(zipcode_data, d => d.totals.Cases)]).range(['#ffffff', "#0000ff"])
+    // create a tooltip TODO: zoom feature causing tooltip offset distance
+    let tooltip = d3.select("#map_container")
+        .append("div")
+        .style('position', 'absolute')
+        .style("opacity", 0)
+        .attr("class", "tooltip")
+        .style("background-color", "white")
+        .style("border", "solid")
+        .style("border-width", "2px")
+        .style("border-radius", "5px")
+        .style("padding", "5px")
+
+    let mouseOver = function(d) {
+        const zipcode = d.target.id
+        if (zipcode_data_hash[zipcode]) {
+            tooltip
+                .style("opacity", 1)
+            d3.select(this)
+                .style("stroke", "black")
+                .style("stroke-width", 2)
+            // make sure the hovered path don't get covered by other path
+            d3.select(this).raise()
+        }
+      }
+
+    let mouseMove = function(d) {
+        const zipcode = d.target.id
+        if (zipcode_data_hash[zipcode]) {
+            const total_cases = zipcode_data_hash[zipcode].totals.Cases
+            tooltip
+            .html("The exact value of<br>this cell is: " + total_cases)
+            .style("left", (d3.pointer(d)[0]+30) + "px")
+            .style("top", (d3.pointer(d)[1]) + "px")
+            console.log(total_cases)
+        }
+    }
+
+    let mouseLeave = function(d) {
+        tooltip
+          .style("opacity", 0)
+        d3.select(this)
+          .style("stroke", "rgb(157, 49, 49)")
+          .style("stroke-width", 1)
+          //.style("opacity", 0.8)
+      }
 
     // append paths
     g.selectAll('path')
@@ -68,16 +113,20 @@ async function makeMap(url) {
         .append('path')
         .attr('d', geoGenerator)
         .attr('id', d => d.properties.postalCode)
+        .style('stroke', 'rgb(157, 49, 49)')
+        .style("stroke-width", 1)
         .attr('fill', d => {
             const zipcode = d.properties.postalCode
             const current_zipcode_data = zipcode_data_hash[zipcode]
             //if (current_zipcode_data) console.log(current_zipcode_data)
             return current_zipcode_data ? colorScale(current_zipcode_data.totals.Cases) : "grey"  
         })
+        .on('mouseover', mouseOver)
+        .on('mousemove', mouseMove)
+        .on('mouseleave', mouseLeave)
+    
     // init Zoom-in Zoom-out
     initZoom()
-    
-
     
 }
 
