@@ -5,7 +5,7 @@ const BROOKLYN = 'Brooklyn'
 const MANHATTAN = 'Manhattan'
 const QUEENS = 'Queens'
 const STATEN_ISLAND = 'Staten_Island'
-const nyc_data_url = 'https://jht1493.net/COVID-19-Impact/Dashboard/a0/c_data/nyc/c_subs/Brooklyn/c_meta.json'
+const RECENT_DATES_URL = `${BASE_URL}${BROOKLYN}/c_meta.json`
 
 // D3 map info
 const width = 800
@@ -22,7 +22,7 @@ let zoom = d3.zoom()
     .on('zoom', handleZoom)
 
 makeMap('nyc-zip-code.geojson')
-//getNewYorkData(nyc_data_url)
+
 
 
 //https://github.com/EP-Visual-Design/COVID-19-parsed-data/blob/main/c_data/nyc/c_subs/Brooklyn/c_meta.json
@@ -37,7 +37,7 @@ async function loadData(url) {
 async function makeMap(url) {
     const geojson = await loadData(url)
     // get each zipcode's data
-    const zipcode_data = await getNewYorkData(nyc_data_url)
+    const zipcode_data = await getNewYorkCases(RECENT_DATES_URL)
     let zipcode_data_hash = {}
     zipcode_data.map(obj => {
         const zipcode = obj.c_ref
@@ -45,9 +45,7 @@ async function makeMap(url) {
         const totals = obj.totals
         zipcode_data_hash[zipcode] = {zipcode, daily, totals}
     })
-    console.log(zipcode_data)
-    //console.log(zipcode_data_hash)
-    //console.log(geojson)
+
     let path = d3.geoPath()
     let center = path.centroid(geojson)
     let brooklyn_data = geojson.features.filter(d => d.properties.borough === 'Brooklyn')
@@ -83,14 +81,34 @@ async function makeMap(url) {
     
 }
 
-async function getNewYorkData(url) {
+// get most recent date's cases data
+async function getNewYorkCases(url) {
     const data = await loadData(url)
     const current_date = data.c_dates[data.c_dates.length-1]
     console.log(current_date)
-    const current_date_url = `https://jht1493.net/COVID-19-Impact/Dashboard/a0/c_data/nyc/c_subs/Brooklyn/c_days/${current_date}.json`
-    const current_date_json = await loadData(current_date_url)
-    //console.log(current_date_json)
-    return current_date_json
+
+    const bronx_url = `${BASE_URL}${BRONX}/c_days/${current_date}.json`
+    const brooklyn_url = `${BASE_URL}${BROOKLYN}/c_days/${current_date}.json`
+    const manhattan_url = `${BASE_URL}${MANHATTAN}/c_days/${current_date}.json`
+    const queens_url = `${BASE_URL}${QUEENS}/c_days/${current_date}.json`
+    const staten_island_url = `${BASE_URL}${STATEN_ISLAND}/c_days/${current_date}.json`
+
+    let ny_cases = await Promise.all([
+        loadData(bronx_url),
+        loadData(brooklyn_url),
+        loadData(manhattan_url),
+        loadData(queens_url),
+        loadData(staten_island_url)
+    ])
+    ny_cases = [
+        ...ny_cases[0],
+        ...ny_cases[1],
+        ...ny_cases[2],
+        ...ny_cases[3],
+        ...ny_cases[4]
+    ]
+    
+    return ny_cases
 }
 
 function initZoom() {
