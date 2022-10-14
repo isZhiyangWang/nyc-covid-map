@@ -23,8 +23,6 @@ let zoom = d3.zoom()
 
 makeMap('nyc-zip-code.geojson')
 
-
-
 //https://github.com/EP-Visual-Design/COVID-19-parsed-data/blob/main/c_data/nyc/c_subs/Brooklyn/c_meta.json
 //loadData('https://jht1493.net/COVID-19-Impact/Dashboard/a0/c_data/nyc/c_subs/Brooklyn/c_meta.json')
 
@@ -36,14 +34,16 @@ async function loadData(url) {
 
 async function makeMap(url) {
     const geojson = await loadData(url)
-    // get each zipcode's data
-    const zipcode_data = await getNewYorkCases(RECENT_DATES_URL)
+    // get each zipcode's data (cases and name)
+    const { zipcode_cases, zipcode_names } = await getNewYorkData(RECENT_DATES_URL)
+
     let zipcode_data_hash = {}
-    zipcode_data.map(obj => {
+    zipcode_cases.map(obj => {
         const zipcode = obj.c_ref
         const daily = obj.daily
         const totals = obj.totals
-        zipcode_data_hash[zipcode] = {zipcode, daily, totals}
+        const name  = zipcode_names[zipcode]
+        zipcode_data_hash[zipcode] = {zipcode, name, daily, totals}
     })
 
     let path = d3.geoPath()
@@ -55,12 +55,12 @@ async function makeMap(url) {
         features: brooklyn_data
     }
     let center_bk = path.centroid(brooklyn_geojson)
-    let projection = d3.geoMercator().scale(140000).center(center).translate([width/2,height/2])//.fitExtent([[50,50],[width-margin[0], height-margin[1]]], geojson)
+    let projection = d3.geoMercator().scale(140000).center(center).translate([width/2,height/2])
     // .fitSize([width,height], geojson)
     let geoGenerator = d3.geoPath().projection(projection);
 
-    let colorScale = d3.scaleLinear().domain([0, d3.max(zipcode_data, d => d.totals.Cases)]).range(['#ffffff', "#0000ff"])
-    // create a tooltip TODO: zoom feature causing tooltip offset distance
+    let colorScale = d3.scaleLinear().domain([0, d3.max(zipcode_cases, d => d.totals.Cases)]).range(['#ffffff', "#0000ff"])
+    // create a tooltip
     let tooltip = d3.select("#map_container")
         .append("div")
         .style('position', 'absolute')
@@ -91,11 +91,15 @@ async function makeMap(url) {
         const zipcode = e.target.id
         if (zipcode_data_hash[zipcode]) {
             const total_cases = zipcode_data_hash[zipcode].totals.Cases
+            const zipcode_name = zipcode_names[zipcode]
             tooltip
-            .html("The exact value of<br>this cell is: " + total_cases)
-            .style("left", e.pageX + 50 + "px")
-            .style("top", e.pageY + "px")
-            console.log(total_cases)
+                .html(`
+                    ${zipcode_name} (${zipcode}) <br>
+                    Total Cases:
+                    ${total_cases.toLocaleString()}
+                `)
+                .style("left", e.pageX + 50 + "px")
+                .style("top", e.pageY + "px")
         }
     }
 
@@ -128,7 +132,7 @@ async function makeMap(url) {
         .on('mouseleave', mouseLeave)
 
     // make a legend    
-    makeLegend(zipcode_data)
+    makeLegend(zipcode_cases)
     
     // init Zoom-in Zoom-out
     initZoom()
@@ -136,10 +140,14 @@ async function makeMap(url) {
 }
 
 // get most recent date's cases data
-async function getNewYorkCases(url) {
+async function getNewYorkData(url) {
     const data = await loadData(url)
     const current_date = data.c_dates[data.c_dates.length-1]
-    console.log(current_date)
+
+    const bronx_zipcode = `${BASE_URL}${BRONX}/c_meta.json`
+    const manhattan_zipcode = `${BASE_URL}${MANHATTAN}/c_meta.json`
+    const queens_zipcode = `${BASE_URL}${QUEENS}/c_meta.json`
+    const staten_island_zipcode = `${BASE_URL}${STATEN_ISLAND}/c_meta.json`
 
     const bronx_url = `${BASE_URL}${BRONX}/c_days/${current_date}.json`
     const brooklyn_url = `${BASE_URL}${BROOKLYN}/c_days/${current_date}.json`
@@ -147,26 +155,40 @@ async function getNewYorkCases(url) {
     const queens_url = `${BASE_URL}${QUEENS}/c_days/${current_date}.json`
     const staten_island_url = `${BASE_URL}${STATEN_ISLAND}/c_days/${current_date}.json`
 
-    let ny_cases = await Promise.all([
+    let zipcode_names = await Promise.all([
+        loadData(bronx_zipcode).then(json => json.c_sub_captions),
+        loadData(manhattan_zipcode).then(json => json.c_sub_captions),
+        loadData(queens_zipcode).then(json => json.c_sub_captions),
+        loadData(staten_island_zipcode).then(json => json.c_sub_captions)
+    ])
+    zipcode_names = {
+        ...data.c_sub_captions,
+        ...zipcode_names[0],
+        ...zipcode_names[1],
+        ...zipcode_names[2],
+        ...zipcode_names[3]
+    }
+
+    let zipcode_cases = await Promise.all([
         loadData(bronx_url),
         loadData(brooklyn_url),
         loadData(manhattan_url),
         loadData(queens_url),
         loadData(staten_island_url)
     ])
-    ny_cases = [
-        ...ny_cases[0],
-        ...ny_cases[1],
-        ...ny_cases[2],
-        ...ny_cases[3],
-        ...ny_cases[4]
+    zipcode_cases = [
+        ...zipcode_cases[0],
+        ...zipcode_cases[1],
+        ...zipcode_cases[2],
+        ...zipcode_cases[3],
+        ...zipcode_cases[4]
     ]
     
-    return ny_cases
+    return { zipcode_cases, zipcode_names }
 }
 
-function makeLegend(zipcode_data) {
-    const highestCases = d3.max(zipcode_data, d => d.totals.Cases)
+function makeLegend(zipcode_cases) {
+    const highestCases = d3.max(zipcode_cases, d => d.totals.Cases)
     var data = [{"color":"#ffffff","value":0},{"color":"#0000ff","value": highestCases}];
     var extent = d3.extent(data, d => d.value);
     const paddingL = 10
