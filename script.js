@@ -66,12 +66,18 @@ async function makeMap(url) {
         .style('position', 'absolute')
         .style("opacity", 0)
         .attr("class", "tooltip")
+        .style("max-width", "200px")
         .style("background-color", "white")
         .style("border", "solid")
         .style("border-width", "2px")
         .style("border-radius", "5px")
-        .style("padding", "5px")
+        .style("padding", "10px")
         .style("pointer-events", "none")
+    
+    // add Callout
+    let callout = d3.select("#callout")
+    callout.append('h1').text(()=>"Hover on the map to show total cases")
+    callout.append('h2')
 
     let mouseOver = function(e) {
         const zipcode = e.target.id
@@ -90,16 +96,19 @@ async function makeMap(url) {
     let mouseMove = function(e) {
         const zipcode = e.target.id
         if (zipcode_data_hash[zipcode]) {
-            const total_cases = zipcode_data_hash[zipcode].totals.Cases
+            const total_cases = zipcode_data_hash[zipcode].totals.Cases.toLocaleString()
             const zipcode_name = zipcode_names[zipcode]
             tooltip
                 .html(`
                     ${zipcode_name} (${zipcode}) <br>
                     Total Cases:
-                    ${total_cases.toLocaleString()}
+                    ${total_cases}
                 `)
                 .style("left", e.pageX + 50 + "px")
                 .style("top", e.pageY + "px")
+            // update callout
+            d3.select('h1').text(`${zipcode_name} (${zipcode})`)
+            d3.select('h2').text(`Total Cases: ${total_cases}`)
         }
     }
 
