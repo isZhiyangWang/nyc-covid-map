@@ -6,11 +6,18 @@ const MANHATTAN = 'Manhattan'
 const QUEENS = 'Queens'
 const STATEN_ISLAND = 'Staten_Island'
 const RECENT_DATES_URL = `${BASE_URL}${BROOKLYN}/c_meta.json`
+const METRIC = 'Deaths' // 'Cases'
 
 // D3 map info
 const width = 800
 const height = 800
 const margin = [50,50]
+const INTENSE_COLOR = '#AA2222'
+const LIGHT_COLOR = '#ECD15B'
+const NODATA_COLOR = '#D3D3D3'
+const STROKE_LIGHT = '#EAEAEA'
+const STROKE_DARK = '#050404'
+
 
 const svg = d3.selectAll("#nyc-zipcode-map").attr("viewBox", [0,0,width,height])
                 .style("border", "1px solid #000")
@@ -36,7 +43,6 @@ async function makeMap(url) {
     const geojson = await loadData(url)
     // get each zipcode's data (cases and name)
     const { zipcode_cases, zipcode_names } = await getNewYorkData(RECENT_DATES_URL)
-
     let zipcode_data_hash = {}
     zipcode_cases.map(obj => {
         const zipcode = obj.c_ref
@@ -45,7 +51,7 @@ async function makeMap(url) {
         const name  = zipcode_names[zipcode]
         zipcode_data_hash[zipcode] = {zipcode, name, daily, totals}
     })
-
+    const top_cases = zipcode_cases.sort((a,b)=>b.totals[METRIC]-a.totals[METRIC]).slice(0,5)
     let path = d3.geoPath()
     let center = path.centroid(geojson)
     let brooklyn_data = geojson.features.filter(d => d.properties.borough === 'Brooklyn')
@@ -59,7 +65,7 @@ async function makeMap(url) {
     // .fitSize([width,height], geojson)
     let geoGenerator = d3.geoPath().projection(projection);
 
-    let colorScale = d3.scaleLinear().domain([0, d3.max(zipcode_cases, d => d.totals.Cases)]).range(['#ffffff', "#0000ff"])
+    let colorScale = d3.scaleLinear().domain([0, d3.max(zipcode_cases, d => d.totals[METRIC])]).range([LIGHT_COLOR, INTENSE_COLOR])
     // create a tooltip
     let tooltip = d3.select("#map_container")
         .append("div")
@@ -76,8 +82,28 @@ async function makeMap(url) {
     
     // add Callout
     let callout = d3.select("#callout")
-    callout.append('h1').text(()=>"Hover on the map to show total cases")
+    callout.append('h1').text(()=>"Hover on the map to show information")
     callout.append('h2')
+    let top_ranks = callout
+        .append('ol')
+        .attr('id', 'rank_ol')
+        .selectAll('li')
+        .data(top_cases)
+        .enter()
+        .append('li')
+    
+    top_ranks.append('svg').attr('id', 'rank_rect').attr('width', '16px').attr('height', '16px')
+        .append('rect')
+        .attr('width', '16px')
+        .attr('height', '16px')
+        .style('fill', d => colorScale(d.totals[METRIC]))
+    top_ranks.append('div')
+        .text(d => {
+            const zipcode = d.c_ref
+            const zipcode_name = zipcode_names[zipcode]
+            const cases = d.totals[METRIC].toLocaleString()
+            return `${zipcode} ${zipcode_name}: ${cases}`
+        })
 
     let mouseOver = function(e) {
         const zipcode = e.target.id
@@ -86,8 +112,8 @@ async function makeMap(url) {
                 .style("opacity", 1)
 
             d3.select(this)
-                .style("stroke", "black")
-                .style("stroke-width", 2)
+                .style("stroke", STROKE_DARK)
+                .style("stroke-width", 3)
             // make sure the hovered path don't get covered by other path
             d3.select(this).raise()
         }
@@ -96,19 +122,19 @@ async function makeMap(url) {
     let mouseMove = function(e) {
         const zipcode = e.target.id
         if (zipcode_data_hash[zipcode]) {
-            const total_cases = zipcode_data_hash[zipcode].totals.Cases.toLocaleString()
+            const total_cases = zipcode_data_hash[zipcode].totals[METRIC].toLocaleString()
             const zipcode_name = zipcode_names[zipcode]
             tooltip
                 .html(`
                     ${zipcode_name} (${zipcode}) <br>
-                    Total Cases:
+                    Total ${METRIC}:
                     ${total_cases}
                 `)
                 .style("left", e.pageX + 50 + "px")
                 .style("top", e.pageY + "px")
             // update callout
             d3.select('h1').text(`${zipcode_name} (${zipcode})`)
-            d3.select('h2').text(`Total Cases: ${total_cases}`)
+            d3.select('h2').text(`Total ${METRIC}: ${total_cases}`)
         }
     }
 
@@ -116,7 +142,7 @@ async function makeMap(url) {
         tooltip
           .style("opacity", 0)
         d3.select(this)
-          .style("stroke", "rgb(157, 49, 49)")
+          .style("stroke", STROKE_LIGHT)
           .style("stroke-width", 1)
       }
 
@@ -127,14 +153,14 @@ async function makeMap(url) {
         .append('path')
         .attr('d', geoGenerator)
         .attr('id', d => d.properties.postalCode)
-        .style('stroke', 'rgb(157, 49, 49)')
+        .style('stroke', STROKE_LIGHT)
         .style("stroke-width", 1)
         .style("stroke-linejoin", "round")
         .attr('fill', d => {
             const zipcode = d.properties.postalCode
             const current_zipcode_data = zipcode_data_hash[zipcode]
             //if (current_zipcode_data) console.log(current_zipcode_data)
-            return current_zipcode_data ? colorScale(current_zipcode_data.totals.Cases) : "grey"  
+            return current_zipcode_data ? colorScale(current_zipcode_data.totals[METRIC]) : NODATA_COLOR  
         })
         .on('mouseover', mouseOver)
         .on('mousemove', mouseMove)
@@ -197,8 +223,8 @@ async function getNewYorkData(url) {
 }
 
 function makeLegend(zipcode_cases) {
-    const highestCases = d3.max(zipcode_cases, d => d.totals.Cases)
-    var data = [{"color":"#ffffff","value":0},{"color":"#0000ff","value": highestCases}];
+    const highestCases = d3.max(zipcode_cases, d => d.totals[METRIC])
+    var data = [{"color":LIGHT_COLOR,"value":0},{"color":INTENSE_COLOR,"value": highestCases}];
     var extent = d3.extent(data, d => d.value);
     const paddingL = 10
     const paddingT = 35
@@ -250,7 +276,7 @@ function makeLegend(zipcode_cases) {
         .attr("x", 0)
         .attr("y", -10)
         .style("text-anchor", "left")
-        .text("Total Cases");
+        .text(`Total ${METRIC}`);
 }
 
 function initZoom() {
