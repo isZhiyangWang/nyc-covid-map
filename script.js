@@ -54,7 +54,7 @@ async function makeMap(url) {
     const name = zipcode_names[zipcode];
     zipcode_data_hash[zipcode] = { zipcode, name, daily, totals };
   });
-  if (top_n < 0) {
+  if (brooklyn_focus) {
     top_n = zipcode_cases.length;
   }
   const top_cases = zipcode_cases.sort((a, b) => b.totals[METRIC] - a.totals[METRIC]).slice(0, top_n);
@@ -206,6 +206,7 @@ async function makeMap(url) {
     // let elm = document.getElementById('page_title');
     // elm.innerHTML = 'Brooklyn COVID-19 Mortality Map';
     d3.select('#page_title').text('Brooklyn COVID-19 Mortality Map');
+    document.title = 'Brooklyn Zipcode Map';
   }
 }
 
