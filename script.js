@@ -85,12 +85,13 @@ async function makeMap(url) {
     callout
         .select('h2')
         .text(()=>"Hover on the map to show information")
-    d3.select('#callout_zipcode').insert("svg","#callout_zipcode_text").attr('class', 'color_rect_svg').attr('id', 'callout_zipcode_svg').attr('width', '24px').attr('height', '24px')
+    d3.select('#callout_zipcode').insert("svg","#callout_zipcode_text").attr('class', 'color_rect_svg').attr('id', 'callout_zipcode_svg').attr('width', '28px').attr('height', '28px')
         .append('rect')
+        .style('transform', 'translateY(4px)')
         .attr('width', '24px')
         .attr('height', '24px')
         .attr('fill','none')
-    // callout_zipcode.append('h3')
+    callout.append('h4').attr('id', 'rank_title').text('Top 10 Ranked Zipcodes')
     let top_ranks = callout
         .append('ol')
         .attr('id', 'rank_ol')
@@ -99,8 +100,9 @@ async function makeMap(url) {
         .enter()
         .append('li')
     
-    top_ranks.append('svg').attr('class', 'color_rect_svg').attr('id', 'rank_rect').attr('width', '16px').attr('height', '16px')
+    top_ranks.append('svg').attr('class', 'color_rect_svg').attr('id', 'rank_rect').attr('width', '18px').attr('height', '18px')
         .append('rect')
+        .style('transform', 'translateY(2px)')
         .attr('width', '16px')
         .attr('height', '16px')
         .style('fill', d => colorScale(d.totals[METRIC]))
