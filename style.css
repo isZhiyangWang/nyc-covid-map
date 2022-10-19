@@ -22,7 +22,7 @@
     align-items: flex-start;
 }
 
-#callout_zipcode svg {
+.color_rect_svg {
     flex-shrink: 0;
 }
 
