@@ -1,299 +1,326 @@
 // API info
-const BASE_URL = 'https://jht1493.net/COVID-19-Impact/Dashboard/a0/c_data/nyc/c_subs/'
-const BRONX = 'Bronx'
-const BROOKLYN = 'Brooklyn'
-const MANHATTAN = 'Manhattan'
-const QUEENS = 'Queens'
-const STATEN_ISLAND = 'Staten_Island'
-const RECENT_DATES_URL = `${BASE_URL}${BROOKLYN}/c_meta.json`
-const METRIC = 'Deaths' // 'Cases'
+const BASE_URL = 'https://jht1493.net/COVID-19-Impact/Dashboard/a0/c_data/nyc/c_subs/';
+const BRONX = 'Bronx';
+const BROOKLYN = 'Brooklyn';
+const MANHATTAN = 'Manhattan';
+const QUEENS = 'Queens';
+const STATEN_ISLAND = 'Staten_Island';
+const RECENT_DATES_URL = `${BASE_URL}${BROOKLYN}/c_meta.json`;
+const METRIC = 'Deaths'; // 'Cases'
 
 // D3 map info
-const width = 800
-const height = 800
-const margin = [50,50]
-const INTENSE_COLOR = '#AA2222'
-const LIGHT_COLOR = '#ECD15B'
-const NODATA_COLOR = '#D3D3D3'
-const STROKE_LIGHT = '#EAEAEA'
-const STROKE_DARK = '#050404'
+// const width = 800;
+// const height = 800;
+const width = 800;
+const height = width;
+const margin = [50, 50];
+const INTENSE_COLOR = '#AA2222';
+const LIGHT_COLOR = '#ECD15B';
+const NODATA_COLOR = '#D3D3D3';
+const STROKE_LIGHT = '#EAEAEA';
+const STROKE_DARK = '#050404';
+let top_n = 31;
+const brooklyn_focus = true;
 
+// Brooklyn COVID-19 Mortality Map
+// <h1 id="page_title">Interactive NYC COVID-19 Mortality Map</h1>
 
-const svg = d3.selectAll("#nyc-zipcode-map").attr("viewBox", [0,0,width,height])
-                .style("border", "1px solid #000")
+const svg = d3.selectAll('#nyc-zipcode-map').attr('viewBox', [0, 0, width, height]).style('border', '1px solid #000');
 
-const path_group = svg.append("g").attr("id", "path-group")
+const path_group = svg.append('g').attr('id', 'path-group');
 
-let zoom = d3.zoom()
-    .scaleExtent([0.5, 2])
-    .on('zoom', handleZoom)
+let zoom = d3.zoom().scaleExtent([0.5, 2]).on('zoom', handleZoom);
 
-makeMap('nyc-zip-code.geojson')
+makeMap('nyc-zip-code.geojson');
 
 //https://github.com/EP-Visual-Design/COVID-19-parsed-data/blob/main/c_data/nyc/c_subs/Brooklyn/c_meta.json
 //loadData('https://jht1493.net/COVID-19-Impact/Dashboard/a0/c_data/nyc/c_subs/Brooklyn/c_meta.json')
 
 async function loadData(url) {
-    const response = await fetch(url)
-    const json = await response.json()
-    return json
+  const response = await fetch(url);
+  const json = await response.json();
+  return json;
 }
 
 async function makeMap(url) {
-    const geojson = await loadData(url)
-    // get each zipcode's data (cases and name)
-    const { zipcode_cases, zipcode_names } = await getNewYorkData(RECENT_DATES_URL)
-    let zipcode_data_hash = {}
-    zipcode_cases.map(obj => {
-        const zipcode = obj.c_ref
-        const daily = obj.daily
-        const totals = obj.totals
-        const name  = zipcode_names[zipcode]
-        zipcode_data_hash[zipcode] = {zipcode, name, daily, totals}
+  const geojson = await loadData(url);
+  // get each zipcode's data (cases and name)
+  const { zipcode_cases, zipcode_names } = await getNewYorkData(RECENT_DATES_URL);
+  let zipcode_data_hash = {};
+  zipcode_cases.map((obj) => {
+    const zipcode = obj.c_ref;
+    const daily = obj.daily;
+    const totals = obj.totals;
+    const name = zipcode_names[zipcode];
+    zipcode_data_hash[zipcode] = { zipcode, name, daily, totals };
+  });
+  if (top_n < 0) {
+    top_n = zipcode_cases.length;
+  }
+  const top_cases = zipcode_cases.sort((a, b) => b.totals[METRIC] - a.totals[METRIC]).slice(0, top_n);
+  let path = d3.geoPath();
+  let center = path.centroid(geojson);
+  let brooklyn_data = geojson.features.filter((d) => d.properties.borough === 'Brooklyn');
+  //console.log(brooklyn_data)
+  let brooklyn_geojson = {
+    type: 'FeatureCollection',
+    features: brooklyn_data,
+  };
+  let center_bk = path.centroid(brooklyn_geojson);
+  let f_scale = 78000;
+  let f_width = 0.58;
+  let f_height = 0.51;
+  if (brooklyn_focus) {
+    f_scale = 180000;
+    f_width = 0.5;
+    f_height = 0.3;
+  }
+  let projection = d3
+    .geoMercator()
+    .scale(f_scale)
+    .center(center)
+    .translate([width * f_width, height * f_height]);
+  // .fitSize([width,height], geojson)
+  let geoGenerator = d3.geoPath().projection(projection);
+
+  let colorScale = d3
+    .scaleLinear()
+    .domain([0, d3.max(zipcode_cases, (d) => d.totals[METRIC])])
+    .range([LIGHT_COLOR, INTENSE_COLOR]);
+  // create a tooltip
+  let tooltip = d3
+    .select('#map_container')
+    .append('div')
+    .style('position', 'absolute')
+    .style('opacity', 0)
+    .attr('class', 'tooltip')
+    .style('max-width', '200px')
+    .style('background-color', 'white')
+    .style('border', 'solid')
+    .style('border-width', '2px')
+    .style('border-radius', '5px')
+    .style('padding', '10px')
+    .style('pointer-events', 'none');
+
+  // add Callout
+  const callout = d3.select('#callout');
+  callout.select('h2').text(() => 'Hover on the map to show information');
+  d3.select('#callout_zipcode')
+    .insert('svg', '#callout_zipcode_text')
+    .attr('class', 'color_rect_svg')
+    .attr('id', 'callout_zipcode_svg')
+    .attr('width', '28px')
+    .attr('height', '28px')
+    .append('rect')
+    .style('transform', 'translateY(4px)')
+    .attr('width', '24px')
+    .attr('height', '24px')
+    .attr('fill', 'none');
+  if (!brooklyn_focus) {
+    // callout.append('h4').attr('id', 'rank_title').text(`Top ${top_n} Ranked Zipcodes`);
+    callout.append('h4').attr('id', 'rank_title').text(`Highest Mortality Zipcodes`);
+  }
+  let top_ranks = callout.append('ol').attr('id', 'rank_ol').selectAll('li').data(top_cases).enter().append('li');
+
+  top_ranks
+    .append('svg')
+    .attr('class', 'color_rect_svg')
+    .attr('id', 'rank_rect')
+    .attr('width', '18px')
+    .attr('height', '18px')
+    .append('rect')
+    .style('transform', 'translateY(2px)')
+    .attr('width', '16px')
+    .attr('height', '16px')
+    .style('fill', (d) => colorScale(d.totals[METRIC]));
+  top_ranks.append('div').text((d) => {
+    const zipcode = d.c_ref;
+    const zipcode_name = zipcode_names[zipcode];
+    const cases = d.totals[METRIC].toLocaleString();
+    return `${zipcode} ${zipcode_name}: ${cases}`;
+  });
+
+  let mouseOver = function (e) {
+    const zipcode = e.target.id;
+    if (zipcode_data_hash[zipcode]) {
+      tooltip.style('opacity', 1);
+
+      d3.select(this).style('stroke', STROKE_DARK).style('stroke-width', 3);
+      // make sure the hovered path don't get covered by other path
+      d3.select(this).raise();
+    }
+  };
+
+  let mouseMove = function (e) {
+    const zipcode = e.target.id;
+    if (zipcode_data_hash[zipcode]) {
+      const total_cases = zipcode_data_hash[zipcode].totals[METRIC].toLocaleString();
+      const zipcode_name = zipcode_names[zipcode];
+      tooltip
+        .html(
+          `${zipcode_name} (${zipcode}) <br>
+            Total ${METRIC}: ${total_cases} `
+        )
+        .style('left', e.pageX + 50 + 'px')
+        .style('top', e.pageY + 'px');
+      // update callout
+      d3.select('#callout_zipcode_svg rect').attr('fill', colorScale(total_cases));
+      d3.select('h2').text(`${zipcode} ${zipcode_name}`);
+      d3.select('h3').text(`Total ${METRIC}: ${total_cases}`);
+    }
+  };
+
+  let mouseLeave = function (e) {
+    tooltip.style('opacity', 0);
+    d3.select(this).style('stroke', STROKE_LIGHT).style('stroke-width', 1);
+  };
+
+  // append paths
+  path_group
+    .selectAll('path')
+    .data(geojson.features)
+    .enter()
+    .append('path')
+    .attr('d', geoGenerator)
+    .attr('id', (d) => d.properties.postalCode)
+    .style('stroke', STROKE_LIGHT)
+    .style('stroke-width', 1)
+    .style('stroke-linejoin', 'round')
+    .attr('fill', (d) => {
+      const zipcode = d.properties.postalCode;
+      const current_zipcode_data = zipcode_data_hash[zipcode];
+      //if (current_zipcode_data) console.log(current_zipcode_data)
+      return current_zipcode_data ? colorScale(current_zipcode_data.totals[METRIC]) : NODATA_COLOR;
     })
-    const top_cases = zipcode_cases.sort((a,b)=>b.totals[METRIC]-a.totals[METRIC]).slice(0,10)
-    let path = d3.geoPath()
-    let center = path.centroid(geojson)
-    let brooklyn_data = geojson.features.filter(d => d.properties.borough === 'Brooklyn')
-    //console.log(brooklyn_data)
-    let brooklyn_geojson = {
-        type: 'FeatureCollection',
-        features: brooklyn_data
-    }
-    let center_bk = path.centroid(brooklyn_geojson)
-    let projection = d3.geoMercator().scale(140000).center(center).translate([width/2,height/2])
-    // .fitSize([width,height], geojson)
-    let geoGenerator = d3.geoPath().projection(projection);
+    .on('mouseover', mouseOver)
+    .on('mousemove', mouseMove)
+    .on('mouseleave', mouseLeave);
 
-    let colorScale = d3.scaleLinear().domain([0, d3.max(zipcode_cases, d => d.totals[METRIC])]).range([LIGHT_COLOR, INTENSE_COLOR])
-    // create a tooltip
-    let tooltip = d3.select("#map_container")
-        .append("div")
-        .style('position', 'absolute')
-        .style("opacity", 0)
-        .attr("class", "tooltip")
-        .style("max-width", "200px")
-        .style("background-color", "white")
-        .style("border", "solid")
-        .style("border-width", "2px")
-        .style("border-radius", "5px")
-        .style("padding", "10px")
-        .style("pointer-events", "none")
-    
-    // add Callout
-    const callout = d3.select("#callout")
-    callout
-        .select('h2')
-        .text(()=>"Hover on the map to show information")
-    d3.select('#callout_zipcode').insert("svg","#callout_zipcode_text").attr('class', 'color_rect_svg').attr('id', 'callout_zipcode_svg').attr('width', '28px').attr('height', '28px')
-        .append('rect')
-        .style('transform', 'translateY(4px)')
-        .attr('width', '24px')
-        .attr('height', '24px')
-        .attr('fill','none')
-    callout.append('h4').attr('id', 'rank_title').text('Top 10 Ranked Zipcodes')
-    let top_ranks = callout
-        .append('ol')
-        .attr('id', 'rank_ol')
-        .selectAll('li')
-        .data(top_cases)
-        .enter()
-        .append('li')
-    
-    top_ranks.append('svg').attr('class', 'color_rect_svg').attr('id', 'rank_rect').attr('width', '18px').attr('height', '18px')
-        .append('rect')
-        .style('transform', 'translateY(2px)')
-        .attr('width', '16px')
-        .attr('height', '16px')
-        .style('fill', d => colorScale(d.totals[METRIC]))
-    top_ranks.append('div')
-        .text(d => {
-            const zipcode = d.c_ref
-            const zipcode_name = zipcode_names[zipcode]
-            const cases = d.totals[METRIC].toLocaleString()
-            return `${zipcode} ${zipcode_name}: ${cases}`
-        })
+  // make a legend
+  makeLegend(zipcode_cases);
 
-    let mouseOver = function(e) {
-        const zipcode = e.target.id
-        if (zipcode_data_hash[zipcode]) {
-            tooltip
-                .style("opacity", 1)
+  // init Zoom-in Zoom-out
+  initZoom();
 
-            d3.select(this)
-                .style("stroke", STROKE_DARK)
-                .style("stroke-width", 3)
-            // make sure the hovered path don't get covered by other path
-            d3.select(this).raise()
-        }
-      }
-
-    let mouseMove = function(e) {
-        const zipcode = e.target.id
-        if (zipcode_data_hash[zipcode]) {
-            const total_cases = zipcode_data_hash[zipcode].totals[METRIC].toLocaleString()
-            const zipcode_name = zipcode_names[zipcode]
-            tooltip
-                .html(`
-                    ${zipcode_name} (${zipcode}) <br>
-                    Total ${METRIC}:
-                    ${total_cases}
-                `)
-                .style("left", e.pageX + 50 + "px")
-                .style("top", e.pageY + "px")
-            // update callout
-            d3.select('#callout_zipcode_svg rect').attr('fill', colorScale(total_cases))
-            d3.select('h2').text(`${zipcode} ${zipcode_name}`)
-            d3.select('h3').text(`Total ${METRIC}: ${total_cases}`)
-        }
-    }
-
-    let mouseLeave = function(e) {
-        tooltip
-          .style("opacity", 0)
-        d3.select(this)
-          .style("stroke", STROKE_LIGHT)
-          .style("stroke-width", 1)
-      }
-
-    // append paths
-    path_group.selectAll('path')
-        .data(geojson.features)
-        .enter()
-        .append('path')
-        .attr('d', geoGenerator)
-        .attr('id', d => d.properties.postalCode)
-        .style('stroke', STROKE_LIGHT)
-        .style("stroke-width", 1)
-        .style("stroke-linejoin", "round")
-        .attr('fill', d => {
-            const zipcode = d.properties.postalCode
-            const current_zipcode_data = zipcode_data_hash[zipcode]
-            //if (current_zipcode_data) console.log(current_zipcode_data)
-            return current_zipcode_data ? colorScale(current_zipcode_data.totals[METRIC]) : NODATA_COLOR  
-        })
-        .on('mouseover', mouseOver)
-        .on('mousemove', mouseMove)
-        .on('mouseleave', mouseLeave)
-
-    // make a legend    
-    makeLegend(zipcode_cases)
-    
-    // init Zoom-in Zoom-out
-    initZoom()
-    
+  if (brooklyn_focus) {
+    // let elm = document.getElementById('page_title');
+    // elm.innerHTML = 'Brooklyn COVID-19 Mortality Map';
+    d3.select('#page_title').text('Brooklyn COVID-19 Mortality Map');
+  }
 }
 
 // get most recent date's cases data
 async function getNewYorkData(url) {
-    const data = await loadData(url)
-    const current_date = data.c_dates[data.c_dates.length-1]
+  const data = await loadData(url);
+  const current_date = data.c_dates[data.c_dates.length - 1];
 
-    const bronx_zipcode = `${BASE_URL}${BRONX}/c_meta.json`
-    const manhattan_zipcode = `${BASE_URL}${MANHATTAN}/c_meta.json`
-    const queens_zipcode = `${BASE_URL}${QUEENS}/c_meta.json`
-    const staten_island_zipcode = `${BASE_URL}${STATEN_ISLAND}/c_meta.json`
+  const bronx_zipcode = `${BASE_URL}${BRONX}/c_meta.json`;
+  const manhattan_zipcode = `${BASE_URL}${MANHATTAN}/c_meta.json`;
+  const queens_zipcode = `${BASE_URL}${QUEENS}/c_meta.json`;
+  const staten_island_zipcode = `${BASE_URL}${STATEN_ISLAND}/c_meta.json`;
 
-    const bronx_url = `${BASE_URL}${BRONX}/c_days/${current_date}.json`
-    const brooklyn_url = `${BASE_URL}${BROOKLYN}/c_days/${current_date}.json`
-    const manhattan_url = `${BASE_URL}${MANHATTAN}/c_days/${current_date}.json`
-    const queens_url = `${BASE_URL}${QUEENS}/c_days/${current_date}.json`
-    const staten_island_url = `${BASE_URL}${STATEN_ISLAND}/c_days/${current_date}.json`
+  const bronx_url = `${BASE_URL}${BRONX}/c_days/${current_date}.json`;
+  const brooklyn_url = `${BASE_URL}${BROOKLYN}/c_days/${current_date}.json`;
+  const manhattan_url = `${BASE_URL}${MANHATTAN}/c_days/${current_date}.json`;
+  const queens_url = `${BASE_URL}${QUEENS}/c_days/${current_date}.json`;
+  const staten_island_url = `${BASE_URL}${STATEN_ISLAND}/c_days/${current_date}.json`;
 
-    let zipcode_names = await Promise.all([
-        loadData(bronx_zipcode).then(json => json.c_sub_captions),
-        loadData(manhattan_zipcode).then(json => json.c_sub_captions),
-        loadData(queens_zipcode).then(json => json.c_sub_captions),
-        loadData(staten_island_zipcode).then(json => json.c_sub_captions)
-    ])
-    zipcode_names = {
-        ...data.c_sub_captions,
-        ...zipcode_names[0],
-        ...zipcode_names[1],
-        ...zipcode_names[2],
-        ...zipcode_names[3]
-    }
+  let zipcode_names = await Promise.all([
+    loadData(bronx_zipcode).then((json) => json.c_sub_captions),
+    loadData(manhattan_zipcode).then((json) => json.c_sub_captions),
+    loadData(queens_zipcode).then((json) => json.c_sub_captions),
+    loadData(staten_island_zipcode).then((json) => json.c_sub_captions),
+  ]);
+  zipcode_names = {
+    ...data.c_sub_captions,
+    ...zipcode_names[0],
+    ...zipcode_names[1],
+    ...zipcode_names[2],
+    ...zipcode_names[3],
+  };
 
-    let zipcode_cases = await Promise.all([
-        loadData(bronx_url),
-        loadData(brooklyn_url),
-        loadData(manhattan_url),
-        loadData(queens_url),
-        loadData(staten_island_url)
-    ])
+  let zipcode_cases;
+  if (brooklyn_focus) {
+    zipcode_cases = await Promise.all([loadData(brooklyn_url)]);
+    zipcode_cases = [...zipcode_cases[0]];
+  } else {
+    zipcode_cases = await Promise.all([
+      loadData(bronx_url),
+      loadData(brooklyn_url),
+      loadData(manhattan_url),
+      loadData(queens_url),
+      loadData(staten_island_url),
+    ]);
     zipcode_cases = [
-        ...zipcode_cases[0],
-        ...zipcode_cases[1],
-        ...zipcode_cases[2],
-        ...zipcode_cases[3],
-        ...zipcode_cases[4]
-    ]
-    
-    return { zipcode_cases, zipcode_names }
+      ...zipcode_cases[0],
+      ...zipcode_cases[1],
+      ...zipcode_cases[2],
+      ...zipcode_cases[3],
+      ...zipcode_cases[4],
+    ];
+  }
+
+  console.log('zipcode_cases.length', zipcode_cases.length);
+
+  return { zipcode_cases, zipcode_names };
 }
 
 function makeLegend(zipcode_cases) {
-    const highestCases = d3.max(zipcode_cases, d => d.totals[METRIC])
-    var data = [{"color":LIGHT_COLOR,"value":0},{"color":INTENSE_COLOR,"value": highestCases}];
-    var extent = d3.extent(data, d => d.value);
-    const paddingL = 10
-    const paddingT = 35
-    const width = 320
-    const innerWidth = width - paddingL * 2
-    const barHeight = 8
-    const height = 28
+  const highestCases = d3.max(zipcode_cases, (d) => d.totals[METRIC]);
+  var data = [
+    { color: LIGHT_COLOR, value: 0 },
+    { color: INTENSE_COLOR, value: highestCases },
+  ];
+  var extent = d3.extent(data, (d) => d.value);
+  const paddingL = 10;
+  const paddingT = 35;
+  const width = 320;
+  const innerWidth = width - paddingL * 2;
+  const barHeight = 8;
+  const height = 28;
 
-    let svg = d3.select('#nyc-zipcode-map')
+  let svg = d3.select('#nyc-zipcode-map');
 
-    var xScale = d3.scaleLinear()
-        .range([0, innerWidth])
-        .domain(extent);
+  var xScale = d3.scaleLinear().range([0, innerWidth]).domain(extent);
 
-    var xTicks = [
-        0,
-        Math.floor(highestCases/6),
-        Math.floor(highestCases/6 * 2),
-        Math.floor(highestCases/6 * 3),
-        Math.floor(highestCases/6 * 4),
-        Math.floor(highestCases/6 * 5),
-        highestCases
-    ]
-    
-    var xAxis = d3.axisBottom(xScale)
-        .tickSize(barHeight * 2)
-        .tickValues(xTicks);
+  var xTicks = [
+    0,
+    Math.floor(highestCases / 6),
+    Math.floor((highestCases / 6) * 2),
+    Math.floor((highestCases / 6) * 3),
+    Math.floor((highestCases / 6) * 4),
+    Math.floor((highestCases / 6) * 5),
+    highestCases,
+  ];
 
-    var g = svg.append("g").attr("transform", "translate(" + paddingL + ","+ paddingT+")");
+  var xAxis = d3
+    .axisBottom(xScale)
+    .tickSize(barHeight * 2)
+    .tickValues(xTicks);
 
-    let defs = d3.select('#nyc-zipcode-map').append('defs')
-    var linearGradient = defs.append("linearGradient").attr("id", "myGradient");
-    linearGradient.selectAll("stop")
-        .data(data)
-      .enter().append("stop")
-        .attr("offset", d => ((d.value - extent[0]) / (extent[1] - extent[0]) * 100) + "%")
-        .attr("stop-color", d => d.color);
+  var g = svg.append('g').attr('transform', 'translate(' + paddingL + ',' + paddingT + ')');
 
-    g.append("rect")
-        .attr("width", innerWidth)
-        .attr("height", barHeight)
-        .style("fill", "url(#myGradient)");
+  let defs = d3.select('#nyc-zipcode-map').append('defs');
+  var linearGradient = defs.append('linearGradient').attr('id', 'myGradient');
+  linearGradient
+    .selectAll('stop')
+    .data(data)
+    .enter()
+    .append('stop')
+    .attr('offset', (d) => ((d.value - extent[0]) / (extent[1] - extent[0])) * 100 + '%')
+    .attr('stop-color', (d) => d.color);
 
-    g.append("g")
-        .call(xAxis)
-        .select(".domain").remove();
+  g.append('rect').attr('width', innerWidth).attr('height', barHeight).style('fill', 'url(#myGradient)');
 
-    g.append("text")
-        .attr("x", 0)
-        .attr("y", -10)
-        .style("text-anchor", "left")
-        .text(`Total ${METRIC}`);
+  g.append('g').call(xAxis).select('.domain').remove();
+
+  g.append('text').attr('x', 0).attr('y', -10).style('text-anchor', 'left').text(`Total ${METRIC}`);
 }
 
 function initZoom() {
-    d3.select('#nyc-zipcode-map').call(zoom)
+  d3.select('#nyc-zipcode-map').call(zoom);
 }
 
 function handleZoom(e) {
-    d3.select('#nyc-zipcode-map g')
-        .attr('transform', e.transform)
+  d3.select('#nyc-zipcode-map g').attr('transform', e.transform);
 }
