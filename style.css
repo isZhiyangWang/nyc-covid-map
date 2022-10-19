@@ -17,7 +17,11 @@
     max-width: 100%;
 }
 
-#rank_ol li {
+#rank_ol li, #callout_zipcode {
     display: flex;
     align-items: flex-start;
+}
+
+h2, h3 {
+    margin: 0;
 }

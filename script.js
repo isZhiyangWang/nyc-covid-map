@@ -51,7 +51,7 @@ async function makeMap(url) {
         const name  = zipcode_names[zipcode]
         zipcode_data_hash[zipcode] = {zipcode, name, daily, totals}
     })
-    const top_cases = zipcode_cases.sort((a,b)=>b.totals[METRIC]-a.totals[METRIC]).slice(0,5)
+    const top_cases = zipcode_cases.sort((a,b)=>b.totals[METRIC]-a.totals[METRIC]).slice(0,10)
     let path = d3.geoPath()
     let center = path.centroid(geojson)
     let brooklyn_data = geojson.features.filter(d => d.properties.borough === 'Brooklyn')
@@ -81,9 +81,16 @@ async function makeMap(url) {
         .style("pointer-events", "none")
     
     // add Callout
-    let callout = d3.select("#callout")
-    callout.append('h1').text(()=>"Hover on the map to show information")
-    callout.append('h2')
+    const callout = d3.select("#callout")
+    callout
+        .select('h2')
+        .text(()=>"Hover on the map to show information")
+    d3.select('#callout_zipcode').insert("svg","#callout_zipcode_text").attr('class', 'color_rect_svg').attr('id', 'callout_zipcode_svg').attr('width', '24px').attr('height', '24px')
+        .append('rect')
+        .attr('width', '24px')
+        .attr('height', '24px')
+        .attr('fill','none')
+    // callout_zipcode.append('h3')
     let top_ranks = callout
         .append('ol')
         .attr('id', 'rank_ol')
@@ -92,7 +99,7 @@ async function makeMap(url) {
         .enter()
         .append('li')
     
-    top_ranks.append('svg').attr('id', 'rank_rect').attr('width', '16px').attr('height', '16px')
+    top_ranks.append('svg').attr('class', 'color_rect_svg').attr('id', 'rank_rect').attr('width', '16px').attr('height', '16px')
         .append('rect')
         .attr('width', '16px')
         .attr('height', '16px')
@@ -133,8 +140,9 @@ async function makeMap(url) {
                 .style("left", e.pageX + 50 + "px")
                 .style("top", e.pageY + "px")
             // update callout
-            d3.select('h1').text(`${zipcode_name} (${zipcode})`)
-            d3.select('h2').text(`Total ${METRIC}: ${total_cases}`)
+            d3.select('#callout_zipcode_svg rect').attr('fill', colorScale(total_cases))
+            d3.select('h2').text(`${zipcode} ${zipcode_name}`)
+            d3.select('h3').text(`Total ${METRIC}: ${total_cases}`)
         }
     }
 
@@ -233,7 +241,7 @@ function makeLegend(zipcode_cases) {
     const barHeight = 8
     const height = 28
 
-    let svg = d3.select('svg')
+    let svg = d3.select('#nyc-zipcode-map')
 
     var xScale = d3.scaleLinear()
         .range([0, innerWidth])
@@ -255,7 +263,7 @@ function makeLegend(zipcode_cases) {
 
     var g = svg.append("g").attr("transform", "translate(" + paddingL + ","+ paddingT+")");
 
-    let defs = d3.select('svg').append('defs')
+    let defs = d3.select('#nyc-zipcode-map').append('defs')
     var linearGradient = defs.append("linearGradient").attr("id", "myGradient");
     linearGradient.selectAll("stop")
         .data(data)
@@ -280,10 +288,10 @@ function makeLegend(zipcode_cases) {
 }
 
 function initZoom() {
-    d3.select('svg').call(zoom)
+    d3.select('#nyc-zipcode-map').call(zoom)
 }
 
 function handleZoom(e) {
-    d3.select('svg g')
+    d3.select('#nyc-zipcode-map g')
         .attr('transform', e.transform)
 }
