@@ -92,7 +92,7 @@ async function makeMap(url) {
         .attr('width', '24px')
         .attr('height', '24px')
         .attr('fill','none')
-    callout.append('h4').attr('id', 'rank_title').text('Top 10 Ranked Zipcodes')
+    callout.append('h4').attr('id', 'rank_title').text('Highest Mortality Zipcodes')
 
     let top_ranks = callout
         .append('ol')
