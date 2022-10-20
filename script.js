@@ -51,7 +51,7 @@ async function makeMap(url) {
         const name  = zipcode_names[zipcode]
         zipcode_data_hash[zipcode] = {zipcode, name, daily, totals}
     })
-    const top_cases = zipcode_cases.sort((a,b)=>b.totals[METRIC]-a.totals[METRIC]).slice(0,10)
+    const top_cases = zipcode_cases.sort((a,b)=>b.totals[METRIC]-a.totals[METRIC]).slice(0,24)
     let path = d3.geoPath()
     let center = path.centroid(geojson)
     let brooklyn_data = geojson.features.filter(d => d.properties.borough === 'Brooklyn')
@@ -61,8 +61,9 @@ async function makeMap(url) {
         features: brooklyn_data
     }
     let center_bk = path.centroid(brooklyn_geojson)
-    let projection = d3.geoMercator().scale(140000).center(center).translate([width/2,height/2])
-    // .fitSize([width,height], geojson)
+    let projection = d3.geoMercator().scale(140000)//.center(center).translate([width/2,height/2])
+    //.fitSize([width,height], geojson)
+    .fitExtent([[20, 20], [width-50, height-50]], geojson);
     let geoGenerator = d3.geoPath().projection(projection);
 
     let colorScale = d3.scaleLinear().domain([0, d3.max(zipcode_cases, d => d.totals[METRIC])]).range([LIGHT_COLOR, INTENSE_COLOR])

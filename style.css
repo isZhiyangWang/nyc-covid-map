@@ -10,14 +10,14 @@ html, body {
 }
 
 #map_container {
-    width: 760px;
+    width: 960px;
     max-width: 100%;
     flex-shrink: 0;
 }
 
 #nyc-zipcode-map {
     width: 100%;
-    
+    cursor: grab;
 }
 
 .tooltip {
@@ -38,7 +38,7 @@ html, body {
 }
 
 #rank_title {
-    margin-left: 28px;
+    margin-left: 40px;
 }
 
 #rank_ol{
@@ -72,4 +72,10 @@ h2, h3 {
 
 h1, h2, h3, h4, h5, li {
     cursor: default;
+}
+
+@media all and (min-width: 1000px){
+    #callout {
+        margin-left: 3rem;
+    }
 }
