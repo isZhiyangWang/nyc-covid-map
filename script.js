@@ -92,6 +92,7 @@ async function makeMap(url) {
         .attr('height', '24px')
         .attr('fill','none')
     callout.append('h4').attr('id', 'rank_title').text('Top 10 Ranked Zipcodes')
+
     let top_ranks = callout
         .append('ol')
         .attr('id', 'rank_ol')
@@ -106,8 +107,8 @@ async function makeMap(url) {
             let bbox = target_path.getBBox();
             d3.select('#nyc-zipcode-map g')
                 .transition()
+                .duration(1000)
 		        .call(zoom.translateTo, bbox.x + bbox.width/2,  bbox.y + bbox.height/2)
-
             d3.selectAll('.zipcode_path')
                 .style('stroke', STROKE_LIGHT)
                 .style('stroke-width', 1)
@@ -116,7 +117,6 @@ async function makeMap(url) {
                 .style('stroke-width', 3)
             d3.select(`#path_${zipcode}`).raise()
         })
-    
     top_ranks.append('svg').attr('class', 'color_rect_svg').attr('id', 'rank_rect').attr('width', '18px').attr('height', '18px')
         .append('rect')
         .style('transform', 'translateY(2px)')
@@ -203,7 +203,6 @@ async function makeMap(url) {
     
     // init Zoom-in Zoom-out
     initZoom()
-    
 }
 
 // get most recent date's cases data

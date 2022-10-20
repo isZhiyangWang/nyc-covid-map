@@ -20,7 +20,9 @@ html, body {
     
 }
 
-
+.tooltip {
+    word-wrap: break-word;
+}
 
 #callout_zipcode {
     margin-bottom: 2.5rem;
@@ -44,7 +46,13 @@ html, body {
 }
 
 #rank_ol li {
-    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#rank_ol li:hover {
+    background: #FADBE4;
 }
 
 
