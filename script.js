@@ -85,7 +85,7 @@ async function makeMap(url) {
     const callout = d3.select("#callout")
     callout
         .select('h2')
-        .text(()=>"Hover on the map to show information")
+        .text(()=>"Hover, drag, and zoom on the map to interact")
     d3.select('#callout_zipcode').insert("svg","#callout_zipcode_text").attr('class', 'color_rect_svg').attr('id', 'callout_zipcode_svg').attr('width', '28px').attr('height', '28px')
         .append('rect')
         .style('transform', 'translateY(4px)')
