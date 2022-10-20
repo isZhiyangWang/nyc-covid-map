@@ -99,6 +99,23 @@ async function makeMap(url) {
         .data(top_cases)
         .enter()
         .append('li')
+        .on('click', e => {
+            const zipcode = d3.select(e.target).datum().c_ref
+            const target_path = d3.select(`#path_${zipcode}`).node()
+            // use the native SVG interface to get the bounding box
+            let bbox = target_path.getBBox();
+            d3.select('#nyc-zipcode-map g')
+                .transition()
+		        .call(zoom.translateTo, bbox.x + bbox.width/2,  bbox.y + bbox.height/2)
+
+            d3.selectAll('.zipcode_path')
+                .style('stroke', STROKE_LIGHT)
+                .style('stroke-width', 1)
+            d3.select(`#path_${zipcode}`)
+                .style('stroke', STROKE_DARK)
+                .style('stroke-width', 3)
+            d3.select(`#path_${zipcode}`).raise()
+        })
     
     top_ranks.append('svg').attr('class', 'color_rect_svg').attr('id', 'rank_rect').attr('width', '18px').attr('height', '18px')
         .append('rect')
@@ -115,11 +132,14 @@ async function makeMap(url) {
         })
 
     let mouseOver = function(e) {
-        const zipcode = e.target.id
+        const zipcode = d3.select(this).attr('data-zipcode')
+        // make sure other paths are reset after click top rank
+        d3.selectAll('.zipcode_path')
+                .style('stroke', STROKE_LIGHT)
+                .style('stroke-width', 1)
         if (zipcode_data_hash[zipcode]) {
             tooltip
                 .style("opacity", 1)
-
             d3.select(this)
                 .style("stroke", STROKE_DARK)
                 .style("stroke-width", 3)
@@ -129,7 +149,7 @@ async function makeMap(url) {
       }
 
     let mouseMove = function(e) {
-        const zipcode = e.target.id
+        const zipcode = d3.select(this).attr('data-zipcode')
         if (zipcode_data_hash[zipcode]) {
             const total_cases = zipcode_data_hash[zipcode].totals[METRIC].toLocaleString()
             const zipcode_name = zipcode_names[zipcode]
@@ -162,7 +182,9 @@ async function makeMap(url) {
         .enter()
         .append('path')
         .attr('d', geoGenerator)
-        .attr('id', d => d.properties.postalCode)
+        .attr('data-zipcode', d => d.properties.postalCode)
+        .attr('class', 'zipcode_path')
+        .attr('id', d =>  'path_' + d.properties.postalCode)
         .style('stroke', STROKE_LIGHT)
         .style("stroke-width", 1)
         .style("stroke-linejoin", "round")
