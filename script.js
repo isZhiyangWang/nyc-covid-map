@@ -51,7 +51,7 @@ async function makeMap(url) {
         const name  = zipcode_names[zipcode]
         zipcode_data_hash[zipcode] = {zipcode, name, daily, totals}
     })
-    const top_cases = zipcode_cases.sort((a,b)=>b.totals[METRIC]-a.totals[METRIC]).slice(0,24)
+    const top_cases = zipcode_cases.sort((a,b)=>b.totals[METRIC]-a.totals[METRIC]).slice(0,15)
     let path = d3.geoPath()
     let center = path.centroid(geojson)
     let brooklyn_data = geojson.features.filter(d => d.properties.borough === 'Brooklyn')
@@ -86,11 +86,11 @@ async function makeMap(url) {
     callout
         .select('h2')
         .text(()=>"Hover, drag, and zoom on the map to interact")
-    d3.select('#callout_zipcode').insert("svg","#callout_zipcode_text").attr('class', 'color_rect_svg').attr('id', 'callout_zipcode_svg').attr('width', '28px').attr('height', '28px')
+    d3.select('#callout_zipcode').insert("svg","#callout_zipcode_text").attr('class', 'color_rect_svg').attr('id', 'callout_zipcode_svg')//.attr('width', '28px').attr('height', '28px')
         .append('rect')
         .style('transform', 'translateY(4px)')
-        .attr('width', '24px')
-        .attr('height', '24px')
+        // .attr('width', '24px')
+        // .attr('height', '24px')
         .attr('fill','none')
     callout.append('h4').attr('id', 'rank_title').text('Highest Mortality Zipcodes')
 
@@ -118,7 +118,7 @@ async function makeMap(url) {
                 .style('stroke-width', 3)
             d3.select(`#path_${zipcode}`).raise()
         })
-    top_ranks.append('svg').attr('class', 'color_rect_svg').attr('id', 'rank_rect').attr('width', '18px').attr('height', '18px')
+    top_ranks.append('svg').attr('class', 'color_rect_svg').attr('id', 'rank_rect')//.attr('width', '18px').attr('height', '18px')
         .append('rect')
         .style('transform', 'translateY(2px)')
         .attr('width', '16px')

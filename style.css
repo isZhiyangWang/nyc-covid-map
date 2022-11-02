@@ -4,19 +4,24 @@ html, body {
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
 #wrapper {
     display: flex;
     /* flex-wrap: wrap; */
 }
 
 #map_container {
-    width: 960px;
-    max-width: 100%;
+    width: 100%;
     flex-shrink: 0;
 }
 
 #nyc-zipcode-map {
     width: 100%;
+    max-height: calc(100vh - 30*2px - 32px);
     cursor: grab;
 }
 
@@ -25,6 +30,7 @@ html, body {
 }
 
 #callout_zipcode {
+    margin-left: 0.5rem;
     margin-bottom: 2.5rem;
 }
 
@@ -37,12 +43,24 @@ html, body {
     font-size: 1.5rem;
 }
 
+.color_rect_svg {
+    width: 24px;
+    height: 24px;
+}
+
+.color_rect_svg rect {
+    width: 20px;
+    height: 20px;
+}
+
 #rank_title {
-    margin-left: 40px;
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-left: 32px;
 }
 
 #rank_ol{
-    padding-left: 2rem;
+    padding: 0;
 }
 
 #rank_ol li {
@@ -82,8 +100,19 @@ h1, h2, h3, h4, h5, li {
     bottom: 1rem;
 }
 
-@media all and (min-width: 1000px){
+@media all and (max-width: 992px){
+    #wrapper {
+        flex-wrap: wrap;
+    }
+}
+
+@media all and (min-width: 992px){
     #callout {
-        margin-left: 3rem;
+        margin-left: 4%;
+        width: 100%;
+    }
+
+    #map_container {
+        width: 48%;
     }
 }
