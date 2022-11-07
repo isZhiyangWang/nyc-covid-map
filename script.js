@@ -104,7 +104,7 @@ async function makeMap(url) {
         .on('mouseover', () => {
             callout
                 .select('h2')
-                .text(() => 'Click to locate')
+                .text(() => 'Click to locate on the map')
             callout.select('h3')
                 .text(() => '')
             d3.select('#callout_zipcode_svg rect').attr('fill', 'rgba(0, 0, 0, 0)')
@@ -125,6 +125,11 @@ async function makeMap(url) {
                 .style('stroke', STROKE_DARK)
                 .style('stroke-width', 3)
             d3.select(`#path_${zipcode}`).raise()
+        })
+        .on('mouseleave', () => {
+            callout
+                .select('h2')
+                .text(()=>"Hover, drag, and zoom on the map to interact")
         })
     top_ranks.append('svg').attr('class', 'color_rect_svg').attr('id', 'rank_rect')//.attr('width', '18px').attr('height', '18px')
         .append('rect')
@@ -182,9 +187,6 @@ async function makeMap(url) {
     let mouseLeave = function(e) {
         tooltip
           .style("opacity", 0)
-        // d3.select(this)
-        //   .style("stroke", STROKE_LIGHT)
-        //   .style("stroke-width", 1)
       }
 
     // append paths
