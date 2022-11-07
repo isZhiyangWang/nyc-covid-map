@@ -21,8 +21,8 @@ const STROKE_DARK = '#050404'
 
 const svg = d3.selectAll("#nyc-zipcode-map").attr("viewBox", [0,0,width,height])
                 .style("border", "1px solid #000")
-
 const path_group = svg.append("g").attr("id", "path-group")
+let last_hover_zipcode
 
 let zoom = d3.zoom()
     .scaleExtent([0.5, 2])
@@ -101,6 +101,14 @@ async function makeMap(url) {
         .data(top_cases)
         .enter()
         .append('li')
+        .on('mouseover', () => {
+            callout
+                .select('h2')
+                .text(() => 'Click to locate')
+            callout.select('h3')
+                .text(() => '')
+            d3.select('#callout_zipcode_svg rect').attr('fill', 'rgba(0, 0, 0, 0)')
+        })
         .on('click', e => {
             const zipcode = d3.select(e.target).datum().c_ref
             const target_path = d3.select(`#path_${zipcode}`).node()
@@ -134,6 +142,7 @@ async function makeMap(url) {
 
     let mouseOver = function(e) {
         const zipcode = d3.select(this).attr('data-zipcode')
+        last_hover_zipcode = zipcode
         // make sure other paths are reset after click top rank
         d3.selectAll('.zipcode_path')
                 .style('stroke', STROKE_LIGHT)
@@ -154,6 +163,7 @@ async function makeMap(url) {
         if (zipcode_data_hash[zipcode]) {
             const total_cases = zipcode_data_hash[zipcode].totals[METRIC].toLocaleString()
             const zipcode_name = zipcode_names[zipcode]
+            last_hover_zipcode = zipcode
             tooltip
                 .html(`
                     ${zipcode_name} (${zipcode}) <br>
@@ -172,9 +182,9 @@ async function makeMap(url) {
     let mouseLeave = function(e) {
         tooltip
           .style("opacity", 0)
-        d3.select(this)
-          .style("stroke", STROKE_LIGHT)
-          .style("stroke-width", 1)
+        // d3.select(this)
+        //   .style("stroke", STROKE_LIGHT)
+        //   .style("stroke-width", 1)
       }
 
     // append paths
@@ -198,6 +208,20 @@ async function makeMap(url) {
         .on('mouseover', mouseOver)
         .on('mousemove', mouseMove)
         .on('mouseleave', mouseLeave)
+    
+    // show or hide map hover instruction
+    svg
+        .on('mouseleave', () => {
+            callout
+                .select('h2')
+                .text(() => 'Hover, drag, and zoom on the map to interact')
+            callout.select('h3')
+                .text(() => '')
+            d3.select('#callout_zipcode_svg rect').attr('fill', 'rgba(0, 0, 0, 0)')
+            d3.select(`#path_${last_hover_zipcode}`)
+                .style("stroke", STROKE_LIGHT)
+                .style("stroke-width", 1)
+        })
 
     // make a legend    
     makeLegend(zipcode_cases)

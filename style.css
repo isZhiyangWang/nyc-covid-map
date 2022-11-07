@@ -104,6 +104,10 @@ h1, h2, h3, h4, h5, li {
     #wrapper {
         flex-wrap: wrap;
     }
+
+    #callout {
+        margin-top: 1.5rem;
+    }
 }
 
 @media all and (min-width: 992px){
