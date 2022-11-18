@@ -1,24 +1,3 @@
-// API info
-const BASE_URL = 'https://jht1493.net/COVID-19-Impact/Dashboard/a0/c_data/nyc/c_subs/'
-const BRONX = 'Bronx'
-const BROOKLYN = 'Brooklyn'
-const MANHATTAN = 'Manhattan'
-const QUEENS = 'Queens'
-const STATEN_ISLAND = 'Staten_Island'
-const RECENT_DATES_URL = `${BASE_URL}${BROOKLYN}/c_meta.json`
-const METRIC = 'Deaths' // 'Cases'
-
-// D3 map info
-const width = 800
-const height = 800
-const margin = [50,50]
-const INTENSE_COLOR = '#AA2222'
-const LIGHT_COLOR = '#ECD15B'
-const NODATA_COLOR = '#D3D3D3'
-const STROKE_LIGHT = '#EAEAEA'
-const STROKE_DARK = '#050404'
-
-
 const svg = d3.selectAll("#nyc-zipcode-map").attr("viewBox", [0,0,width,height])
                 .style("border", "1px solid #000")
 const path_group = svg.append("g").attr("id", "path-group")
@@ -30,14 +9,6 @@ let zoom = d3.zoom()
 
 makeMap('nyc-zip-code.geojson')
 
-//https://github.com/EP-Visual-Design/COVID-19-parsed-data/blob/main/c_data/nyc/c_subs/Brooklyn/c_meta.json
-//loadData('https://jht1493.net/COVID-19-Impact/Dashboard/a0/c_data/nyc/c_subs/Brooklyn/c_meta.json')
-
-async function loadData(url) {
-    const response = await fetch(url)
-    const json = await response.json()
-    return json
-}
 
 async function makeMap(url) {
     const geojson = await loadData(url)
@@ -49,6 +20,7 @@ async function makeMap(url) {
         const daily = obj.daily
         const totals = obj.totals
         const name  = zipcode_names[zipcode]
+        
         zipcode_data_hash[zipcode] = {zipcode, name, daily, totals}
     })
     const top_cases = zipcode_cases.sort((a,b)=>b.totals[METRIC]-a.totals[METRIC]).slice(0,15)
@@ -92,7 +64,7 @@ async function makeMap(url) {
         // .attr('width', '24px')
         // .attr('height', '24px')
         .attr('fill','none')
-    callout.append('h4').attr('id', 'rank_title').text('Highest Mortality Zipcodes')
+    callout.append('h4').attr('id', 'rank_title').text('Highest Mortality per 100K Zipcodes')
 
     let top_ranks = callout
         .append('ol')
@@ -141,7 +113,8 @@ async function makeMap(url) {
         .text(d => {
             const zipcode = d.c_ref
             const zipcode_name = zipcode_names[zipcode]
-            const cases = d.totals[METRIC].toLocaleString()
+            let cases = d.totals[METRIC].toLocaleString()
+            cases = cases.substring(0, cases.length - 1);
             return `${zipcode} ${zipcode_name}: ${cases}`
         })
 
@@ -234,13 +207,8 @@ async function makeMap(url) {
 
 // get most recent date's cases data
 async function getNewYorkData(url) {
-    const data = await loadData(url)
+    const data = await loadData(url) // use Brooklyn's data to get most recent date
     const current_date = data.c_dates[data.c_dates.length-1]
-
-    const bronx_zipcode = `${BASE_URL}${BRONX}/c_meta.json`
-    const manhattan_zipcode = `${BASE_URL}${MANHATTAN}/c_meta.json`
-    const queens_zipcode = `${BASE_URL}${QUEENS}/c_meta.json`
-    const staten_island_zipcode = `${BASE_URL}${STATEN_ISLAND}/c_meta.json`
 
     const bronx_url = `${BASE_URL}${BRONX}/c_days/${current_date}.json`
     const brooklyn_url = `${BASE_URL}${BROOKLYN}/c_days/${current_date}.json`
@@ -248,18 +216,29 @@ async function getNewYorkData(url) {
     const queens_url = `${BASE_URL}${QUEENS}/c_days/${current_date}.json`
     const staten_island_url = `${BASE_URL}${STATEN_ISLAND}/c_days/${current_date}.json`
 
-    let zipcode_names = await Promise.all([
-        loadData(bronx_zipcode).then(json => json.c_sub_captions),
-        loadData(manhattan_zipcode).then(json => json.c_sub_captions),
-        loadData(queens_zipcode).then(json => json.c_sub_captions),
-        loadData(staten_island_zipcode).then(json => json.c_sub_captions)
+    let zipcode_population = {}
+
+    let zipcode_json = await Promise.all([
+        data,
+        loadData(bronx_zipcode),
+        loadData(manhattan_zipcode),
+        loadData(queens_zipcode),
+        loadData(staten_island_zipcode)
     ])
-    zipcode_names = {
-        ...data.c_sub_captions,
-        ...zipcode_names[0],
-        ...zipcode_names[1],
-        ...zipcode_names[2],
-        ...zipcode_names[3]
+    
+    for(let borough of zipcode_json) {
+        const regions = borough.c_regions
+        for( let zip of regions) {
+            zipcode_population[zip.c_ref] = zip.c_people
+        }
+    }
+
+    let zipcode_names = {
+        ...zipcode_json[0].c_sub_captions,
+        ...zipcode_json[1].c_sub_captions,
+        ...zipcode_json[2].c_sub_captions,
+        ...zipcode_json[3].c_sub_captions,
+        ...zipcode_json[4].c_sub_captions,
     }
 
     let zipcode_cases = await Promise.all([
@@ -269,6 +248,7 @@ async function getNewYorkData(url) {
         loadData(queens_url),
         loadData(staten_island_url)
     ])
+
     zipcode_cases = [
         ...zipcode_cases[0],
         ...zipcode_cases[1],
@@ -277,71 +257,14 @@ async function getNewYorkData(url) {
         ...zipcode_cases[4]
     ]
     
+    for (let item of zipcode_cases) {
+        let zip = item.c_ref
+        let popluation = zipcode_population[zip]
+        item.totals[METRIC] = item.totals[METRIC] * (100000/popluation)
+    }
+
     return { zipcode_cases, zipcode_names }
 }
 
-function makeLegend(zipcode_cases) {
-    const highestCases = d3.max(zipcode_cases, d => d.totals[METRIC])
-    var data = [{"color":LIGHT_COLOR,"value":0},{"color":INTENSE_COLOR,"value": highestCases}];
-    var extent = d3.extent(data, d => d.value);
-    const paddingL = 10
-    const paddingT = 35
-    const width = 320
-    const innerWidth = width - paddingL * 2
-    const barHeight = 8
-    const height = 28
 
-    let svg = d3.select('#nyc-zipcode-map')
 
-    var xScale = d3.scaleLinear()
-        .range([0, innerWidth])
-        .domain(extent);
-
-    var xTicks = [
-        0,
-        Math.floor(highestCases/6),
-        Math.floor(highestCases/6 * 2),
-        Math.floor(highestCases/6 * 3),
-        Math.floor(highestCases/6 * 4),
-        Math.floor(highestCases/6 * 5),
-        highestCases
-    ]
-    
-    var xAxis = d3.axisBottom(xScale)
-        .tickSize(barHeight * 2)
-        .tickValues(xTicks);
-
-    var g = svg.append("g").attr("transform", "translate(" + paddingL + ","+ paddingT+")");
-
-    let defs = d3.select('#nyc-zipcode-map').append('defs')
-    var linearGradient = defs.append("linearGradient").attr("id", "myGradient");
-    linearGradient.selectAll("stop")
-        .data(data)
-      .enter().append("stop")
-        .attr("offset", d => ((d.value - extent[0]) / (extent[1] - extent[0]) * 100) + "%")
-        .attr("stop-color", d => d.color);
-
-    g.append("rect")
-        .attr("width", innerWidth)
-        .attr("height", barHeight)
-        .style("fill", "url(#myGradient)");
-
-    g.append("g")
-        .call(xAxis)
-        .select(".domain").remove();
-
-    g.append("text")
-        .attr("x", 0)
-        .attr("y", -10)
-        .style("text-anchor", "left")
-        .text(`Total ${METRIC}`);
-}
-
-function initZoom() {
-    d3.select('#nyc-zipcode-map').call(zoom)
-}
-
-function handleZoom(e) {
-    d3.select('#nyc-zipcode-map g')
-        .attr('transform', e.transform)
-}
