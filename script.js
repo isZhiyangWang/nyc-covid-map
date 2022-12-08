@@ -148,7 +148,7 @@ async function makeMap(url) {
             tooltip
                 .html(`
                     ${zipcode_name} (${zipcode}) <br>
-                    Total ${METRIC}:
+                    ${METRIC} per 100K:
                     ${total_cases}
                 `)
                 .style("left", e.pageX + 50 + "px")
@@ -156,7 +156,7 @@ async function makeMap(url) {
             // update callout
             d3.select('#callout_zipcode_svg rect').attr('fill', colorScale(total_cases))
             d3.select('h2').text(`${zipcode} ${zipcode_name}`)
-            d3.select('h3').text(`Total ${METRIC}: ${total_cases}`)
+            d3.select('h3').text(`Total ${METRIC} per 100K: ${total_cases}`)
 
             keepLabelsOnTop()
         }
@@ -165,7 +165,6 @@ async function makeMap(url) {
     let mouseLeave = function(e) {
         tooltip
           .style("opacity", 0)
-        //keepLabelsOnTop()
       }
 
     // append paths
@@ -214,8 +213,6 @@ async function makeMap(url) {
     drawRegionLabel(path_group, QUEENS)
     drawRegionLabel(path_group, MANHATTAN)
     drawRegionLabel(path_group, STATEN_ISLAND)
-
-
 
     // init Zoom-in Zoom-out
     initZoom()

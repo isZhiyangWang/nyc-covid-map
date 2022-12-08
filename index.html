@@ -10,6 +10,19 @@
 </head>
 <body>
     <h1>Interactive NYC COVID-19 Mortality Map</h1>
+    <form action="">
+        <label>
+            Showing data of:
+            <input
+              type="date"
+              required />
+            <span class="validity"></span>
+        </label>
+          
+        <button>Submit</button>
+          
+    </form>
+    <!-- <input id="date_selector" type="date" required /> -->
     <div id="wrapper">
         <div id="map_container">
             <svg id="nyc-zipcode-map">
