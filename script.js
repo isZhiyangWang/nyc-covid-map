@@ -117,7 +117,7 @@ async function makeMap(url) {
             const zipcode_name = zipcode_names[zipcode]
             let cases = d.totals[METRIC].toLocaleString()
             cases = cases.substring(0, cases.length - 1);
-            return `${zipcode} ${zipcode_name}: ${cases}`
+            return `${zipcode_name} (${zipcode}): ${cases}`
         })
 
     let mouseOver = function(e) {
@@ -155,7 +155,7 @@ async function makeMap(url) {
                 .style("top", e.pageY + "px")
             // update callout
             d3.select('#callout_zipcode_svg rect').attr('fill', colorScale(total_cases))
-            d3.select('h2').text(`${zipcode} ${zipcode_name}`)
+            d3.select('h2').text(`${zipcode_name} (${zipcode})`)
             d3.select('h3').text(`Total ${METRIC} per 100K: ${total_cases}`)
 
             keepLabelsOnTop()
