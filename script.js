@@ -26,12 +26,14 @@ async function makeMap(url) {
     const top_cases = zipcode_cases.sort((a,b)=>b.totals[METRIC]-a.totals[METRIC]).slice(0,15)
     let path = d3.geoPath()
     let center = path.centroid(geojson)
-    let brooklyn_data = geojson.features.filter(d => d.properties.borough === 'Brooklyn')
-    //console.log(brooklyn_data)
-    let brooklyn_geojson = {
-        type: 'FeatureCollection',
-        features: brooklyn_data
-    }
+    let bronx_geojson = makeRegionGeoJson(geojson, BRONX)
+    let brooklyn_geojson = makeRegionGeoJson(geojson, BROOKLYN)
+    let manhattan_geojson = makeRegionGeoJson(geojson, MANHATTAN)
+    let queens_geojson = makeRegionGeoJson(geojson, QUEENS)
+    let staten_island_geojson = makeRegionGeoJson(geojson, "Staten Island")
+    bk_center = path.centroid(brooklyn_geojson)
+    let bounds = path.bounds(brooklyn_geojson)
+
     let center_bk = path.centroid(brooklyn_geojson)
     let projection = d3.geoMercator().scale(140000)//.center(center).translate([width/2,height/2])
     //.fitSize([width,height], geojson)
@@ -133,6 +135,7 @@ async function makeMap(url) {
                 .style("stroke-width", 3)
             // make sure the hovered path don't get covered by other path
             d3.select(this).raise()
+            keepLabelsOnTop()
         }
       }
 
@@ -154,12 +157,15 @@ async function makeMap(url) {
             d3.select('#callout_zipcode_svg rect').attr('fill', colorScale(total_cases))
             d3.select('h2').text(`${zipcode} ${zipcode_name}`)
             d3.select('h3').text(`Total ${METRIC}: ${total_cases}`)
+
+            keepLabelsOnTop()
         }
     }
 
     let mouseLeave = function(e) {
         tooltip
           .style("opacity", 0)
+        //keepLabelsOnTop()
       }
 
     // append paths
@@ -169,7 +175,7 @@ async function makeMap(url) {
         .append('path')
         .attr('d', geoGenerator)
         .attr('data-zipcode', d => d.properties.postalCode)
-        .attr('class', 'zipcode_path')
+        .attr('class', d => `zipcode_path path_${d.properties.borough.split(' ').join('_')}`)
         .attr('id', d =>  'path_' + d.properties.postalCode)
         .style('stroke', STROKE_LIGHT)
         .style("stroke-width", 1)
@@ -200,7 +206,17 @@ async function makeMap(url) {
 
     // make a legend    
     makeLegend(zipcode_cases)
+
     
+    // draw borough label
+    drawRegionLabel(path_group, BRONX)
+    drawRegionLabel(path_group, BROOKLYN)
+    drawRegionLabel(path_group, QUEENS)
+    drawRegionLabel(path_group, MANHATTAN)
+    drawRegionLabel(path_group, STATEN_ISLAND)
+
+
+
     // init Zoom-in Zoom-out
     initZoom()
 }

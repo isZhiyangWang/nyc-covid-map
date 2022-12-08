@@ -13,6 +13,44 @@ function handleZoom(e) {
         .attr('transform', e.transform)
 }
 
+function makeRegionGeoJson(geojson, regionName) {
+    let regionData = geojson.features.filter(d => d.properties.borough === regionName)
+    return {
+        type: 'FeatureCollection',
+        features: regionData
+    }
+}
+
+function drawRegionLabel(svg, regionName) {
+    let bk_bboxes = d3.selectAll(`.path_${regionName}`).nodes()
+    let minX = 10000000
+    let minY = 10000000
+    let maxX = -10000000
+    let maxY = -10000000
+    //console.log(bk_bboxes)
+    for(let item of bk_bboxes) {
+        let target_path = item.getBBox()
+        minX = Math.min(minX, target_path.x);
+        maxX = Math.max(maxX, target_path.x + target_path.width);
+        minY = Math.min(minY, target_path.y);
+        maxY = Math.max(maxY, target_path.y + target_path.height);
+        //console.log(target)
+    }
+    svg.append('text')
+        .attr('x', (minX+maxX)/2)
+        .attr('y', (minY+maxY)/2)
+        .attr('font-size', 20)
+        .attr('text-anchor', 'middle')
+        .attr('class', 'labels')
+        .attr('id', `label_${regionName}`)
+        .attr("fill", "black")
+        .text(regionName.split('_').join(' '));
+}
+
+function keepLabelsOnTop() {
+    d3.select('.labels').raise()
+}
+
 function makeLegend(zipcode_cases) {
     const highestCases = d3.max(zipcode_cases, d => d.totals[METRIC])
     var data = [{"color":LIGHT_COLOR,"value":0},{"color":INTENSE_COLOR,"value": highestCases}];
