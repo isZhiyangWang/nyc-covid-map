@@ -9,11 +9,10 @@ let zoom = d3.zoom()
 
 makeMap('nyc-zip-code.geojson')
 
-
-async function makeMap(url) {
+async function makeMap(url, date_input) {
     const geojson = await loadData(url)
     // get each zipcode's data (cases and name)
-    const { zipcode_cases, zipcode_names } = await getNewYorkData(RECENT_DATES_URL)
+    const { zipcode_cases, zipcode_names } = await getNewYorkData(RECENT_DATES_URL, date_input)
     let zipcode_data_hash = {}
     zipcode_cases.map(obj => {
         const zipcode = obj.c_ref
@@ -188,6 +187,7 @@ async function makeMap(url) {
         .on('mouseover', mouseOver)
         .on('mousemove', mouseMove)
         .on('mouseleave', mouseLeave)
+        
     
     // show or hide map hover instruction
     svg
@@ -219,19 +219,27 @@ async function makeMap(url) {
 }
 
 // get most recent date's cases data
-async function getNewYorkData(url) {
-    const data = await loadData(url) // use Brooklyn's data to get most recent date
-    const current_date = data.c_dates[data.c_dates.length-1]
+async function getNewYorkData(url, date_input) {
+    let data = await loadData(url)
+    console.log('date input para', date_input) 
+    if(!date_input) {
+        // use Brooklyn's data to get most recent date
+        console.log(data)
+        date_input = data.c_dates[data.c_dates.length-1]
+    }
+    
+    console.log('current date',date_input)
 
-    const bronx_url = `${BASE_URL}${BRONX}/c_days/${current_date}.json`
-    const brooklyn_url = `${BASE_URL}${BROOKLYN}/c_days/${current_date}.json`
-    const manhattan_url = `${BASE_URL}${MANHATTAN}/c_days/${current_date}.json`
-    const queens_url = `${BASE_URL}${QUEENS}/c_days/${current_date}.json`
-    const staten_island_url = `${BASE_URL}${STATEN_ISLAND}/c_days/${current_date}.json`
+    const bronx_url = `${BASE_URL}${BRONX}/c_days/${date_input}.json`
+    const brooklyn_url = `${BASE_URL}${BROOKLYN}/c_days/${date_input}.json`
+    const manhattan_url = `${BASE_URL}${MANHATTAN}/c_days/${date_input}.json`
+    const queens_url = `${BASE_URL}${QUEENS}/c_days/${date_input}.json`
+    const staten_island_url = `${BASE_URL}${STATEN_ISLAND}/c_days/${date_input}.json`
 
     let zipcode_population = {}
 
     let zipcode_json = await Promise.all([
+        //loadData(brooklyn_zipcode),
         data,
         loadData(bronx_zipcode),
         loadData(manhattan_zipcode),
@@ -279,5 +287,21 @@ async function getNewYorkData(url) {
     return { zipcode_cases, zipcode_names }
 }
 
+function colorMapByDate(evt) {
+    evt.preventDefault()
+    const date_input = document.getElementById('date_input')
+    console.log('submit', date_input.value)
+}
 
+date_form.addEventListener("submit", (evt) => {
+    evt.preventDefault()
+    d3.selectAll('.tooltip').remove()
+    d3.selectAll('.zipcode_path').remove()
+    d3.select('.legend').remove()
+    d3.selectAll('.color_rect_svg').remove()
+    d3.select('#rank_ol').html("")
+    d3.select('#rank_title').html("")
+    d3.selectAll('.labels').remove()
+    makeMap('nyc-zip-code.geojson', date_input.value)
+});
 

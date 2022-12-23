@@ -82,7 +82,7 @@ function makeLegend(zipcode_cases) {
         .tickSize(barHeight * 2)
         .tickValues(xTicks);
 
-    var g = svg.append("g").attr("transform", "translate(" + paddingL + ","+ paddingT+")");
+    var g = svg.append("g").attr('class', 'legend').attr("transform", "translate(" + paddingL + ","+ paddingT+")");
 
     let defs = d3.select('#nyc-zipcode-map').append('defs')
     var linearGradient = defs.append("linearGradient").attr("id", "myGradient");
