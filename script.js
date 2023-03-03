@@ -67,6 +67,9 @@ async function makeMap(url, date_input) {
         // .attr('height', '24px')
         .attr('fill','none')
 
+    const rank_title = d3.select('#rank_title')
+    rank_title.html(`Highest Mortality Zipcodes ${raw_or_per100k.value === 'per100k' ? 'per 100K' : 'Raw Data'}`)
+
     let top_ranks = callout
         .append('ol')
         
