@@ -23,6 +23,7 @@ async function makeMap(url, date_input) {
         zipcode_data_hash[zipcode] = {zipcode, name, daily, totals}
     })
     const top_cases = zipcode_cases.sort((a,b)=>b.totals[METRIC]-a.totals[METRIC]).slice(0,15)
+    console.log(top_cases)
     let path = d3.geoPath()
     let center = path.centroid(geojson)
     let bronx_geojson = makeRegionGeoJson(geojson, BRONX)
@@ -65,10 +66,10 @@ async function makeMap(url, date_input) {
         // .attr('width', '24px')
         // .attr('height', '24px')
         .attr('fill','none')
-    callout.append('h4').attr('id', 'rank_title').text('Highest Mortality per 100K Zipcodes')
 
     let top_ranks = callout
         .append('ol')
+        
         .attr('id', 'rank_ol')
         .selectAll('li')
         .data(top_cases)
@@ -115,7 +116,7 @@ async function makeMap(url, date_input) {
             const zipcode = d.c_ref
             const zipcode_name = zipcode_names[zipcode]
             let cases = d.totals[METRIC].toLocaleString()
-            cases = cases.substring(0, cases.length - 1);
+            //cases = cases.substring(0, cases.length - 1);
             return `${zipcode_name} (${zipcode}): ${cases}`
         })
 
@@ -246,7 +247,7 @@ async function getNewYorkData(url, date_input) {
         loadData(queens_zipcode),
         loadData(staten_island_zipcode)
     ])
-    
+
     for(let borough of zipcode_json) {
         const regions = borough.c_regions
         for( let zip of regions) {
@@ -277,12 +278,19 @@ async function getNewYorkData(url, date_input) {
         ...zipcode_cases[3],
         ...zipcode_cases[4]
     ]
+
     
-    for (let item of zipcode_cases) {
-        let zip = item.c_ref
-        let popluation = zipcode_population[zip]
-        item.totals[METRIC] = item.totals[METRIC] * (100000/popluation)
+    if (raw_or_per100k.value === 'per100k') {
+        for (let item of zipcode_cases) {
+            let zip = item.c_ref
+            let popluation = zipcode_population[zip]
+            //console.log('item', item)
+            //console.log('before',item.totals[METRIC])
+            item.totals[METRIC] = item.totals[METRIC] * (100000/popluation)
+            //console.log('after',item.totals[METRIC])
+        }
     }
+
 
     return { zipcode_cases, zipcode_names }
 }
@@ -293,15 +301,24 @@ function colorMapByDate(evt) {
     console.log('submit', date_input.value)
 }
 
-date_form.addEventListener("submit", (evt) => {
+form.addEventListener("submit", (evt) => {
     evt.preventDefault()
     d3.selectAll('.tooltip').remove()
     d3.selectAll('.zipcode_path').remove()
     d3.select('.legend').remove()
     d3.selectAll('.color_rect_svg').remove()
-    d3.select('#rank_ol').html("")
-    d3.select('#rank_title').html("")
+    d3.select('#rank_ol').remove()
     d3.selectAll('.labels').remove()
     makeMap('nyc-zip-code.geojson', date_input.value)
 });
 
+// select Raw or per100K data
+raw_or_per100k.addEventListener('change', (evt)=> {
+    d3.selectAll('.tooltip').remove()
+    d3.selectAll('.zipcode_path').remove()
+    d3.select('.legend').remove()
+    d3.selectAll('.color_rect_svg').remove()
+    d3.select('#rank_ol').remove()
+    d3.selectAll('.labels').remove()
+    makeMap('nyc-zip-code.geojson', date_input.value)
+})

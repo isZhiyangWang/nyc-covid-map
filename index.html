@@ -10,7 +10,12 @@
 </head>
 <body>
     <h1>Interactive NYC COVID-19 Mortality Map</h1>
-    <form id="date_form" action="">
+    <form id="form" action="">
+        <label for="">Raw or 100K</label>
+        <select name="raw_or_per100k" id="raw_or_per100k">
+            <option value="per100k">per 100k</option>
+            <option value="raw">Raw</option>
+        </select> 
         <label>
             Showing data of:
             <input
@@ -18,7 +23,8 @@
               type="date"
               required />
             <span class="validity"></span>
-        </label> 
+        </label>
+        
         <button>Submit</button>
     </form>
     <!-- <input id="date_selector" type="date" required /> -->
@@ -35,6 +41,7 @@
                     <h3 class="case_num"></h3>
                 </div>
             </div>
+            <h4 id="rank_title">Highest Mortality per 100K Zipcodes</h4>
         </div>
     </div>
     <!-- <div id="credit">

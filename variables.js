@@ -25,4 +25,6 @@ const STROKE_LIGHT = '#EAEAEA'
 const STROKE_DARK = '#050404'
 
 // HTML elements
-const date_form = document.getElementById('date_form')
+const form = document.getElementById('form')
+const date_input = document.getElementById('date_input')
+const raw_or_per100k = document.getElementById("raw_or_per100k")
