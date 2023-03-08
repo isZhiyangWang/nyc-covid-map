@@ -105,5 +105,5 @@ function makeLegend(zipcode_cases) {
         .attr("x", 0)
         .attr("y", -10)
         .style("text-anchor", "left")
-        .text(`${METRIC} per 100K`);
+        .text(`${METRIC} (${raw_or_per100k.value})`);
 }
