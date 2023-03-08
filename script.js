@@ -151,7 +151,7 @@ async function makeMap(url, date_input) {
             tooltip
                 .html(`
                     ${zipcode_name} (${zipcode}) <br>
-                    ${METRIC} per 100K:
+                    ${METRIC} (${raw_or_per100k.value}):
                     ${total_cases}
                 `)
                 .style("left", e.pageX + 50 + "px")
