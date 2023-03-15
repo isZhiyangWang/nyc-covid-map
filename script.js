@@ -70,7 +70,7 @@ async function makeMap(url, date_input) {
         .attr('fill','none')
 
     const rank_title = d3.select('#rank_title')
-    rank_title.html(`Highest Mortality Zipcodes ${raw_or_per100k.value === 'per100k' ? 'per 100K' : 'Raw Data'}`)
+    rank_title.html(`Highest Mortality Zipcodes ${raw_or_per100k.value === 'per100k' ? 'per 100K' : 'Total Deaths'}`)
 
     let top_ranks = callout
         .append('ol')
@@ -161,7 +161,7 @@ async function makeMap(url, date_input) {
             // update callout
             d3.selectAll('#callout_zipcode_svg rect').attr('fill', colorScale(total_cases))
             d3.selectAll('.name').text(`${zipcode_name} (${zipcode})`)
-            d3.selectAll('.case_num').text(`Total ${METRIC} per 100K: ${total_cases}`)
+            d3.selectAll('.case_num').text(`Total ${METRIC} ${raw_or_per100k.value === 'per100k' ? "per 100K" : ""}: ${total_cases}`)
 
             keepLabelsOnTop()
         }
