@@ -29,9 +29,13 @@ body {
     word-wrap: break-word;
 }
 
-#callout_zipcode {
+.callout_zipcode {
     margin-left: 0.5rem;
     margin-bottom: 2.5rem;
+}
+
+#callout_zipcode_mobile {
+    margin: 2rem 0;
 }
 
 #callout_zipcode_text .name {
@@ -74,7 +78,7 @@ body {
 }
 
 
-#rank_ol li, #callout_zipcode {
+#rank_ol li, .callout_zipcode {
     display: flex;
     align-items: flex-start;
 }
@@ -108,6 +112,10 @@ h1, h2, h3, h4, h5, li {
     #callout {
         margin-top: 1.5rem;
     }
+
+    #callout_zipcode_desktop {
+        display: none;
+    }
 }
 
 @media all and (min-width: 992px){
@@ -118,5 +126,9 @@ h1, h2, h3, h4, h5, li {
 
     #map_container {
         width: 48%;
+    }
+
+    #callout_zipcode_mobile {
+        display: none;
     }
 }

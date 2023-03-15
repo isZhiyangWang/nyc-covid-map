@@ -57,10 +57,12 @@ async function makeMap(url, date_input) {
     
     // add Callout
     const callout = d3.select("#callout")
-    callout
-        .select('h2')
+    // callout
+    //     .select('.instruction')
+    //     .text(()=>"Hover, drag, and zoom on the map to interact")
+    d3.selectAll('.instruction')
         .text(()=>"Hover, drag, and zoom on the map to interact")
-    d3.select('#callout_zipcode').insert("svg","#callout_zipcode_text").attr('class', 'color_rect_svg').attr('id', 'callout_zipcode_svg')//.attr('width', '28px').attr('height', '28px')
+    d3.selectAll('.callout_zipcode').insert("svg","#callout_zipcode_text").attr('class', 'color_rect_svg callout_zipcode_svg').attr('id', 'callout_zipcode_svg').attr('width', '28px').attr('height', '28px')
         .append('rect')
         .style('transform', 'translateY(4px)')
         // .attr('width', '24px')
@@ -79,12 +81,12 @@ async function makeMap(url, date_input) {
         .enter()
         .append('li')
         .on('mouseover', () => {
-            callout
-                .select('h2')
+            //callout
+            d3.selectAll('.instruction')
                 .text(() => 'Click to locate on the map')
-            callout.select('h3')
+            d3.selectAll('.case_num')
                 .text(() => '')
-            d3.select('#callout_zipcode_svg rect').attr('fill', 'rgba(0, 0, 0, 0)')
+            d3.selectAll('#callout_zipcode_svg rect').attr('fill', 'rgba(0, 0, 0, 0)')
         })
         .on('click', e => {
             const zipcode = d3.select(e.target).datum().c_ref
@@ -104,9 +106,9 @@ async function makeMap(url, date_input) {
             d3.select(`#path_${zipcode}`).raise()
         })
         .on('mouseleave', () => {
-            callout
-                .select('h2')
+            d3.selectAll('.instruction')
                 .text(()=>"Hover, drag, and zoom on the map to interact")
+            
         })
     top_ranks.append('svg').attr('class', 'color_rect_svg').attr('id', 'rank_rect')//.attr('width', '18px').attr('height', '18px')
         .append('rect')
@@ -157,9 +159,9 @@ async function makeMap(url, date_input) {
                 .style("left", e.pageX + 50 + "px")
                 .style("top", e.pageY + "px")
             // update callout
-            d3.select('#callout_zipcode_svg rect').attr('fill', colorScale(total_cases))
-            d3.select('h2').text(`${zipcode_name} (${zipcode})`)
-            d3.select('h3').text(`Total ${METRIC} per 100K: ${total_cases}`)
+            d3.selectAll('#callout_zipcode_svg rect').attr('fill', colorScale(total_cases))
+            d3.selectAll('.name').text(`${zipcode_name} (${zipcode})`)
+            d3.selectAll('.case_num').text(`Total ${METRIC} per 100K: ${total_cases}`)
 
             keepLabelsOnTop()
         }
@@ -196,12 +198,11 @@ async function makeMap(url, date_input) {
     // show or hide map hover instruction
     svg
         .on('mouseleave', () => {
-            callout
-                .select('h2')
+            d3.selectAll('.instruction')
                 .text(() => 'Hover, drag, and zoom on the map to interact')
-            callout.select('h3')
+            d3.selectAll('.case_num')
                 .text(() => '')
-            d3.select('#callout_zipcode_svg rect').attr('fill', 'rgba(0, 0, 0, 0)')
+            d3.selectAll('#callout_zipcode_svg rect').attr('fill', 'rgba(0, 0, 0, 0)')
             d3.select(`#path_${last_hover_zipcode}`)
                 .style("stroke", STROKE_LIGHT)
                 .style("stroke-width", 1)
