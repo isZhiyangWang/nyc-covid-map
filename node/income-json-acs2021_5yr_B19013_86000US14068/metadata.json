@@ -1,0 +1,20 @@
+{
+    "release": {
+        "id": "acs2021_5yr",
+        "years": "2017-2021",
+        "name": "ACS 2021 5-year"
+    },
+    "tables": {
+        "B19013": {
+            "title": "Median Household Income in the Past 12 Months (In 2021 Inflation-adjusted Dollars)",
+            "universe": "Households",
+            "denominator_column_id": null,
+            "columns": {
+                "B19013001": {
+                    "name": "Median household income in the past 12 months (in 2021 inflation-adjusted dollars)",
+                    "indent": 0
+                }
+            }
+        }
+    }
+}
