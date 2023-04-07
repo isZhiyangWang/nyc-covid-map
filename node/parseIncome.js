@@ -2,7 +2,8 @@ const fs = require('fs-extra');
 // const path = require('path');
 
 let jsonPath = './income-json-acs2021_5yr_B19013_86000US14068/acs2021_5yr_B19013_86000US14068.geojson';
-let outputPath = '../income.json';
+//let outputPath = '../income.json';
+let outputPath = '../incomeHash.json';
 
 let data = fs.readJsonSync(jsonPath);
 
@@ -41,7 +42,12 @@ for (let ent of data.features) {
     incomeNullCount++;
   }
 }
+let incomeHash = {}
+for(let item of incomeArr) {
+  incomeHash[item.zipcode] = item.income
+}
 
-fs.writeJsonSync(outputPath, incomeArr, { spaces: 2 });
-
+//fs.writeJsonSync(outputPath, incomeArr, { spaces: 2 });
+fs.writeJsonSync(outputPath, incomeHash, { spaces: 2 });
+//index 1786 incomeNullCount 159
 console.log('index', index, 'incomeNullCount', incomeNullCount);
