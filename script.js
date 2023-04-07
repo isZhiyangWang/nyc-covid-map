@@ -1,5 +1,5 @@
 const svg = d3.selectAll("#nyc-zipcode-map").attr("viewBox", [0,0,width,height])
-                .style("border", "1px solid #000")
+                //.style("border", "1px solid #000")
 const path_group = svg.append("g").attr("id", "path-group")
 let last_hover_zipcode
 
@@ -48,9 +48,7 @@ async function makeMap(url, date_input) {
         .style("opacity", 0)
         .attr("class", "tooltip")
         .style("max-width", "200px")
-        .style("background-color", "white")
-        .style("border", "solid")
-        .style("border-width", "2px")
+        .style("background", "rgba(0,0,0,.8)")
         .style("border-radius", "5px")
         .style("padding", "10px")
         .style("pointer-events", "none")
@@ -101,7 +99,7 @@ async function makeMap(url, date_input) {
                 .style('stroke', STROKE_LIGHT)
                 .style('stroke-width', 1)
             d3.select(`#path_${zipcode}`)
-                .style('stroke', STROKE_DARK)
+                .style('stroke', STROKE_LIGHT)
                 .style('stroke-width', 3)
             d3.select(`#path_${zipcode}`).raise()
         })
@@ -136,7 +134,7 @@ async function makeMap(url, date_input) {
             tooltip
                 .style("opacity", 1)
             d3.select(this)
-                .style("stroke", STROKE_DARK)
+                .style("stroke", STROKE_LIGHT)
                 .style("stroke-width", 3)
             // make sure the hovered path don't get covered by other path
             d3.select(this).raise()
@@ -152,7 +150,7 @@ async function makeMap(url, date_input) {
             last_hover_zipcode = zipcode
             tooltip
                 .html(`
-                    ${zipcode_name} (${zipcode}) <br>
+                    ${zipcode_name}, ${zipcode} <br>
                     ${METRIC} (${raw_or_per100k.value}):
                     ${total_cases}
                 `)

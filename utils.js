@@ -43,7 +43,7 @@ function drawRegionLabel(svg, regionName) {
         .attr('text-anchor', 'middle')
         .attr('class', 'labels')
         .attr('id', `label_${regionName}`)
-        .attr("fill", "black")
+        .attr("fill", "#fff")
         .text(regionName.split('_').join(' '));
 }
 
@@ -55,14 +55,14 @@ function makeLegend(zipcode_cases) {
     const highestCases = d3.max(zipcode_cases, d => d.totals[METRIC])
     var data = [{"color":LIGHT_COLOR,"value":0},{"color":INTENSE_COLOR,"value": highestCases}];
     var extent = d3.extent(data, d => d.value);
-    const paddingL = 10
+    const paddingL = 32
     const paddingT = 35
     const width = 320
     const innerWidth = width - paddingL * 2
     const barHeight = 8
     const height = 28
 
-    let svg = d3.select('#nyc-zipcode-map')
+    let svg = d3.select('#legendSvg')
 
     var xScale = d3.scaleLinear()
         .range([0, innerWidth])
@@ -105,5 +105,6 @@ function makeLegend(zipcode_cases) {
         .attr("x", 0)
         .attr("y", -10)
         .style("text-anchor", "left")
-        .text(`${METRIC} (${raw_or_per100k.value})`);
+        .style("fill", "#fff")
+        .text(`${METRIC} ${raw_or_per100k.value === 'per100k' ? 'per 100K' : 'Total'}`);
 }
