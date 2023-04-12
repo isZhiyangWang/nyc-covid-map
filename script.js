@@ -12,6 +12,7 @@ makeMap('nyc-zip-code.geojson')
 async function makeMap(url, date_input) {
     const geojson = await loadData(url)
     // get each zipcode's data (cases and name)
+    console.log('date input_', date_input)
     const { zipcode_cases, zipcode_names } = await getNewYorkData(RECENT_DATES_URL, date_input)
     let zipcode_data_hash = {}
     zipcode_cases.map(obj => {
@@ -108,20 +109,20 @@ async function makeMap(url, date_input) {
                 .text(()=>"Hover, drag, and zoom on the map to interact")
             
         })
-    top_ranks.append('svg').attr('class', 'color_rect_svg').attr('id', 'rank_rect')//.attr('width', '18px').attr('height', '18px')
-        .append('rect')
-        .style('transform', 'translateY(2px)')
-        .attr('width', '16px')
-        .attr('height', '16px')
-        .style('fill', d => colorScale(d.totals[METRIC]))
-    top_ranks.append('div')
-        .text(d => {
-            const zipcode = d.c_ref
-            const zipcode_name = zipcode_names[zipcode]
-            let cases = d.totals[METRIC].toLocaleString()
-            //cases = cases.substring(0, cases.length - 1);
-            return `${zipcode_name} (${zipcode}): ${cases}`
-        })
+    // top_ranks.append('svg').attr('class', 'color_rect_svg').attr('id', 'rank_rect')//.attr('width', '18px').attr('height', '18px')
+    //     .append('rect')
+    //     .style('transform', 'translateY(2px)')
+    //     .attr('width', '16px')
+    //     .attr('height', '16px')
+    //     .style('fill', d => colorScale(d.totals[METRIC]))
+    // top_ranks.append('div')
+    //     .text(d => {
+    //         const zipcode = d.c_ref
+    //         const zipcode_name = zipcode_names[zipcode]
+    //         let cases = d.totals[METRIC].toLocaleString()
+    //         //cases = cases.substring(0, cases.length - 1);
+    //         return `${zipcode_name} (${zipcode}): ${cases}`
+    //     })
 
     let mouseOver = function(e) {
         const zipcode = d3.select(this).attr('data-zipcode')
@@ -222,22 +223,23 @@ async function makeMap(url, date_input) {
 }
 
 // get most recent date's cases data
-async function getNewYorkData(url, date_input) {
+async function getNewYorkData(url, target_date) {
     let data = await loadData(url)
-    console.log('date input para', date_input) 
-    if(!date_input) {
+    console.log('date input para', target_date) 
+    if(!target_date) {
         // use Brooklyn's data to get most recent date
         console.log(data)
-        date_input = data.c_dates[data.c_dates.length-1]
+        target_date = data.c_dates[data.c_dates.length-1]
+        document.getElementById('date_input').value = target_date
     }
     
-    console.log('current date',date_input)
+    console.log('current date',target_date)
 
-    const bronx_url = `${BASE_URL}${BRONX}/c_days/${date_input}.json`
-    const brooklyn_url = `${BASE_URL}${BROOKLYN}/c_days/${date_input}.json`
-    const manhattan_url = `${BASE_URL}${MANHATTAN}/c_days/${date_input}.json`
-    const queens_url = `${BASE_URL}${QUEENS}/c_days/${date_input}.json`
-    const staten_island_url = `${BASE_URL}${STATEN_ISLAND}/c_days/${date_input}.json`
+    const bronx_url = `${BASE_URL}${BRONX}/c_days/${target_date}.json`
+    const brooklyn_url = `${BASE_URL}${BROOKLYN}/c_days/${target_date}.json`
+    const manhattan_url = `${BASE_URL}${MANHATTAN}/c_days/${target_date}.json`
+    const queens_url = `${BASE_URL}${QUEENS}/c_days/${target_date}.json`
+    const staten_island_url = `${BASE_URL}${STATEN_ISLAND}/c_days/${target_date}.json`
 
     let zipcode_population = {}
 
