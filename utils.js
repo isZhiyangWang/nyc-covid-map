@@ -108,3 +108,32 @@ function makeLegend(zipcode_cases) {
         .style("fill", "#fff")
         .text(`${METRIC} ${raw_or_per100k.value === 'per100k' ? 'per 100K' : 'Total'}`);
 }
+
+function focusZipcodePath() {
+    const zipcode = zipcode_input.value
+    const target_path = d3.select(`#path_${zipcode}`).node()
+    if (zipcode && target_path) {
+        // use the native SVG interface to get the bounding box
+        let bbox = target_path.getBBox();
+        d3.select('#nyc-zipcode-map g')
+            .transition()
+            .duration(1000)
+            .call(zoom.translateTo, bbox.x + bbox.width/2,  bbox.y + bbox.height/2)
+        d3.selectAll('.zipcode_path')
+            .style('stroke', STROKE_LIGHT)
+            .style('stroke-width', 1)
+        d3.select(`#path_${zipcode}`)
+            .style('stroke', STROKE_LIGHT)
+            .style('stroke-width', 3)
+        d3.select(`#path_${zipcode}`).raise()
+    }
+}
+
+function clearMap() {
+    d3.selectAll('.tooltip').remove()
+    d3.selectAll('.zipcode_path').remove()
+    d3.select('.legend').remove()
+    d3.selectAll('.color_rect_svg').remove()
+    d3.select('#rank_ol').remove()
+    d3.selectAll('.labels').remove()
+}

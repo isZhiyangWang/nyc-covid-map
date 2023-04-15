@@ -2,6 +2,7 @@ const svg = d3.selectAll("#nyc-zipcode-map").attr("viewBox", [0,0,width,height])
                 //.style("border", "1px solid #000")
 const path_group = svg.append("g").attr("id", "path-group")
 let last_hover_zipcode
+let incomeJson
 
 let zoom = d3.zoom()
     .scaleExtent([0.5, 2])
@@ -11,6 +12,10 @@ makeMap('nyc-zip-code.geojson')
 
 async function makeMap(url, date_input) {
     const geojson = await loadData(url)
+    if (!incomeJson) {
+        incomeJson = await loadData('./incomeHash.json')
+        console.log(incomeJson)
+    }
     // get each zipcode's data (cases and name)
     console.log('date input_', date_input)
     const { zipcode_cases, zipcode_names } = await getNewYorkData(RECENT_DATES_URL, date_input)
@@ -20,8 +25,9 @@ async function makeMap(url, date_input) {
         const daily = obj.daily
         const totals = obj.totals
         const name  = zipcode_names[zipcode]
+        const income = incomeJson[zipcode]
         
-        zipcode_data_hash[zipcode] = {zipcode, name, daily, totals}
+        zipcode_data_hash[zipcode] = {zipcode, name, daily, totals, income}
     })
     const top_cases = zipcode_cases.sort((a,b)=>b.totals[METRIC]-a.totals[METRIC]).slice(0,15)
     console.log(top_cases)
@@ -146,14 +152,16 @@ async function makeMap(url, date_input) {
     let mouseMove = function(e) {
         const zipcode = d3.select(this).attr('data-zipcode')
         if (zipcode_data_hash[zipcode]) {
-            const total_cases = zipcode_data_hash[zipcode].totals[METRIC].toLocaleString()
+            const total_cases = zipcode_data_hash[zipcode].totals[METRIC]
             const zipcode_name = zipcode_names[zipcode]
+            const income = zipcode_data_hash[zipcode].income
             last_hover_zipcode = zipcode
             tooltip
                 .html(`
                     ${zipcode_name}, ${zipcode} <br>
                     ${METRIC} (${raw_or_per100k.value}):
-                    ${total_cases}
+                    ${Math.round(total_cases)} <br>
+                    Median Income: $${income.toLocaleString()}
                 `)
                 .style("left", e.pageX + 50 + "px")
                 .style("top", e.pageY + "px")
@@ -192,7 +200,8 @@ async function makeMap(url, date_input) {
         .on('mouseover', mouseOver)
         .on('mousemove', mouseMove)
         .on('mouseleave', mouseLeave)
-        
+
+        focusZipcodePath()
     
     // show or hide map hover instruction
     svg
@@ -307,22 +316,19 @@ function colorMapByDate(evt) {
 
 form.addEventListener("submit", (evt) => {
     evt.preventDefault()
-    d3.selectAll('.tooltip').remove()
-    d3.selectAll('.zipcode_path').remove()
-    d3.select('.legend').remove()
-    d3.selectAll('.color_rect_svg').remove()
-    d3.select('#rank_ol').remove()
-    d3.selectAll('.labels').remove()
+    clearMap()
     makeMap('nyc-zip-code.geojson', date_input.value)
+
 });
 
 // select Raw or per100K data
 raw_or_per100k.addEventListener('change', (evt)=> {
-    d3.selectAll('.tooltip').remove()
-    d3.selectAll('.zipcode_path').remove()
-    d3.select('.legend').remove()
-    d3.selectAll('.color_rect_svg').remove()
-    d3.select('#rank_ol').remove()
-    d3.selectAll('.labels').remove()
+    clearMap()
     makeMap('nyc-zip-code.geojson', date_input.value)
+    
+})
+
+// update zipcode input
+zipcode_input.addEventListener("change", (evt) => {
+
 })

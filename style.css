@@ -62,7 +62,7 @@ form > div:not(:last-child) {
     background:#D9D9D9;
     vertical-align: middle;
 }
-#raw_or_per100k, #date_input {
+#raw_or_per100k, #date_input, #zipcode_input {
     padding: 0.2rem 0.4rem;
     font-family: 'JetBrains Mono', monospace;
     font-weight: 600;
@@ -80,7 +80,7 @@ form > div:not(:last-child) {
 
 #wrapper {
     margin: auto;
-    max-width: 80%;
+    max-width: 90%;
     /* display: flex; */
     /* flex-wrap: wrap; */
 }
@@ -94,7 +94,7 @@ form > div:not(:last-child) {
 
 #nyc-zipcode-map {
     width: 100%;
-    max-height: calc(100vh - 30*2px - 32px);
+    max-height: calc(90vh - 30*2px - 32px);
     cursor: grab;
 }
 
@@ -171,8 +171,16 @@ form > div:not(:last-child) {
 }
 
 #mapIntro p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
+}
+
+.mapHint {
+    text-align: center;
+    font-family: 'JetBrains Mono';
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #5A4949;
 }
 
 h2, h3 {
@@ -220,6 +228,14 @@ h1, h2, h3, h4, h5, li {
     }
 }
 
+@media all and (max-width: 576px) {
+    #side {
+        position: unset;
+        max-width: 90%;
+        margin: 1rem auto;
+    }
+}
+
 button, input[type="submit"], input[type="reset"] {
 	background: none;
 	color: inherit;
@@ -228,4 +244,11 @@ button, input[type="submit"], input[type="reset"] {
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    transition: background-color 9999s ease-in-out 0s;
 }

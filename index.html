@@ -15,12 +15,12 @@
     </header>
     
     
-    <div id="callout_zipcode_mobile" class="callout_zipcode">
+    <!-- <div id="callout_zipcode_mobile" class="callout_zipcode">
         <div id="callout_zipcode_text" class="callout_zipcode_text">
             <h2 class="name instruction"></h2>
             <h3 class="case_num"></h3>
         </div>
-    </div>
+    </div> -->
     <!-- <h2 class="instruction"></h2> -->
     <!-- <input id="date_selector" type="date" required /> -->
     <div id="side">
@@ -48,6 +48,12 @@
                     <span class="validity"></span>
                 </div>
             </div>
+            <div class="filter">
+                <label for="zipcode_input">Zipcode</label>
+                <div class="selectWrapper">
+                    <input id="zipcode_input" type="text" name="zipcode_input" placeholder="ex: 11201">
+                </div>
+            </div>
             <div id="submitContainer">
                 <button id="submitBtn">Submit</button>
             </div>
@@ -62,6 +68,7 @@
                 <!-- <g class="path-group"></g> -->
             </svg>
         </div>
+        <div class="mapHint">Hover, drag, and zoom to interact</div>
         <div id="mapIntro">
             <p>Our interactive map visualizes the up-to-date total coronavirus deaths in each New York City zip code along with the population impact of the virus by zip code. </p>
             <p>Beginning with data on May 18, 2020 when the city finally began to release zip code specific data, this visualization reveals the disparate impact of COVID-19 on NYC residents within a 302.64 sq mile area</p>
