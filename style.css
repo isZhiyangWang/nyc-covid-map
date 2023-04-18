@@ -40,15 +40,30 @@ h1 {
     background-color: #281721;
 }
 
+.legend {
+    transform: translate(1rem, 2rem);
+}
+
+.legendTitle {
+    font-size: 0.8rem;
+}
+
 form {
     font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
     background-color: #281721;
     margin-top: 1rem;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
 }
 
 form > div:not(:last-child) {
     margin-bottom: 0.8rem;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #submitContainer {
@@ -171,7 +186,6 @@ form > div:not(:last-child) {
 }
 
 #mapIntro p {
-    font-size: 1.2rem;
     margin-bottom: 1rem;
 }
 
@@ -228,7 +242,7 @@ h1, h2, h3, h4, h5, li {
     }
 }
 
-@media all and (max-width: 576px) {
+@media all and (max-width: 768px) {
     #side {
         position: unset;
         max-width: 90%;

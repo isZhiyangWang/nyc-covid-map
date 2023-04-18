@@ -55,14 +55,14 @@ function makeLegend(zipcode_cases) {
     const highestCases = d3.max(zipcode_cases, d => d.totals[METRIC])
     var data = [{"color":LIGHT_COLOR,"value":0},{"color":INTENSE_COLOR,"value": highestCases}];
     var extent = d3.extent(data, d => d.value);
-    const paddingL = 32
+    const paddingL = 0//32
     const paddingT = 35
-    const width = 320
+    const width = 250
     const innerWidth = width - paddingL * 2
     const barHeight = 8
     const height = 28
 
-    let svg = d3.select('#legendSvg')
+    let svg = d3.select('#legendSvg')//.attr("viewBox", [0,0,300,100])
 
     var xScale = d3.scaleLinear()
         .range([0, innerWidth])
@@ -82,7 +82,7 @@ function makeLegend(zipcode_cases) {
         .tickSize(barHeight * 2)
         .tickValues(xTicks);
 
-    var g = svg.append("g").attr('class', 'legend').attr("transform", "translate(" + paddingL + ","+ paddingT+")");
+    var g = svg.append("g").attr('class', 'legend')//.attr("transform", "translate(" + paddingL + ","+ paddingT+")");
 
     let defs = d3.select('#nyc-zipcode-map').append('defs')
     var linearGradient = defs.append("linearGradient").attr("id", "myGradient");
@@ -102,6 +102,7 @@ function makeLegend(zipcode_cases) {
         .select(".domain").remove();
 
     g.append("text")
+        .attr('class', 'legendTitle')
         .attr("x", 0)
         .attr("y", -10)
         .style("text-anchor", "left")
