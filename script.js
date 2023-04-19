@@ -26,7 +26,6 @@ async function makeMap(url, date_input) {
         const totals = obj.totals
         const name  = zipcode_names[zipcode]
         const income = incomeJson[zipcode]
-        
         zipcode_data_hash[zipcode] = {zipcode, name, daily, totals, income}
     })
     const top_cases = zipcode_cases.sort((a,b)=>b.totals[METRIC]-a.totals[METRIC]).slice(0,15)
@@ -158,8 +157,8 @@ async function makeMap(url, date_input) {
             last_hover_zipcode = zipcode
             tooltip
                 .html(`
-                    ${zipcode_name}, ${zipcode} <br>
-                    ${METRIC} (${raw_or_per100k.value}):
+                    <b>${zipcode}, ${zipcode_name}</b>  <br>
+                    ${METRIC} ${raw_or_per100k.value === "per100k" ?  "per 100K" : "Total"}:
                     ${Math.round(total_cases)} <br>
                     Median Income: $${income.toLocaleString()}
                 `)
@@ -192,10 +191,15 @@ async function makeMap(url, date_input) {
         .style("stroke-width", 1)
         .style("stroke-linejoin", "round")
         .attr('fill', d => {
+            //console.log('fill path', d)
             const zipcode = d.properties.postalCode
+            const boro = d.properties.borough
             const current_zipcode_data = zipcode_data_hash[zipcode]
-            //if (current_zipcode_data) console.log(current_zipcode_data)
-            return current_zipcode_data ? colorScale(current_zipcode_data.totals[METRIC]) : NODATA_COLOR  
+            // if boro is not specified, return color for all available zipcode
+            if (!select_boro.value) return current_zipcode_data ? colorScale(current_zipcode_data.totals[METRIC]) : NODATA_COLOR  
+            // else color the match boro 
+            return select_boro.value === boro && current_zipcode_data ? colorScale(current_zipcode_data.totals[METRIC]) : NODATA_COLOR
+            
         })
         .on('mouseover', mouseOver)
         .on('mousemove', mouseMove)
@@ -308,12 +312,6 @@ async function getNewYorkData(url, target_date) {
     return { zipcode_cases, zipcode_names }
 }
 
-function colorMapByDate(evt) {
-    evt.preventDefault()
-    const date_input = document.getElementById('date_input')
-    console.log('submit', date_input.value)
-}
-
 form.addEventListener("submit", (evt) => {
     evt.preventDefault()
     clearMap()
@@ -328,7 +326,8 @@ raw_or_per100k.addEventListener('change', (evt)=> {
     
 })
 
-// update zipcode input
-zipcode_input.addEventListener("change", (evt) => {
-
-})
+// select borough
+select_boro.addEventListener("change", (evt) => {
+    clearMap()
+    makeMap('nyc-zip-code.geojson', date_input.value)
+  });

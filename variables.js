@@ -28,4 +28,5 @@ const STROKE_DARK = '#050404'
 const form = document.getElementById('form')
 const date_input = document.getElementById('date_input')
 const raw_or_per100k = document.getElementById("raw_or_per100k")
+const select_boro = document.getElementById("select_boro")
 const zipcode_input = document.getElementById('zipcode_input')

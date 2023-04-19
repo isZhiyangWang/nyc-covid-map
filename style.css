@@ -77,7 +77,7 @@ form > div:not(:last-child) {
     background:#D9D9D9;
     vertical-align: middle;
 }
-#raw_or_per100k, #date_input, #zipcode_input {
+#raw_or_per100k, #date_input, #select_boro, #zipcode_input {
     padding: 0.2rem 0.4rem;
     font-family: 'JetBrains Mono', monospace;
     font-weight: 600;
@@ -120,6 +120,7 @@ form > div:not(:last-child) {
 
 .tooltip {
     font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
     word-wrap: break-word;
 }
 

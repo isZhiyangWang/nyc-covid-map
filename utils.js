@@ -124,7 +124,7 @@ function focusZipcodePath() {
             .style('stroke', STROKE_LIGHT)
             .style('stroke-width', 1)
         d3.select(`#path_${zipcode}`)
-            .style('stroke', STROKE_LIGHT)
+            .style('stroke', STROKE_DARK)
             .style('stroke-width', 3)
         d3.select(`#path_${zipcode}`).raise()
     }
