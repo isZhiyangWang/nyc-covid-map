@@ -130,6 +130,23 @@ function focusZipcodePath() {
     }
 }
 
+function highlightZipcodeArea(zipcode_data_hash, zipcode, tooltip, target) {
+    // make sure other paths are reset after click top rank
+    d3.selectAll('.zipcode_path')
+        .style('stroke', STROKE_LIGHT)
+        .style('stroke-width', 1)
+    if (zipcode_data_hash[zipcode]) {
+        tooltip
+            .style("opacity", 1)
+        d3.select(target)
+            .style("stroke", STROKE_LIGHT)
+            .style("stroke-width", 3)
+        // make sure the hovered path don't get covered by other path
+        d3.select(target).raise()
+        keepLabelsOnTop()
+    }
+}
+
 function clearMap() {
     d3.selectAll('.tooltip').remove()
     d3.selectAll('.zipcode_path').remove()

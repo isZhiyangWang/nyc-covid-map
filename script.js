@@ -128,28 +128,30 @@ async function makeMap(url, date_input) {
     //         //cases = cases.substring(0, cases.length - 1);
     //         return `${zipcode_name} (${zipcode}): ${cases}`
     //     })
+    let showTooltip = function() {
+
+    }
+
+
 
     let mouseOver = function(e) {
         const zipcode = d3.select(this).attr('data-zipcode')
+        const path_boro = d3.select(this).node().getAttribute('data-boro')
         last_hover_zipcode = zipcode
-        // make sure other paths are reset after click top rank
-        d3.selectAll('.zipcode_path')
-                .style('stroke', STROKE_LIGHT)
-                .style('stroke-width', 1)
-        if (zipcode_data_hash[zipcode]) {
-            tooltip
-                .style("opacity", 1)
-            d3.select(this)
-                .style("stroke", STROKE_LIGHT)
-                .style("stroke-width", 3)
-            // make sure the hovered path don't get covered by other path
-            d3.select(this).raise()
-            keepLabelsOnTop()
+
+        if (!select_boro.value) {
+            highlightZipcodeArea(zipcode_data_hash, zipcode, tooltip, this)
+
+            //return
+        }
+        else if (select_boro.value && path_boro === select_boro.value) {
+            highlightZipcodeArea(zipcode_data_hash, zipcode, tooltip, this)
         }
       }
 
     let mouseMove = function(e) {
         const zipcode = d3.select(this).attr('data-zipcode')
+        const path_boro = d3.select(this).node().getAttribute('data-boro')
         if (zipcode_data_hash[zipcode]) {
             const total_cases = zipcode_data_hash[zipcode].totals[METRIC]
             const zipcode_name = zipcode_names[zipcode]
@@ -187,6 +189,7 @@ async function makeMap(url, date_input) {
         .attr('data-zipcode', d => d.properties.postalCode)
         .attr('class', d => `zipcode_path path_${d.properties.borough.split(' ').join('_')}`)
         .attr('id', d =>  'path_' + d.properties.postalCode)
+        .attr("data-boro", d => d.properties.borough)
         .style('stroke', STROKE_LIGHT)
         .style("stroke-width", 1)
         .style("stroke-linejoin", "round")
