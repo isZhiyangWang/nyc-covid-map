@@ -102,6 +102,8 @@ form > div:not(:last-child) {
 
 #map_container {
     margin: auto;
+    width: 800px;
+    max-width: 100%;
     /* max-width: 80%; */
     /* width: 80%; */
     flex-shrink: 0;

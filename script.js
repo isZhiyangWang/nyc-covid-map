@@ -6,6 +6,7 @@ let incomeJson
 
 let zoom = d3.zoom()
     .scaleExtent([0.5, 2])
+    .translateExtent([[-100, -100], [width+100, height+100]])
     .on('zoom', handleZoom)
 
 makeMap('nyc-zip-code.geojson')
