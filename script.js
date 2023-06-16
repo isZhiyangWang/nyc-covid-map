@@ -249,6 +249,17 @@ async function getNewYorkData(url, target_date) {
         target_date = data.c_dates[data.c_dates.length-1]
         document.getElementById('date_input').value = target_date
     }
+
+    // check if add a date slider min/max or not 
+    if (!dateRange) {
+        dateRange = data.c_dates
+        dateSlider.max = dateRange.length - 1
+        dateSlider.value = dateSlider.max//dateRange.length - 1
+        dateOutput.innerText = dateRange[dateSlider.value]
+        // set min/max date for date input html element
+        date_input.min = dateRange[0]
+        date_input.max = dateRange[dateSlider.max]
+    }
     
     console.log('current date',target_date)
 
@@ -317,6 +328,7 @@ async function getNewYorkData(url, target_date) {
 }
 
 form.addEventListener("submit", (evt) => {
+    console.log('submittttt', date_input.value)
     evt.preventDefault()
     clearMap()
     makeMap('nyc-zip-code.geojson', date_input.value)
@@ -335,3 +347,18 @@ select_boro.addEventListener("change", (evt) => {
     clearMap()
     makeMap('nyc-zip-code.geojson', date_input.value)
   });
+
+// date picker
+date_input.onchange = function() {
+    //console.log(this.value)
+    //console.log(dateRange.indexOf(this.value))
+    let indexOfDate = dateRange.indexOf(this.value)
+    dateSlider.value = indexOfDate
+    dateOutput.innerHTML = dateRange[indexOfDate]
+}
+
+// date slider
+dateSlider.oninput = function() {
+    date_input.value = dateRange[this.value];
+    dateOutput.innerHTML = dateRange[this.value];
+}
