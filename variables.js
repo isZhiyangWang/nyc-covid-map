@@ -33,3 +33,7 @@ const zipcode_input = document.getElementById('zipcode_input')
 let dateRange
 const dateSlider = document.getElementById("myRange");
 const dateOutput = document.getElementById("demo");
+let maxLegend
+let maxLegendObj
+let maxLegendRaw
+let maxLegendPer100K

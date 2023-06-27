@@ -26,3 +26,17 @@ npm install
 node parseIncome.js
 
 ```
+```
+Data source for zipcodes
+https://csvjson.com/csv2json
+https://gist.github.com/erichurst/7882666
+https://www.kaggle.com/datasets/saidakbarp/nyc-zipcode-geodata
+
+Data and Json
+nyc-zip-code.geojson
+us_zipcode.json
+
+the approach is abandoned due to missing zipcodes in us_zipcode.json
+we are going with this algorithm
+https://blog.mapbox.com/a-new-algorithm-for-finding-a-visual-center-of-a-polygon-7c77e6492fbc
+```

@@ -52,7 +52,17 @@ function keepLabelsOnTop() {
 }
 
 function makeLegend(zipcode_cases) {
-    const highestCases = d3.max(zipcode_cases, d => d.totals[METRIC])
+    //maxLegend = makeLegend ? d3.max(zipcode_cases, d => d.totals[METRIC]) : makeLegend
+    if (!maxLegend) {
+        maxLegend = d3.max(zipcode_cases, d => d.totals[METRIC])
+    }
+    //if (raw_or_per100k.value === 'per100k') 
+    const highestCases = raw_or_per100k.value === 'per100k' ? maxLegendPer100K : maxLegendRaw// || d3.max(zipcode_cases, d => d.totals[METRIC])
+    
+    let myMaxLegend = raw_or_per100k.value === 'per100k' ? maxLegendPer100K : maxLegendRaw
+    // let highestCases = function() {
+    //     if 
+    // }
     var data = [{"color":LIGHT_COLOR,"value":0},{"color":INTENSE_COLOR,"value": highestCases}];
     var extent = d3.extent(data, d => d.value);
     const paddingL = 0//32

@@ -47,7 +47,9 @@ async function makeMap(url, date_input) {
     .fitExtent([[20, 20], [width-50, height-50]], geojson);
     let geoGenerator = d3.geoPath().projection(projection);
 
-    let colorScale = d3.scaleLinear().domain([0, d3.max(zipcode_cases, d => d.totals[METRIC])]).range([LIGHT_COLOR, INTENSE_COLOR])
+    //let colorScale = d3.scaleLinear().domain([0, d3.max(zipcode_cases, d => d.totals[METRIC])]).range([LIGHT_COLOR, INTENSE_COLOR])
+    const highestCases = raw_or_per100k.value === 'per100k' ? maxLegendPer100K : maxLegendRaw
+    let colorScale = d3.scaleLinear().domain([0, highestCases]).range([LIGHT_COLOR, INTENSE_COLOR])
     // create a tooltip
     let tooltip = d3.select("#map_container")
         .append("div")
@@ -310,8 +312,14 @@ async function getNewYorkData(url, target_date) {
         ...zipcode_cases[3],
         ...zipcode_cases[4]
     ]
-
+    console.log('zipcde_cases (total)', zipcode_cases)
     
+    // max of raw totals
+    if (!maxLegendRaw) {
+        maxLegendRaw = d3.max(zipcode_cases, d => d.totals[METRIC])
+    }
+    console.log('maxLengendRaw', maxLegendRaw)
+
     if (raw_or_per100k.value === 'per100k') {
         for (let item of zipcode_cases) {
             let zip = item.c_ref
@@ -323,6 +331,11 @@ async function getNewYorkData(url, target_date) {
         }
     }
 
+    // per100k max total
+    if (!maxLegendPer100K) {
+        maxLegendPer100K = d3.max(zipcode_cases, d => d.totals[METRIC])
+    }
+    console.log('maxLegendPer100k',maxLegendPer100K)
 
     return { zipcode_cases, zipcode_names }
 }
@@ -355,10 +368,17 @@ date_input.onchange = function() {
     let indexOfDate = dateRange.indexOf(this.value)
     dateSlider.value = indexOfDate
     dateOutput.innerHTML = dateRange[indexOfDate]
+    clearMap()
+    makeMap('nyc-zip-code.geojson', date_input.value)
 }
 
 // date slider
 dateSlider.oninput = function() {
     date_input.value = dateRange[this.value];
     dateOutput.innerHTML = dateRange[this.value];
+}
+
+dateSlider.onchange = function() {
+    clearMap()
+    makeMap('nyc-zip-code.geojson', date_input.value)
 }
