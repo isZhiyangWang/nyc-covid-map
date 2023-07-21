@@ -215,7 +215,7 @@ async function makeMap(url, date_input) {
         .on('mousemove', mouseMove)
         .on('mouseleave', mouseLeave)
         
-        if (zipcode_input.value) {
+        if (zipcode_input.value && zipcode_data_hash[zipcode_input.value]) {
             focusZipcodePath(zipcode_input.value, colorScale(zipcode_data_hash[zipcode_input.value].totals[METRIC]))
         }
         
