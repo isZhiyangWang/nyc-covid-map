@@ -142,6 +142,10 @@ async function makeMap(url, date_input) {
         const path_boro = d3.select(this).node().getAttribute('data-boro')
         last_hover_zipcode = zipcode
 
+        if (zipcode === zipcode_input.value) {
+            highlightZipcodeArea(zipcode_data_hash, zipcode, tooltip, this)
+        }
+
         if (!select_boro.value) {
             highlightZipcodeArea(zipcode_data_hash, zipcode, tooltip, this)
 
@@ -210,8 +214,11 @@ async function makeMap(url, date_input) {
         .on('mouseover', mouseOver)
         .on('mousemove', mouseMove)
         .on('mouseleave', mouseLeave)
-
-        focusZipcodePath()
+        
+        if (zipcode_input.value) {
+            focusZipcodePath(zipcode_input.value, colorScale(zipcode_data_hash[zipcode_input.value].totals[METRIC]))
+        }
+        
     
     // show or hide map hover instruction
     svg
@@ -345,6 +352,7 @@ form.addEventListener("submit", (evt) => {
     evt.preventDefault()
     clearMap()
     makeMap('nyc-zip-code.geojson', date_input.value)
+    console.log('search', zipcode_input.value)
 
 });
 

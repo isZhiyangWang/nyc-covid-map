@@ -119,8 +119,9 @@ function makeLegend(zipcode_cases) {
         .text(`${METRIC} ${raw_or_per100k.value === 'per100k' ? 'per 100K' : 'Total'}`);
 }
 
-function focusZipcodePath() {
-    const zipcode = zipcode_input.value
+function focusZipcodePath(zipcode, fillClr) {
+    //const zipcode = zipcode_input.value
+    //console.log('colorscle', colorScale)
     const target_path = d3.select(`#path_${zipcode}`).node()
     if (zipcode && target_path) {
         // use the native SVG interface to get the bounding box
@@ -135,6 +136,7 @@ function focusZipcodePath() {
         d3.select(`#path_${zipcode}`)
             .style('stroke', STROKE_DARK)
             .style('stroke-width', 3)
+            .style('fill', fillClr)
         d3.select(`#path_${zipcode}`).raise()
     }
 }
