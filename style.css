@@ -165,9 +165,38 @@ form > div:not(:last-child) {
 }
 
 .tooltip {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.9rem;
-    word-wrap: break-word;
+    position: absolute;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    pointer-events: none;
+    max-width: 400px; 
+    overflow-wrap: break-word; 
+}
+
+.tooltip table {
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+.tooltip th, .tooltip td {
+    padding: 4px;
+    text-align: left;
+    border: 1px solid #ddd;
+    color: white; 
+
+}
+
+.tooltip td div {
+    background-color: lightblue; 
+    height: 10px;
+}
+
+.tooltip td {
+    position: relative;
+    white-space: nowrap; 
 }
 
 .callout_zipcode {

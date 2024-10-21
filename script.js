@@ -3,6 +3,7 @@ const svg = d3.selectAll("#nyc-zipcode-map").attr("viewBox", [0,0,width,height])
 const path_group = svg.append("g").attr("id", "path-group")
 let last_hover_zipcode
 let incomeJson
+let raceJson;
 
 let zoom = d3.zoom()
     .scaleExtent([0.5, 2])
@@ -17,6 +18,11 @@ async function makeMap(url, date_input) {
         incomeJson = await loadData('./incomeHash.json')
         console.log(incomeJson)
     }
+    if (!raceJson) {
+        raceJson = await loadData('./raceHash.json');  // Load the race data
+        console.log(raceJson);
+    }
+
     // get each zipcode's data (cases and name)
     console.log('date input_', date_input)
     const { zipcode_cases, zipcode_names } = await getNewYorkData(RECENT_DATES_URL, date_input)
@@ -27,7 +33,8 @@ async function makeMap(url, date_input) {
         const totals = obj.totals
         const name  = zipcode_names[zipcode]
         const income = incomeJson[zipcode]
-        zipcode_data_hash[zipcode] = {zipcode, name, daily, totals, income}
+        const raceData = raceJson[zipcode];  // Get race data for the current zipcode
+        zipcode_data_hash[zipcode] = {zipcode, name, daily, totals, income, raceData};
     })
     const top_cases = zipcode_cases.sort((a,b)=>b.totals[METRIC]-a.totals[METRIC]).slice(0,15)
     console.log(top_cases)
@@ -156,24 +163,67 @@ async function makeMap(url, date_input) {
         }
       }
 
-    let mouseMove = function(e) {
-        const zipcode = d3.select(this).attr('data-zipcode')
-        const path_boro = d3.select(this).node().getAttribute('data-boro')
+      let mouseMove = function(e) {
+        const zipcode = d3.select(this).attr('data-zipcode');
         if (zipcode_data_hash[zipcode]) {
-            const total_cases = zipcode_data_hash[zipcode].totals[METRIC]
-            const zipcode_name = zipcode_names[zipcode]
-            const income = zipcode_data_hash[zipcode].income
-            last_hover_zipcode = zipcode
-            tooltip
+            const total_cases = zipcode_data_hash[zipcode].totals[METRIC];
+            const zipcode_name = zipcode_names[zipcode];
+            const income = zipcode_data_hash[zipcode].income;
+            const raceData = zipcode_data_hash[zipcode].raceData || [];
+            const totalPopulation = raceData[0] || 1;  
+    
+         
+            const raceLabels = [
+                "Total:", 
+                "White", 
+                "Black", 
+                "Am. Indian/Alaska Native", 
+                "Asian", 
+                "Hawaiian/Pacific Islander", 
+                "Other", 
+                "Two+ Races", 
+                "Two Races w/ Other", 
+                "Two+ Races w/o Other"
+            ];
+            
+    
+          
+            let raceTable = raceData.length > 0 
+                ? `<table><thead><tr><th>Race</th><th>Population</th></tr></thead><tbody>` +
+                  raceLabels.slice(1).map((label, i) => {
+                      const population = raceData[i + 1] || 0;
+                      const percentage = (population / totalPopulation) * 100;  
+                      return `
+                        <tr>
+                            <td>${label}</td>
+                            <td style="position: relative; background: linear-gradient(to right, lightblue ${percentage}%, black ${percentage}%);">
+                                ${population.toLocaleString()}
+                            </td>
+                        </tr>`;
+                  }).join('') +
+                  `</tbody></table>`
+                : 'No race data available';
+    
+
+                tooltip
                 .html(`
                     <b>${zipcode}, ${zipcode_name}</b>  <br>
                     ${METRIC} ${raw_or_per100k.value === "per100k" ?  "per 100K" : "Total"}:
                     ${Math.round(total_cases)} <br>
-                    Median Income: $${income.toLocaleString()}
+                    Median Income: $${income.toLocaleString()}<br>
+                    <br><b>Race Distribution:</b><br>
+                    ${raceTable}
                 `)
                 .style("left", e.pageX + 50 + "px")
                 .style("top", e.pageY + "px")
-            // update callout
+                .style("width", "400px")  
+                .style("max-width", "400px") 
+                .style("white-space", "normal")
+                .style("overflow-wrap", "break-word"); 
+            
+
+    
+   
             d3.selectAll('#callout_zipcode_svg rect').attr('fill', colorScale(total_cases))
             d3.selectAll('.name').text(`${zipcode_name} (${zipcode})`)
             d3.selectAll('.case_num').text(`Total ${METRIC} ${raw_or_per100k.value === 'per100k' ? "per 100K" : ""}: ${total_cases}`)

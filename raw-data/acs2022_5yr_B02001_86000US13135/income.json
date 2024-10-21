@@ -1,0 +1,7146 @@
+[
+  {
+    "zipcode": "New York",
+    "income": 75157
+  },
+  {
+    "zipcode": "06390",
+    "income": 46250
+  },
+  {
+    "zipcode": "10001",
+    "income": 101409
+  },
+  {
+    "zipcode": "10002",
+    "income": 37093
+  },
+  {
+    "zipcode": "10003",
+    "income": 137533
+  },
+  {
+    "zipcode": "10004",
+    "income": 216017
+  },
+  {
+    "zipcode": "10005",
+    "income": 197188
+  },
+  {
+    "zipcode": "10006",
+    "income": 200536
+  },
+  {
+    "zipcode": "10007",
+    "income": 250001
+  },
+  {
+    "zipcode": "10009",
+    "income": 77551
+  },
+  {
+    "zipcode": "10010",
+    "income": 131635
+  },
+  {
+    "zipcode": "10011",
+    "income": 139343
+  },
+  {
+    "zipcode": "10012",
+    "income": 117581
+  },
+  {
+    "zipcode": "10013",
+    "income": 137572
+  },
+  {
+    "zipcode": "10014",
+    "income": 136559
+  },
+  {
+    "zipcode": "10016",
+    "income": 136431
+  },
+  {
+    "zipcode": "10017",
+    "income": 136112
+  },
+  {
+    "zipcode": "10018",
+    "income": 130457
+  },
+  {
+    "zipcode": "10019",
+    "income": 105538
+  },
+  {
+    "zipcode": "10020",
+    "income": null
+  },
+  {
+    "zipcode": "10021",
+    "income": 136060
+  },
+  {
+    "zipcode": "10022",
+    "income": 156255
+  },
+  {
+    "zipcode": "10023",
+    "income": 136109
+  },
+  {
+    "zipcode": "10024",
+    "income": 153177
+  },
+  {
+    "zipcode": "10025",
+    "income": 103440
+  },
+  {
+    "zipcode": "10026",
+    "income": 65038
+  },
+  {
+    "zipcode": "10027",
+    "income": 58435
+  },
+  {
+    "zipcode": "10028",
+    "income": 149789
+  },
+  {
+    "zipcode": "10029",
+    "income": 33901
+  },
+  {
+    "zipcode": "10030",
+    "income": 42834
+  },
+  {
+    "zipcode": "10031",
+    "income": 57180
+  },
+  {
+    "zipcode": "10032",
+    "income": 55059
+  },
+  {
+    "zipcode": "10033",
+    "income": 71630
+  },
+  {
+    "zipcode": "10034",
+    "income": 63851
+  },
+  {
+    "zipcode": "10035",
+    "income": 32555
+  },
+  {
+    "zipcode": "10036",
+    "income": 98177
+  },
+  {
+    "zipcode": "10037",
+    "income": 48782
+  },
+  {
+    "zipcode": "10038",
+    "income": 99924
+  },
+  {
+    "zipcode": "10039",
+    "income": 50164
+  },
+  {
+    "zipcode": "10040",
+    "income": 54700
+  },
+  {
+    "zipcode": "10044",
+    "income": 115294
+  },
+  {
+    "zipcode": "10065",
+    "income": 152335
+  },
+  {
+    "zipcode": "10069",
+    "income": 183178
+  },
+  {
+    "zipcode": "10075",
+    "income": 131372
+  },
+  {
+    "zipcode": "10103",
+    "income": null
+  },
+  {
+    "zipcode": "10110",
+    "income": null
+  },
+  {
+    "zipcode": "10111",
+    "income": null
+  },
+  {
+    "zipcode": "10112",
+    "income": null
+  },
+  {
+    "zipcode": "10115",
+    "income": null
+  },
+  {
+    "zipcode": "10119",
+    "income": null
+  },
+  {
+    "zipcode": "10128",
+    "income": 127919
+  },
+  {
+    "zipcode": "10152",
+    "income": null
+  },
+  {
+    "zipcode": "10153",
+    "income": null
+  },
+  {
+    "zipcode": "10154",
+    "income": null
+  },
+  {
+    "zipcode": "10162",
+    "income": 99300
+  },
+  {
+    "zipcode": "10165",
+    "income": null
+  },
+  {
+    "zipcode": "10167",
+    "income": null
+  },
+  {
+    "zipcode": "10168",
+    "income": null
+  },
+  {
+    "zipcode": "10169",
+    "income": null
+  },
+  {
+    "zipcode": "10170",
+    "income": null
+  },
+  {
+    "zipcode": "10171",
+    "income": null
+  },
+  {
+    "zipcode": "10172",
+    "income": null
+  },
+  {
+    "zipcode": "10173",
+    "income": null
+  },
+  {
+    "zipcode": "10174",
+    "income": null
+  },
+  {
+    "zipcode": "10177",
+    "income": null
+  },
+  {
+    "zipcode": "10199",
+    "income": null
+  },
+  {
+    "zipcode": "10271",
+    "income": null
+  },
+  {
+    "zipcode": "10278",
+    "income": null
+  },
+  {
+    "zipcode": "10279",
+    "income": null
+  },
+  {
+    "zipcode": "10280",
+    "income": 178148
+  },
+  {
+    "zipcode": "10282",
+    "income": 250001
+  },
+  {
+    "zipcode": "10301",
+    "income": 78053
+  },
+  {
+    "zipcode": "10302",
+    "income": 73927
+  },
+  {
+    "zipcode": "10303",
+    "income": 69879
+  },
+  {
+    "zipcode": "10304",
+    "income": 64539
+  },
+  {
+    "zipcode": "10305",
+    "income": 76833
+  },
+  {
+    "zipcode": "10306",
+    "income": 88687
+  },
+  {
+    "zipcode": "10307",
+    "income": 117469
+  },
+  {
+    "zipcode": "10308",
+    "income": 116082
+  },
+  {
+    "zipcode": "10309",
+    "income": 107500
+  },
+  {
+    "zipcode": "10310",
+    "income": 96161
+  },
+  {
+    "zipcode": "10311",
+    "income": null
+  },
+  {
+    "zipcode": "10312",
+    "income": 100875
+  },
+  {
+    "zipcode": "10314",
+    "income": 94578
+  },
+  {
+    "zipcode": "10451",
+    "income": 33945
+  },
+  {
+    "zipcode": "10452",
+    "income": 33877
+  },
+  {
+    "zipcode": "10453",
+    "income": 34860
+  },
+  {
+    "zipcode": "10454",
+    "income": 21846
+  },
+  {
+    "zipcode": "10455",
+    "income": 30741
+  },
+  {
+    "zipcode": "10456",
+    "income": 31166
+  },
+  {
+    "zipcode": "10457",
+    "income": 38066
+  },
+  {
+    "zipcode": "10458",
+    "income": 38768
+  },
+  {
+    "zipcode": "10459",
+    "income": 36631
+  },
+  {
+    "zipcode": "10460",
+    "income": 31504
+  },
+  {
+    "zipcode": "10461",
+    "income": 61087
+  },
+  {
+    "zipcode": "10462",
+    "income": 59032
+  },
+  {
+    "zipcode": "10463",
+    "income": 63048
+  },
+  {
+    "zipcode": "10464",
+    "income": 118972
+  },
+  {
+    "zipcode": "10465",
+    "income": 80245
+  },
+  {
+    "zipcode": "10466",
+    "income": 62918
+  },
+  {
+    "zipcode": "10467",
+    "income": 42639
+  },
+  {
+    "zipcode": "10468",
+    "income": 40138
+  },
+  {
+    "zipcode": "10469",
+    "income": 70415
+  },
+  {
+    "zipcode": "10470",
+    "income": 70107
+  },
+  {
+    "zipcode": "10471",
+    "income": 96368
+  },
+  {
+    "zipcode": "10472",
+    "income": 36730
+  },
+  {
+    "zipcode": "10473",
+    "income": 48212
+  },
+  {
+    "zipcode": "10474",
+    "income": 33157
+  },
+  {
+    "zipcode": "10475",
+    "income": 56327
+  },
+  {
+    "zipcode": "10501",
+    "income": 237361
+  },
+  {
+    "zipcode": "10502",
+    "income": 226848
+  },
+  {
+    "zipcode": "10503",
+    "income": 86964
+  },
+  {
+    "zipcode": "10504",
+    "income": 229671
+  },
+  {
+    "zipcode": "10505",
+    "income": 150179
+  },
+  {
+    "zipcode": "10506",
+    "income": 220469
+  },
+  {
+    "zipcode": "10507",
+    "income": 83359
+  },
+  {
+    "zipcode": "10509",
+    "income": 111376
+  },
+  {
+    "zipcode": "10510",
+    "income": 190368
+  },
+  {
+    "zipcode": "10511",
+    "income": 118984
+  },
+  {
+    "zipcode": "10512",
+    "income": 101924
+  },
+  {
+    "zipcode": "10514",
+    "income": 246991
+  },
+  {
+    "zipcode": "10516",
+    "income": 119980
+  },
+  {
+    "zipcode": "10517",
+    "income": 78750
+  },
+  {
+    "zipcode": "10518",
+    "income": null
+  },
+  {
+    "zipcode": "10519",
+    "income": null
+  },
+  {
+    "zipcode": "10520",
+    "income": 120769
+  },
+  {
+    "zipcode": "10522",
+    "income": 136204
+  },
+  {
+    "zipcode": "10523",
+    "income": 110420
+  },
+  {
+    "zipcode": "10524",
+    "income": 123426
+  },
+  {
+    "zipcode": "10526",
+    "income": 202823
+  },
+  {
+    "zipcode": "10527",
+    "income": 207917
+  },
+  {
+    "zipcode": "10528",
+    "income": 134458
+  },
+  {
+    "zipcode": "10530",
+    "income": 104090
+  },
+  {
+    "zipcode": "10532",
+    "income": 121489
+  },
+  {
+    "zipcode": "10533",
+    "income": 204118
+  },
+  {
+    "zipcode": "10535",
+    "income": 146635
+  },
+  {
+    "zipcode": "10536",
+    "income": 198919
+  },
+  {
+    "zipcode": "10537",
+    "income": 103854
+  },
+  {
+    "zipcode": "10538",
+    "income": 203932
+  },
+  {
+    "zipcode": "10541",
+    "income": 120397
+  },
+  {
+    "zipcode": "10543",
+    "income": 119900
+  },
+  {
+    "zipcode": "10545",
+    "income": null
+  },
+  {
+    "zipcode": "10546",
+    "income": 174107
+  },
+  {
+    "zipcode": "10547",
+    "income": 123229
+  },
+  {
+    "zipcode": "10548",
+    "income": 111052
+  },
+  {
+    "zipcode": "10549",
+    "income": 110813
+  },
+  {
+    "zipcode": "10550",
+    "income": 48472
+  },
+  {
+    "zipcode": "10552",
+    "income": 86470
+  },
+  {
+    "zipcode": "10553",
+    "income": 80400
+  },
+  {
+    "zipcode": "10560",
+    "income": 159957
+  },
+  {
+    "zipcode": "10562",
+    "income": 97083
+  },
+  {
+    "zipcode": "10566",
+    "income": 75642
+  },
+  {
+    "zipcode": "10567",
+    "income": 143465
+  },
+  {
+    "zipcode": "10570",
+    "income": 165439
+  },
+  {
+    "zipcode": "10573",
+    "income": 98626
+  },
+  {
+    "zipcode": "10576",
+    "income": 215119
+  },
+  {
+    "zipcode": "10577",
+    "income": 250001
+  },
+  {
+    "zipcode": "10578",
+    "income": 250001
+  },
+  {
+    "zipcode": "10579",
+    "income": 122193
+  },
+  {
+    "zipcode": "10580",
+    "income": 211696
+  },
+  {
+    "zipcode": "10583",
+    "income": 218498
+  },
+  {
+    "zipcode": "10588",
+    "income": 119620
+  },
+  {
+    "zipcode": "10589",
+    "income": 106500
+  },
+  {
+    "zipcode": "10590",
+    "income": 160278
+  },
+  {
+    "zipcode": "10591",
+    "income": 100993
+  },
+  {
+    "zipcode": "10594",
+    "income": 167857
+  },
+  {
+    "zipcode": "10595",
+    "income": 99500
+  },
+  {
+    "zipcode": "10596",
+    "income": 83512
+  },
+  {
+    "zipcode": "10597",
+    "income": 250001
+  },
+  {
+    "zipcode": "10598",
+    "income": 140337
+  },
+  {
+    "zipcode": "10601",
+    "income": 75592
+  },
+  {
+    "zipcode": "10603",
+    "income": 118063
+  },
+  {
+    "zipcode": "10604",
+    "income": 101619
+  },
+  {
+    "zipcode": "10605",
+    "income": 131463
+  },
+  {
+    "zipcode": "10606",
+    "income": 101853
+  },
+  {
+    "zipcode": "10607",
+    "income": 142344
+  },
+  {
+    "zipcode": "10701",
+    "income": 55553
+  },
+  {
+    "zipcode": "10703",
+    "income": 78473
+  },
+  {
+    "zipcode": "10704",
+    "income": 88341
+  },
+  {
+    "zipcode": "10705",
+    "income": 61078
+  },
+  {
+    "zipcode": "10706",
+    "income": 171615
+  },
+  {
+    "zipcode": "10707",
+    "income": 119530
+  },
+  {
+    "zipcode": "10708",
+    "income": 113298
+  },
+  {
+    "zipcode": "10709",
+    "income": 142536
+  },
+  {
+    "zipcode": "10710",
+    "income": 89043
+  },
+  {
+    "zipcode": "10801",
+    "income": 73632
+  },
+  {
+    "zipcode": "10803",
+    "income": 184821
+  },
+  {
+    "zipcode": "10804",
+    "income": 213892
+  },
+  {
+    "zipcode": "10805",
+    "income": 75336
+  },
+  {
+    "zipcode": "10901",
+    "income": 102470
+  },
+  {
+    "zipcode": "10910",
+    "income": null
+  },
+  {
+    "zipcode": "10911",
+    "income": null
+  },
+  {
+    "zipcode": "10913",
+    "income": 171146
+  },
+  {
+    "zipcode": "10914",
+    "income": 83469
+  },
+  {
+    "zipcode": "10915",
+    "income": null
+  },
+  {
+    "zipcode": "10916",
+    "income": 99792
+  },
+  {
+    "zipcode": "10917",
+    "income": 117917
+  },
+  {
+    "zipcode": "10918",
+    "income": 120288
+  },
+  {
+    "zipcode": "10919",
+    "income": 94355
+  },
+  {
+    "zipcode": "10920",
+    "income": 132241
+  },
+  {
+    "zipcode": "10921",
+    "income": 99722
+  },
+  {
+    "zipcode": "10922",
+    "income": 88750
+  },
+  {
+    "zipcode": "10923",
+    "income": 91310
+  },
+  {
+    "zipcode": "10924",
+    "income": 98462
+  },
+  {
+    "zipcode": "10925",
+    "income": 95625
+  },
+  {
+    "zipcode": "10926",
+    "income": 81726
+  },
+  {
+    "zipcode": "10927",
+    "income": 69679
+  },
+  {
+    "zipcode": "10928",
+    "income": 83571
+  },
+  {
+    "zipcode": "10930",
+    "income": 130577
+  },
+  {
+    "zipcode": "10931",
+    "income": 79091
+  },
+  {
+    "zipcode": "10932",
+    "income": null
+  },
+  {
+    "zipcode": "10933",
+    "income": null
+  },
+  {
+    "zipcode": "10940",
+    "income": 70407
+  },
+  {
+    "zipcode": "10941",
+    "income": 89118
+  },
+  {
+    "zipcode": "10950",
+    "income": 77362
+  },
+  {
+    "zipcode": "10952",
+    "income": 61272
+  },
+  {
+    "zipcode": "10953",
+    "income": null
+  },
+  {
+    "zipcode": "10954",
+    "income": 109932
+  },
+  {
+    "zipcode": "10956",
+    "income": 156555
+  },
+  {
+    "zipcode": "10958",
+    "income": 122591
+  },
+  {
+    "zipcode": "10960",
+    "income": 108327
+  },
+  {
+    "zipcode": "10962",
+    "income": 144167
+  },
+  {
+    "zipcode": "10963",
+    "income": 76622
+  },
+  {
+    "zipcode": "10964",
+    "income": 145673
+  },
+  {
+    "zipcode": "10965",
+    "income": 121359
+  },
+  {
+    "zipcode": "10968",
+    "income": 114526
+  },
+  {
+    "zipcode": "10969",
+    "income": 129698
+  },
+  {
+    "zipcode": "10970",
+    "income": 106375
+  },
+  {
+    "zipcode": "10973",
+    "income": 99250
+  },
+  {
+    "zipcode": "10974",
+    "income": 92639
+  },
+  {
+    "zipcode": "10975",
+    "income": 81250
+  },
+  {
+    "zipcode": "10976",
+    "income": 65000
+  },
+  {
+    "zipcode": "10977",
+    "income": 67799
+  },
+  {
+    "zipcode": "10979",
+    "income": null
+  },
+  {
+    "zipcode": "10980",
+    "income": 117883
+  },
+  {
+    "zipcode": "10983",
+    "income": 137308
+  },
+  {
+    "zipcode": "10984",
+    "income": 121607
+  },
+  {
+    "zipcode": "10985",
+    "income": null
+  },
+  {
+    "zipcode": "10986",
+    "income": 186726
+  },
+  {
+    "zipcode": "10987",
+    "income": 174375
+  },
+  {
+    "zipcode": "10988",
+    "income": 78750
+  },
+  {
+    "zipcode": "10989",
+    "income": 117038
+  },
+  {
+    "zipcode": "10990",
+    "income": 117168
+  },
+  {
+    "zipcode": "10992",
+    "income": 105765
+  },
+  {
+    "zipcode": "10993",
+    "income": 53688
+  },
+  {
+    "zipcode": "10994",
+    "income": 156500
+  },
+  {
+    "zipcode": "10996",
+    "income": 121219
+  },
+  {
+    "zipcode": "10998",
+    "income": 106250
+  },
+  {
+    "zipcode": "11001",
+    "income": 132344
+  },
+  {
+    "zipcode": "11003",
+    "income": 107088
+  },
+  {
+    "zipcode": "11004",
+    "income": 100174
+  },
+  {
+    "zipcode": "11005",
+    "income": 60800
+  },
+  {
+    "zipcode": "11010",
+    "income": 123401
+  },
+  {
+    "zipcode": "11020",
+    "income": 168319
+  },
+  {
+    "zipcode": "11021",
+    "income": 105606
+  },
+  {
+    "zipcode": "11023",
+    "income": 131458
+  },
+  {
+    "zipcode": "11024",
+    "income": 129479
+  },
+  {
+    "zipcode": "11030",
+    "income": 232400
+  },
+  {
+    "zipcode": "11040",
+    "income": 140368
+  },
+  {
+    "zipcode": "11042",
+    "income": null
+  },
+  {
+    "zipcode": "11050",
+    "income": 138559
+  },
+  {
+    "zipcode": "11096",
+    "income": 69021
+  },
+  {
+    "zipcode": "11101",
+    "income": 98920
+  },
+  {
+    "zipcode": "11102",
+    "income": 95478
+  },
+  {
+    "zipcode": "11103",
+    "income": 82597
+  },
+  {
+    "zipcode": "11104",
+    "income": 81142
+  },
+  {
+    "zipcode": "11105",
+    "income": 93200
+  },
+  {
+    "zipcode": "11106",
+    "income": 71972
+  },
+  {
+    "zipcode": "11109",
+    "income": 160898
+  },
+  {
+    "zipcode": "11201",
+    "income": 148282
+  },
+  {
+    "zipcode": "11203",
+    "income": 61414
+  },
+  {
+    "zipcode": "11204",
+    "income": 58850
+  },
+  {
+    "zipcode": "11205",
+    "income": 68607
+  },
+  {
+    "zipcode": "11206",
+    "income": 49013
+  },
+  {
+    "zipcode": "11207",
+    "income": 45616
+  },
+  {
+    "zipcode": "11208",
+    "income": 49679
+  },
+  {
+    "zipcode": "11209",
+    "income": 84145
+  },
+  {
+    "zipcode": "11210",
+    "income": 77378
+  },
+  {
+    "zipcode": "11211",
+    "income": 89091
+  },
+  {
+    "zipcode": "11212",
+    "income": 30733
+  },
+  {
+    "zipcode": "11213",
+    "income": 48896
+  },
+  {
+    "zipcode": "11214",
+    "income": 58487
+  },
+  {
+    "zipcode": "11215",
+    "income": 156930
+  },
+  {
+    "zipcode": "11216",
+    "income": 84661
+  },
+  {
+    "zipcode": "11217",
+    "income": 133269
+  },
+  {
+    "zipcode": "11218",
+    "income": 81857
+  },
+  {
+    "zipcode": "11219",
+    "income": 44450
+  },
+  {
+    "zipcode": "11220",
+    "income": 57046
+  },
+  {
+    "zipcode": "11221",
+    "income": 66923
+  },
+  {
+    "zipcode": "11222",
+    "income": 110385
+  },
+  {
+    "zipcode": "11223",
+    "income": 57281
+  },
+  {
+    "zipcode": "11224",
+    "income": 37241
+  },
+  {
+    "zipcode": "11225",
+    "income": 68542
+  },
+  {
+    "zipcode": "11226",
+    "income": 66173
+  },
+  {
+    "zipcode": "11228",
+    "income": 77189
+  },
+  {
+    "zipcode": "11229",
+    "income": 69076
+  },
+  {
+    "zipcode": "11230",
+    "income": 61017
+  },
+  {
+    "zipcode": "11231",
+    "income": 121638
+  },
+  {
+    "zipcode": "11232",
+    "income": 77031
+  },
+  {
+    "zipcode": "11233",
+    "income": 52380
+  },
+  {
+    "zipcode": "11234",
+    "income": 86185
+  },
+  {
+    "zipcode": "11235",
+    "income": 58669
+  },
+  {
+    "zipcode": "11236",
+    "income": 73562
+  },
+  {
+    "zipcode": "11237",
+    "income": 65908
+  },
+  {
+    "zipcode": "11238",
+    "income": 114427
+  },
+  {
+    "zipcode": "11239",
+    "income": 33736
+  },
+  {
+    "zipcode": "11354",
+    "income": 52273
+  },
+  {
+    "zipcode": "11355",
+    "income": 46963
+  },
+  {
+    "zipcode": "11356",
+    "income": 73318
+  },
+  {
+    "zipcode": "11357",
+    "income": 88580
+  },
+  {
+    "zipcode": "11358",
+    "income": 74854
+  },
+  {
+    "zipcode": "11359",
+    "income": null
+  },
+  {
+    "zipcode": "11360",
+    "income": 92851
+  },
+  {
+    "zipcode": "11361",
+    "income": 93734
+  },
+  {
+    "zipcode": "11362",
+    "income": 100528
+  },
+  {
+    "zipcode": "11363",
+    "income": 98111
+  },
+  {
+    "zipcode": "11364",
+    "income": 90970
+  },
+  {
+    "zipcode": "11365",
+    "income": 73279
+  },
+  {
+    "zipcode": "11366",
+    "income": 100781
+  },
+  {
+    "zipcode": "11367",
+    "income": 71469
+  },
+  {
+    "zipcode": "11368",
+    "income": 62254
+  },
+  {
+    "zipcode": "11369",
+    "income": 66132
+  },
+  {
+    "zipcode": "11370",
+    "income": 67241
+  },
+  {
+    "zipcode": "11371",
+    "income": null
+  },
+  {
+    "zipcode": "11372",
+    "income": 62910
+  },
+  {
+    "zipcode": "11373",
+    "income": 62072
+  },
+  {
+    "zipcode": "11374",
+    "income": 79221
+  },
+  {
+    "zipcode": "11375",
+    "income": 96321
+  },
+  {
+    "zipcode": "11377",
+    "income": 66325
+  },
+  {
+    "zipcode": "11378",
+    "income": 85464
+  },
+  {
+    "zipcode": "11379",
+    "income": 88672
+  },
+  {
+    "zipcode": "11385",
+    "income": 77350
+  },
+  {
+    "zipcode": "11411",
+    "income": 108131
+  },
+  {
+    "zipcode": "11412",
+    "income": 93429
+  },
+  {
+    "zipcode": "11413",
+    "income": 104236
+  },
+  {
+    "zipcode": "11414",
+    "income": 86113
+  },
+  {
+    "zipcode": "11415",
+    "income": 80360
+  },
+  {
+    "zipcode": "11416",
+    "income": 76477
+  },
+  {
+    "zipcode": "11417",
+    "income": 78498
+  },
+  {
+    "zipcode": "11418",
+    "income": 77708
+  },
+  {
+    "zipcode": "11419",
+    "income": 84245
+  },
+  {
+    "zipcode": "11420",
+    "income": 89027
+  },
+  {
+    "zipcode": "11421",
+    "income": 76721
+  },
+  {
+    "zipcode": "11422",
+    "income": 95945
+  },
+  {
+    "zipcode": "11423",
+    "income": 69386
+  },
+  {
+    "zipcode": "11424",
+    "income": null
+  },
+  {
+    "zipcode": "11426",
+    "income": 102818
+  },
+  {
+    "zipcode": "11427",
+    "income": 84000
+  },
+  {
+    "zipcode": "11428",
+    "income": 83417
+  },
+  {
+    "zipcode": "11429",
+    "income": 89318
+  },
+  {
+    "zipcode": "11430",
+    "income": null
+  },
+  {
+    "zipcode": "11432",
+    "income": 66246
+  },
+  {
+    "zipcode": "11433",
+    "income": 68801
+  },
+  {
+    "zipcode": "11434",
+    "income": 66546
+  },
+  {
+    "zipcode": "11435",
+    "income": 71346
+  },
+  {
+    "zipcode": "11436",
+    "income": 78306
+  },
+  {
+    "zipcode": "11451",
+    "income": null
+  },
+  {
+    "zipcode": "11501",
+    "income": 113729
+  },
+  {
+    "zipcode": "11507",
+    "income": 139025
+  },
+  {
+    "zipcode": "11509",
+    "income": 143333
+  },
+  {
+    "zipcode": "11510",
+    "income": 126776
+  },
+  {
+    "zipcode": "11514",
+    "income": 113875
+  },
+  {
+    "zipcode": "11516",
+    "income": 94639
+  },
+  {
+    "zipcode": "11518",
+    "income": 96889
+  },
+  {
+    "zipcode": "11520",
+    "income": 100867
+  },
+  {
+    "zipcode": "11530",
+    "income": 169333
+  },
+  {
+    "zipcode": "11542",
+    "income": 82049
+  },
+  {
+    "zipcode": "11545",
+    "income": 150815
+  },
+  {
+    "zipcode": "11547",
+    "income": null
+  },
+  {
+    "zipcode": "11548",
+    "income": 139167
+  },
+  {
+    "zipcode": "11549",
+    "income": null
+  },
+  {
+    "zipcode": "11550",
+    "income": 76430
+  },
+  {
+    "zipcode": "11552",
+    "income": 133423
+  },
+  {
+    "zipcode": "11553",
+    "income": 91809
+  },
+  {
+    "zipcode": "11554",
+    "income": 126079
+  },
+  {
+    "zipcode": "11556",
+    "income": null
+  },
+  {
+    "zipcode": "11557",
+    "income": 151107
+  },
+  {
+    "zipcode": "11558",
+    "income": 96710
+  },
+  {
+    "zipcode": "11559",
+    "income": 100617
+  },
+  {
+    "zipcode": "11560",
+    "income": 162625
+  },
+  {
+    "zipcode": "11561",
+    "income": 119731
+  },
+  {
+    "zipcode": "11563",
+    "income": 124978
+  },
+  {
+    "zipcode": "11565",
+    "income": 138192
+  },
+  {
+    "zipcode": "11566",
+    "income": 156929
+  },
+  {
+    "zipcode": "11568",
+    "income": 250001
+  },
+  {
+    "zipcode": "11569",
+    "income": null
+  },
+  {
+    "zipcode": "11570",
+    "income": 138733
+  },
+  {
+    "zipcode": "11572",
+    "income": 124688
+  },
+  {
+    "zipcode": "11575",
+    "income": 102908
+  },
+  {
+    "zipcode": "11576",
+    "income": 207548
+  },
+  {
+    "zipcode": "11577",
+    "income": 177833
+  },
+  {
+    "zipcode": "11579",
+    "income": 165938
+  },
+  {
+    "zipcode": "11580",
+    "income": 123750
+  },
+  {
+    "zipcode": "11581",
+    "income": 121442
+  },
+  {
+    "zipcode": "11590",
+    "income": 122078
+  },
+  {
+    "zipcode": "11596",
+    "income": 137917
+  },
+  {
+    "zipcode": "11598",
+    "income": 160186
+  },
+  {
+    "zipcode": "11691",
+    "income": 54877
+  },
+  {
+    "zipcode": "11692",
+    "income": 53498
+  },
+  {
+    "zipcode": "11693",
+    "income": 64688
+  },
+  {
+    "zipcode": "11694",
+    "income": 88643
+  },
+  {
+    "zipcode": "11697",
+    "income": 113047
+  },
+  {
+    "zipcode": "11701",
+    "income": 87480
+  },
+  {
+    "zipcode": "11702",
+    "income": 129375
+  },
+  {
+    "zipcode": "11703",
+    "income": 110889
+  },
+  {
+    "zipcode": "11704",
+    "income": 110143
+  },
+  {
+    "zipcode": "11705",
+    "income": 119609
+  },
+  {
+    "zipcode": "11706",
+    "income": 102380
+  },
+  {
+    "zipcode": "11709",
+    "income": 119760
+  },
+  {
+    "zipcode": "11710",
+    "income": 151731
+  },
+  {
+    "zipcode": "11713",
+    "income": 88864
+  },
+  {
+    "zipcode": "11714",
+    "income": 117126
+  },
+  {
+    "zipcode": "11715",
+    "income": 105425
+  },
+  {
+    "zipcode": "11716",
+    "income": 109871
+  },
+  {
+    "zipcode": "11717",
+    "income": 105625
+  },
+  {
+    "zipcode": "11718",
+    "income": 147813
+  },
+  {
+    "zipcode": "11719",
+    "income": 96736
+  },
+  {
+    "zipcode": "11720",
+    "income": 114471
+  },
+  {
+    "zipcode": "11721",
+    "income": 177179
+  },
+  {
+    "zipcode": "11722",
+    "income": 89746
+  },
+  {
+    "zipcode": "11724",
+    "income": 250001
+  },
+  {
+    "zipcode": "11725",
+    "income": 152216
+  },
+  {
+    "zipcode": "11726",
+    "income": 96953
+  },
+  {
+    "zipcode": "11727",
+    "income": 84246
+  },
+  {
+    "zipcode": "11729",
+    "income": 113240
+  },
+  {
+    "zipcode": "11730",
+    "income": 126618
+  },
+  {
+    "zipcode": "11731",
+    "income": 143093
+  },
+  {
+    "zipcode": "11732",
+    "income": 104050
+  },
+  {
+    "zipcode": "11733",
+    "income": 161801
+  },
+  {
+    "zipcode": "11735",
+    "income": 128438
+  },
+  {
+    "zipcode": "11738",
+    "income": 123313
+  },
+  {
+    "zipcode": "11739",
+    "income": 162708
+  },
+  {
+    "zipcode": "11740",
+    "income": 132218
+  },
+  {
+    "zipcode": "11741",
+    "income": 125971
+  },
+  {
+    "zipcode": "11742",
+    "income": 115984
+  },
+  {
+    "zipcode": "11743",
+    "income": 144452
+  },
+  {
+    "zipcode": "11746",
+    "income": 129432
+  },
+  {
+    "zipcode": "11747",
+    "income": 123648
+  },
+  {
+    "zipcode": "11749",
+    "income": 100771
+  },
+  {
+    "zipcode": "11751",
+    "income": 110806
+  },
+  {
+    "zipcode": "11752",
+    "income": 129715
+  },
+  {
+    "zipcode": "11753",
+    "income": 162043
+  },
+  {
+    "zipcode": "11754",
+    "income": 109208
+  },
+  {
+    "zipcode": "11755",
+    "income": 114097
+  },
+  {
+    "zipcode": "11756",
+    "income": 127733
+  },
+  {
+    "zipcode": "11757",
+    "income": 106765
+  },
+  {
+    "zipcode": "11758",
+    "income": 130315
+  },
+  {
+    "zipcode": "11762",
+    "income": 145099
+  },
+  {
+    "zipcode": "11763",
+    "income": 101201
+  },
+  {
+    "zipcode": "11764",
+    "income": 127463
+  },
+  {
+    "zipcode": "11765",
+    "income": 250001
+  },
+  {
+    "zipcode": "11766",
+    "income": 131544
+  },
+  {
+    "zipcode": "11767",
+    "income": 132990
+  },
+  {
+    "zipcode": "11768",
+    "income": 147840
+  },
+  {
+    "zipcode": "11769",
+    "income": 114593
+  },
+  {
+    "zipcode": "11770",
+    "income": 105500
+  },
+  {
+    "zipcode": "11771",
+    "income": 129648
+  },
+  {
+    "zipcode": "11772",
+    "income": 95630
+  },
+  {
+    "zipcode": "11776",
+    "income": 113140
+  },
+  {
+    "zipcode": "11777",
+    "income": 122860
+  },
+  {
+    "zipcode": "11778",
+    "income": 105764
+  },
+  {
+    "zipcode": "11779",
+    "income": 106340
+  },
+  {
+    "zipcode": "11780",
+    "income": 139365
+  },
+  {
+    "zipcode": "11782",
+    "income": 131712
+  },
+  {
+    "zipcode": "11783",
+    "income": 147969
+  },
+  {
+    "zipcode": "11784",
+    "income": 93250
+  },
+  {
+    "zipcode": "11786",
+    "income": 147132
+  },
+  {
+    "zipcode": "11787",
+    "income": 136182
+  },
+  {
+    "zipcode": "11788",
+    "income": 129316
+  },
+  {
+    "zipcode": "11789",
+    "income": 115750
+  },
+  {
+    "zipcode": "11790",
+    "income": 135880
+  },
+  {
+    "zipcode": "11791",
+    "income": 171719
+  },
+  {
+    "zipcode": "11792",
+    "income": 138320
+  },
+  {
+    "zipcode": "11793",
+    "income": 156750
+  },
+  {
+    "zipcode": "11794",
+    "income": null
+  },
+  {
+    "zipcode": "11795",
+    "income": 142385
+  },
+  {
+    "zipcode": "11796",
+    "income": 142522
+  },
+  {
+    "zipcode": "11797",
+    "income": 190093
+  },
+  {
+    "zipcode": "11798",
+    "income": 88201
+  },
+  {
+    "zipcode": "11801",
+    "income": 121688
+  },
+  {
+    "zipcode": "11803",
+    "income": 166829
+  },
+  {
+    "zipcode": "11804",
+    "income": 154483
+  },
+  {
+    "zipcode": "11901",
+    "income": 74235
+  },
+  {
+    "zipcode": "11930",
+    "income": 144318
+  },
+  {
+    "zipcode": "11931",
+    "income": null
+  },
+  {
+    "zipcode": "11932",
+    "income": 111979
+  },
+  {
+    "zipcode": "11933",
+    "income": 67500
+  },
+  {
+    "zipcode": "11934",
+    "income": 133086
+  },
+  {
+    "zipcode": "11935",
+    "income": 111250
+  },
+  {
+    "zipcode": "11937",
+    "income": 124469
+  },
+  {
+    "zipcode": "11939",
+    "income": 90048
+  },
+  {
+    "zipcode": "11940",
+    "income": 117209
+  },
+  {
+    "zipcode": "11941",
+    "income": 109921
+  },
+  {
+    "zipcode": "11942",
+    "income": 91941
+  },
+  {
+    "zipcode": "11944",
+    "income": 66989
+  },
+  {
+    "zipcode": "11946",
+    "income": 103996
+  },
+  {
+    "zipcode": "11947",
+    "income": null
+  },
+  {
+    "zipcode": "11948",
+    "income": 113563
+  },
+  {
+    "zipcode": "11949",
+    "income": 109613
+  },
+  {
+    "zipcode": "11950",
+    "income": 95649
+  },
+  {
+    "zipcode": "11951",
+    "income": 88601
+  },
+  {
+    "zipcode": "11952",
+    "income": 96150
+  },
+  {
+    "zipcode": "11953",
+    "income": 86563
+  },
+  {
+    "zipcode": "11954",
+    "income": 135927
+  },
+  {
+    "zipcode": "11955",
+    "income": 66148
+  },
+  {
+    "zipcode": "11956",
+    "income": 93611
+  },
+  {
+    "zipcode": "11957",
+    "income": 78045
+  },
+  {
+    "zipcode": "11958",
+    "income": 91154
+  },
+  {
+    "zipcode": "11959",
+    "income": 145341
+  },
+  {
+    "zipcode": "11960",
+    "income": 153646
+  },
+  {
+    "zipcode": "11961",
+    "income": 73549
+  },
+  {
+    "zipcode": "11962",
+    "income": 113125
+  },
+  {
+    "zipcode": "11963",
+    "income": 100577
+  },
+  {
+    "zipcode": "11964",
+    "income": 100813
+  },
+  {
+    "zipcode": "11965",
+    "income": 91831
+  },
+  {
+    "zipcode": "11967",
+    "income": 99209
+  },
+  {
+    "zipcode": "11968",
+    "income": 128913
+  },
+  {
+    "zipcode": "11970",
+    "income": null
+  },
+  {
+    "zipcode": "11971",
+    "income": 96319
+  },
+  {
+    "zipcode": "11972",
+    "income": null
+  },
+  {
+    "zipcode": "11973",
+    "income": null
+  },
+  {
+    "zipcode": "11975",
+    "income": 148958
+  },
+  {
+    "zipcode": "11976",
+    "income": 161442
+  },
+  {
+    "zipcode": "11977",
+    "income": 133625
+  },
+  {
+    "zipcode": "11978",
+    "income": 101444
+  },
+  {
+    "zipcode": "11980",
+    "income": 95865
+  },
+  {
+    "zipcode": "12007",
+    "income": null
+  },
+  {
+    "zipcode": "12008",
+    "income": 126076
+  },
+  {
+    "zipcode": "12009",
+    "income": 100000
+  },
+  {
+    "zipcode": "12010",
+    "income": 49705
+  },
+  {
+    "zipcode": "12015",
+    "income": 74318
+  },
+  {
+    "zipcode": "12017",
+    "income": null
+  },
+  {
+    "zipcode": "12018",
+    "income": 111667
+  },
+  {
+    "zipcode": "12019",
+    "income": 102175
+  },
+  {
+    "zipcode": "12020",
+    "income": 92344
+  },
+  {
+    "zipcode": "12022",
+    "income": 84722
+  },
+  {
+    "zipcode": "12023",
+    "income": 94097
+  },
+  {
+    "zipcode": "12024",
+    "income": null
+  },
+  {
+    "zipcode": "12025",
+    "income": 64771
+  },
+  {
+    "zipcode": "12027",
+    "income": 96780
+  },
+  {
+    "zipcode": "12028",
+    "income": 73988
+  },
+  {
+    "zipcode": "12029",
+    "income": 92024
+  },
+  {
+    "zipcode": "12031",
+    "income": 62125
+  },
+  {
+    "zipcode": "12032",
+    "income": 61250
+  },
+  {
+    "zipcode": "12033",
+    "income": 82948
+  },
+  {
+    "zipcode": "12035",
+    "income": 57083
+  },
+  {
+    "zipcode": "12036",
+    "income": 36957
+  },
+  {
+    "zipcode": "12037",
+    "income": 82273
+  },
+  {
+    "zipcode": "12040",
+    "income": 68542
+  },
+  {
+    "zipcode": "12041",
+    "income": 106484
+  },
+  {
+    "zipcode": "12042",
+    "income": 72232
+  },
+  {
+    "zipcode": "12043",
+    "income": 62204
+  },
+  {
+    "zipcode": "12045",
+    "income": 68977
+  },
+  {
+    "zipcode": "12046",
+    "income": 58375
+  },
+  {
+    "zipcode": "12047",
+    "income": 65147
+  },
+  {
+    "zipcode": "12051",
+    "income": 60221
+  },
+  {
+    "zipcode": "12052",
+    "income": 104167
+  },
+  {
+    "zipcode": "12053",
+    "income": 82847
+  },
+  {
+    "zipcode": "12054",
+    "income": 117984
+  },
+  {
+    "zipcode": "12056",
+    "income": 96417
+  },
+  {
+    "zipcode": "12057",
+    "income": 77017
+  },
+  {
+    "zipcode": "12058",
+    "income": 74952
+  },
+  {
+    "zipcode": "12059",
+    "income": 90696
+  },
+  {
+    "zipcode": "12060",
+    "income": 96964
+  },
+  {
+    "zipcode": "12061",
+    "income": 108490
+  },
+  {
+    "zipcode": "12062",
+    "income": 77321
+  },
+  {
+    "zipcode": "12063",
+    "income": 78542
+  },
+  {
+    "zipcode": "12064",
+    "income": 48750
+  },
+  {
+    "zipcode": "12065",
+    "income": 106346
+  },
+  {
+    "zipcode": "12066",
+    "income": 76310
+  },
+  {
+    "zipcode": "12067",
+    "income": 108750
+  },
+  {
+    "zipcode": "12068",
+    "income": 67232
+  },
+  {
+    "zipcode": "12069",
+    "income": null
+  },
+  {
+    "zipcode": "12070",
+    "income": 54673
+  },
+  {
+    "zipcode": "12071",
+    "income": 55139
+  },
+  {
+    "zipcode": "12072",
+    "income": 70543
+  },
+  {
+    "zipcode": "12074",
+    "income": 80859
+  },
+  {
+    "zipcode": "12075",
+    "income": 70697
+  },
+  {
+    "zipcode": "12076",
+    "income": 58289
+  },
+  {
+    "zipcode": "12077",
+    "income": 116406
+  },
+  {
+    "zipcode": "12078",
+    "income": 46386
+  },
+  {
+    "zipcode": "12083",
+    "income": 80926
+  },
+  {
+    "zipcode": "12084",
+    "income": 83051
+  },
+  {
+    "zipcode": "12085",
+    "income": 35074
+  },
+  {
+    "zipcode": "12086",
+    "income": 70000
+  },
+  {
+    "zipcode": "12087",
+    "income": 78977
+  },
+  {
+    "zipcode": "12090",
+    "income": 58229
+  },
+  {
+    "zipcode": "12092",
+    "income": 61513
+  },
+  {
+    "zipcode": "12093",
+    "income": 56250
+  },
+  {
+    "zipcode": "12094",
+    "income": 97692
+  },
+  {
+    "zipcode": "12095",
+    "income": 59904
+  },
+  {
+    "zipcode": "12106",
+    "income": 77260
+  },
+  {
+    "zipcode": "12108",
+    "income": 75809
+  },
+  {
+    "zipcode": "12110",
+    "income": 93533
+  },
+  {
+    "zipcode": "12115",
+    "income": 113750
+  },
+  {
+    "zipcode": "12116",
+    "income": 74500
+  },
+  {
+    "zipcode": "12117",
+    "income": 65724
+  },
+  {
+    "zipcode": "12118",
+    "income": 83438
+  },
+  {
+    "zipcode": "12120",
+    "income": 68750
+  },
+  {
+    "zipcode": "12121",
+    "income": 108561
+  },
+  {
+    "zipcode": "12122",
+    "income": 50278
+  },
+  {
+    "zipcode": "12123",
+    "income": 94342
+  },
+  {
+    "zipcode": "12124",
+    "income": null
+  },
+  {
+    "zipcode": "12125",
+    "income": 61750
+  },
+  {
+    "zipcode": "12130",
+    "income": 74028
+  },
+  {
+    "zipcode": "12131",
+    "income": 38750
+  },
+  {
+    "zipcode": "12132",
+    "income": 113382
+  },
+  {
+    "zipcode": "12134",
+    "income": 61667
+  },
+  {
+    "zipcode": "12136",
+    "income": 116471
+  },
+  {
+    "zipcode": "12137",
+    "income": 86952
+  },
+  {
+    "zipcode": "12138",
+    "income": 66974
+  },
+  {
+    "zipcode": "12139",
+    "income": 64250
+  },
+  {
+    "zipcode": "12140",
+    "income": 89744
+  },
+  {
+    "zipcode": "12143",
+    "income": 71750
+  },
+  {
+    "zipcode": "12144",
+    "income": 85993
+  },
+  {
+    "zipcode": "12147",
+    "income": 65083
+  },
+  {
+    "zipcode": "12148",
+    "income": 117042
+  },
+  {
+    "zipcode": "12149",
+    "income": 62083
+  },
+  {
+    "zipcode": "12150",
+    "income": 79219
+  },
+  {
+    "zipcode": "12151",
+    "income": 96000
+  },
+  {
+    "zipcode": "12153",
+    "income": 77105
+  },
+  {
+    "zipcode": "12154",
+    "income": 84063
+  },
+  {
+    "zipcode": "12155",
+    "income": 54632
+  },
+  {
+    "zipcode": "12156",
+    "income": 92708
+  },
+  {
+    "zipcode": "12157",
+    "income": 66628
+  },
+  {
+    "zipcode": "12158",
+    "income": 84388
+  },
+  {
+    "zipcode": "12159",
+    "income": 103070
+  },
+  {
+    "zipcode": "12160",
+    "income": 75375
+  },
+  {
+    "zipcode": "12161",
+    "income": null
+  },
+  {
+    "zipcode": "12164",
+    "income": 61964
+  },
+  {
+    "zipcode": "12165",
+    "income": null
+  },
+  {
+    "zipcode": "12166",
+    "income": 66488
+  },
+  {
+    "zipcode": "12167",
+    "income": 52770
+  },
+  {
+    "zipcode": "12168",
+    "income": 77946
+  },
+  {
+    "zipcode": "12169",
+    "income": 37342
+  },
+  {
+    "zipcode": "12170",
+    "income": 91328
+  },
+  {
+    "zipcode": "12172",
+    "income": 54141
+  },
+  {
+    "zipcode": "12173",
+    "income": 75139
+  },
+  {
+    "zipcode": "12174",
+    "income": null
+  },
+  {
+    "zipcode": "12175",
+    "income": 77837
+  },
+  {
+    "zipcode": "12176",
+    "income": 37917
+  },
+  {
+    "zipcode": "12177",
+    "income": 78306
+  },
+  {
+    "zipcode": "12180",
+    "income": 61595
+  },
+  {
+    "zipcode": "12182",
+    "income": 53972
+  },
+  {
+    "zipcode": "12183",
+    "income": 57750
+  },
+  {
+    "zipcode": "12184",
+    "income": 82647
+  },
+  {
+    "zipcode": "12185",
+    "income": 81504
+  },
+  {
+    "zipcode": "12186",
+    "income": 108654
+  },
+  {
+    "zipcode": "12187",
+    "income": 63646
+  },
+  {
+    "zipcode": "12188",
+    "income": 75269
+  },
+  {
+    "zipcode": "12189",
+    "income": 53443
+  },
+  {
+    "zipcode": "12190",
+    "income": 44750
+  },
+  {
+    "zipcode": "12192",
+    "income": 90495
+  },
+  {
+    "zipcode": "12193",
+    "income": 66988
+  },
+  {
+    "zipcode": "12194",
+    "income": 46250
+  },
+  {
+    "zipcode": "12195",
+    "income": 128559
+  },
+  {
+    "zipcode": "12196",
+    "income": 99932
+  },
+  {
+    "zipcode": "12197",
+    "income": 77250
+  },
+  {
+    "zipcode": "12198",
+    "income": 87114
+  },
+  {
+    "zipcode": "12202",
+    "income": 45659
+  },
+  {
+    "zipcode": "12203",
+    "income": 71001
+  },
+  {
+    "zipcode": "12204",
+    "income": 62391
+  },
+  {
+    "zipcode": "12205",
+    "income": 83103
+  },
+  {
+    "zipcode": "12206",
+    "income": 32994
+  },
+  {
+    "zipcode": "12207",
+    "income": 22670
+  },
+  {
+    "zipcode": "12208",
+    "income": 66624
+  },
+  {
+    "zipcode": "12209",
+    "income": 68185
+  },
+  {
+    "zipcode": "12210",
+    "income": 47177
+  },
+  {
+    "zipcode": "12211",
+    "income": 121209
+  },
+  {
+    "zipcode": "12222",
+    "income": null
+  },
+  {
+    "zipcode": "12302",
+    "income": 83692
+  },
+  {
+    "zipcode": "12303",
+    "income": 71573
+  },
+  {
+    "zipcode": "12304",
+    "income": 55725
+  },
+  {
+    "zipcode": "12305",
+    "income": 46367
+  },
+  {
+    "zipcode": "12306",
+    "income": 71859
+  },
+  {
+    "zipcode": "12307",
+    "income": 30151
+  },
+  {
+    "zipcode": "12308",
+    "income": 51498
+  },
+  {
+    "zipcode": "12309",
+    "income": 111830
+  },
+  {
+    "zipcode": "12401",
+    "income": 61261
+  },
+  {
+    "zipcode": "12404",
+    "income": 64188
+  },
+  {
+    "zipcode": "12405",
+    "income": 60288
+  },
+  {
+    "zipcode": "12406",
+    "income": 60313
+  },
+  {
+    "zipcode": "12407",
+    "income": 75714
+  },
+  {
+    "zipcode": "12409",
+    "income": 101724
+  },
+  {
+    "zipcode": "12410",
+    "income": 27614
+  },
+  {
+    "zipcode": "12411",
+    "income": 58750
+  },
+  {
+    "zipcode": "12412",
+    "income": 70495
+  },
+  {
+    "zipcode": "12413",
+    "income": 53795
+  },
+  {
+    "zipcode": "12414",
+    "income": 53229
+  },
+  {
+    "zipcode": "12416",
+    "income": null
+  },
+  {
+    "zipcode": "12417",
+    "income": 89038
+  },
+  {
+    "zipcode": "12418",
+    "income": 68182
+  },
+  {
+    "zipcode": "12419",
+    "income": 63553
+  },
+  {
+    "zipcode": "12420",
+    "income": 105857
+  },
+  {
+    "zipcode": "12421",
+    "income": 75714
+  },
+  {
+    "zipcode": "12422",
+    "income": 51600
+  },
+  {
+    "zipcode": "12423",
+    "income": 58000
+  },
+  {
+    "zipcode": "12424",
+    "income": 56000
+  },
+  {
+    "zipcode": "12427",
+    "income": 115274
+  },
+  {
+    "zipcode": "12428",
+    "income": 50357
+  },
+  {
+    "zipcode": "12429",
+    "income": null
+  },
+  {
+    "zipcode": "12430",
+    "income": 58942
+  },
+  {
+    "zipcode": "12431",
+    "income": 82697
+  },
+  {
+    "zipcode": "12432",
+    "income": 34444
+  },
+  {
+    "zipcode": "12433",
+    "income": 48875
+  },
+  {
+    "zipcode": "12434",
+    "income": 40638
+  },
+  {
+    "zipcode": "12435",
+    "income": 73319
+  },
+  {
+    "zipcode": "12436",
+    "income": null
+  },
+  {
+    "zipcode": "12438",
+    "income": null
+  },
+  {
+    "zipcode": "12439",
+    "income": 39659
+  },
+  {
+    "zipcode": "12440",
+    "income": 93250
+  },
+  {
+    "zipcode": "12441",
+    "income": 47593
+  },
+  {
+    "zipcode": "12442",
+    "income": 24474
+  },
+  {
+    "zipcode": "12443",
+    "income": 109205
+  },
+  {
+    "zipcode": "12444",
+    "income": 61328
+  },
+  {
+    "zipcode": "12446",
+    "income": 67733
+  },
+  {
+    "zipcode": "12448",
+    "income": 185139
+  },
+  {
+    "zipcode": "12449",
+    "income": 66875
+  },
+  {
+    "zipcode": "12450",
+    "income": null
+  },
+  {
+    "zipcode": "12451",
+    "income": 58036
+  },
+  {
+    "zipcode": "12452",
+    "income": 53438
+  },
+  {
+    "zipcode": "12453",
+    "income": null
+  },
+  {
+    "zipcode": "12454",
+    "income": 55938
+  },
+  {
+    "zipcode": "12455",
+    "income": 53750
+  },
+  {
+    "zipcode": "12456",
+    "income": 84310
+  },
+  {
+    "zipcode": "12457",
+    "income": 64659
+  },
+  {
+    "zipcode": "12458",
+    "income": 55658
+  },
+  {
+    "zipcode": "12459",
+    "income": 90114
+  },
+  {
+    "zipcode": "12460",
+    "income": null
+  },
+  {
+    "zipcode": "12461",
+    "income": 86885
+  },
+  {
+    "zipcode": "12463",
+    "income": null
+  },
+  {
+    "zipcode": "12464",
+    "income": 62083
+  },
+  {
+    "zipcode": "12465",
+    "income": 60781
+  },
+  {
+    "zipcode": "12466",
+    "income": 64400
+  },
+  {
+    "zipcode": "12468",
+    "income": 46250
+  },
+  {
+    "zipcode": "12469",
+    "income": 86691
+  },
+  {
+    "zipcode": "12470",
+    "income": 73036
+  },
+  {
+    "zipcode": "12471",
+    "income": 2499
+  },
+  {
+    "zipcode": "12472",
+    "income": 57500
+  },
+  {
+    "zipcode": "12473",
+    "income": 87391
+  },
+  {
+    "zipcode": "12474",
+    "income": 64000
+  },
+  {
+    "zipcode": "12475",
+    "income": null
+  },
+  {
+    "zipcode": "12477",
+    "income": 66516
+  },
+  {
+    "zipcode": "12480",
+    "income": 103516
+  },
+  {
+    "zipcode": "12481",
+    "income": 59099
+  },
+  {
+    "zipcode": "12482",
+    "income": null
+  },
+  {
+    "zipcode": "12483",
+    "income": null
+  },
+  {
+    "zipcode": "12484",
+    "income": 66364
+  },
+  {
+    "zipcode": "12485",
+    "income": 56705
+  },
+  {
+    "zipcode": "12486",
+    "income": 79406
+  },
+  {
+    "zipcode": "12487",
+    "income": 68750
+  },
+  {
+    "zipcode": "12489",
+    "income": null
+  },
+  {
+    "zipcode": "12490",
+    "income": null
+  },
+  {
+    "zipcode": "12491",
+    "income": 85938
+  },
+  {
+    "zipcode": "12492",
+    "income": 114286
+  },
+  {
+    "zipcode": "12493",
+    "income": null
+  },
+  {
+    "zipcode": "12494",
+    "income": 125725
+  },
+  {
+    "zipcode": "12495",
+    "income": 58654
+  },
+  {
+    "zipcode": "12496",
+    "income": 71364
+  },
+  {
+    "zipcode": "12498",
+    "income": 58262
+  },
+  {
+    "zipcode": "12501",
+    "income": 65299
+  },
+  {
+    "zipcode": "12502",
+    "income": 79722
+  },
+  {
+    "zipcode": "12503",
+    "income": 88958
+  },
+  {
+    "zipcode": "12504",
+    "income": null
+  },
+  {
+    "zipcode": "12507",
+    "income": 100714
+  },
+  {
+    "zipcode": "12508",
+    "income": 88910
+  },
+  {
+    "zipcode": "12512",
+    "income": 130521
+  },
+  {
+    "zipcode": "12513",
+    "income": 37679
+  },
+  {
+    "zipcode": "12514",
+    "income": 113490
+  },
+  {
+    "zipcode": "12515",
+    "income": 96118
+  },
+  {
+    "zipcode": "12516",
+    "income": 116290
+  },
+  {
+    "zipcode": "12517",
+    "income": 89457
+  },
+  {
+    "zipcode": "12518",
+    "income": 95867
+  },
+  {
+    "zipcode": "12520",
+    "income": 106433
+  },
+  {
+    "zipcode": "12521",
+    "income": 76250
+  },
+  {
+    "zipcode": "12522",
+    "income": 66283
+  },
+  {
+    "zipcode": "12523",
+    "income": 61100
+  },
+  {
+    "zipcode": "12524",
+    "income": 82556
+  },
+  {
+    "zipcode": "12525",
+    "income": 80893
+  },
+  {
+    "zipcode": "12526",
+    "income": 83067
+  },
+  {
+    "zipcode": "12527",
+    "income": null
+  },
+  {
+    "zipcode": "12528",
+    "income": 78952
+  },
+  {
+    "zipcode": "12529",
+    "income": 80362
+  },
+  {
+    "zipcode": "12530",
+    "income": null
+  },
+  {
+    "zipcode": "12531",
+    "income": 123784
+  },
+  {
+    "zipcode": "12533",
+    "income": 120362
+  },
+  {
+    "zipcode": "12534",
+    "income": 61361
+  },
+  {
+    "zipcode": "12538",
+    "income": 78445
+  },
+  {
+    "zipcode": "12540",
+    "income": 105685
+  },
+  {
+    "zipcode": "12542",
+    "income": 99911
+  },
+  {
+    "zipcode": "12543",
+    "income": 80438
+  },
+  {
+    "zipcode": "12545",
+    "income": 92218
+  },
+  {
+    "zipcode": "12546",
+    "income": 72201
+  },
+  {
+    "zipcode": "12547",
+    "income": 99219
+  },
+  {
+    "zipcode": "12548",
+    "income": 73482
+  },
+  {
+    "zipcode": "12549",
+    "income": 106435
+  },
+  {
+    "zipcode": "12550",
+    "income": 69671
+  },
+  {
+    "zipcode": "12553",
+    "income": 91698
+  },
+  {
+    "zipcode": "12561",
+    "income": 80558
+  },
+  {
+    "zipcode": "12563",
+    "income": 95000
+  },
+  {
+    "zipcode": "12564",
+    "income": 106850
+  },
+  {
+    "zipcode": "12565",
+    "income": 54477
+  },
+  {
+    "zipcode": "12566",
+    "income": 94570
+  },
+  {
+    "zipcode": "12567",
+    "income": 77813
+  },
+  {
+    "zipcode": "12569",
+    "income": 89275
+  },
+  {
+    "zipcode": "12570",
+    "income": 106557
+  },
+  {
+    "zipcode": "12571",
+    "income": 102455
+  },
+  {
+    "zipcode": "12572",
+    "income": 86700
+  },
+  {
+    "zipcode": "12574",
+    "income": null
+  },
+  {
+    "zipcode": "12575",
+    "income": 134297
+  },
+  {
+    "zipcode": "12577",
+    "income": 138676
+  },
+  {
+    "zipcode": "12578",
+    "income": 67708
+  },
+  {
+    "zipcode": "12580",
+    "income": 97961
+  },
+  {
+    "zipcode": "12581",
+    "income": 78571
+  },
+  {
+    "zipcode": "12582",
+    "income": 121771
+  },
+  {
+    "zipcode": "12583",
+    "income": 81154
+  },
+  {
+    "zipcode": "12585",
+    "income": 90167
+  },
+  {
+    "zipcode": "12586",
+    "income": 75845
+  },
+  {
+    "zipcode": "12589",
+    "income": 100771
+  },
+  {
+    "zipcode": "12590",
+    "income": 96726
+  },
+  {
+    "zipcode": "12592",
+    "income": 59668
+  },
+  {
+    "zipcode": "12594",
+    "income": 83924
+  },
+  {
+    "zipcode": "12601",
+    "income": 53105
+  },
+  {
+    "zipcode": "12603",
+    "income": 92480
+  },
+  {
+    "zipcode": "12604",
+    "income": null
+  },
+  {
+    "zipcode": "12701",
+    "income": 49653
+  },
+  {
+    "zipcode": "12719",
+    "income": 69656
+  },
+  {
+    "zipcode": "12720",
+    "income": null
+  },
+  {
+    "zipcode": "12721",
+    "income": 74947
+  },
+  {
+    "zipcode": "12722",
+    "income": null
+  },
+  {
+    "zipcode": "12723",
+    "income": 79188
+  },
+  {
+    "zipcode": "12724",
+    "income": null
+  },
+  {
+    "zipcode": "12725",
+    "income": 74286
+  },
+  {
+    "zipcode": "12726",
+    "income": 65539
+  },
+  {
+    "zipcode": "12729",
+    "income": 69000
+  },
+  {
+    "zipcode": "12732",
+    "income": 45000
+  },
+  {
+    "zipcode": "12733",
+    "income": 30231
+  },
+  {
+    "zipcode": "12734",
+    "income": 55298
+  },
+  {
+    "zipcode": "12736",
+    "income": 38468
+  },
+  {
+    "zipcode": "12737",
+    "income": 94722
+  },
+  {
+    "zipcode": "12738",
+    "income": 61250
+  },
+  {
+    "zipcode": "12740",
+    "income": 79347
+  },
+  {
+    "zipcode": "12741",
+    "income": 49028
+  },
+  {
+    "zipcode": "12742",
+    "income": 51771
+  },
+  {
+    "zipcode": "12743",
+    "income": 83500
+  },
+  {
+    "zipcode": "12745",
+    "income": null
+  },
+  {
+    "zipcode": "12746",
+    "income": 65368
+  },
+  {
+    "zipcode": "12747",
+    "income": 62589
+  },
+  {
+    "zipcode": "12748",
+    "income": 73191
+  },
+  {
+    "zipcode": "12749",
+    "income": null
+  },
+  {
+    "zipcode": "12750",
+    "income": null
+  },
+  {
+    "zipcode": "12751",
+    "income": 45548
+  },
+  {
+    "zipcode": "12752",
+    "income": 80313
+  },
+  {
+    "zipcode": "12754",
+    "income": 47332
+  },
+  {
+    "zipcode": "12758",
+    "income": 54858
+  },
+  {
+    "zipcode": "12759",
+    "income": 40000
+  },
+  {
+    "zipcode": "12760",
+    "income": 78906
+  },
+  {
+    "zipcode": "12762",
+    "income": 59265
+  },
+  {
+    "zipcode": "12763",
+    "income": null
+  },
+  {
+    "zipcode": "12764",
+    "income": 51030
+  },
+  {
+    "zipcode": "12765",
+    "income": 77019
+  },
+  {
+    "zipcode": "12766",
+    "income": 68393
+  },
+  {
+    "zipcode": "12767",
+    "income": 60625
+  },
+  {
+    "zipcode": "12768",
+    "income": 48125
+  },
+  {
+    "zipcode": "12769",
+    "income": null
+  },
+  {
+    "zipcode": "12770",
+    "income": 87250
+  },
+  {
+    "zipcode": "12771",
+    "income": 56228
+  },
+  {
+    "zipcode": "12775",
+    "income": 81535
+  },
+  {
+    "zipcode": "12776",
+    "income": 73125
+  },
+  {
+    "zipcode": "12777",
+    "income": 122500
+  },
+  {
+    "zipcode": "12778",
+    "income": null
+  },
+  {
+    "zipcode": "12779",
+    "income": null
+  },
+  {
+    "zipcode": "12780",
+    "income": 49764
+  },
+  {
+    "zipcode": "12781",
+    "income": 66208
+  },
+  {
+    "zipcode": "12783",
+    "income": 57100
+  },
+  {
+    "zipcode": "12784",
+    "income": null
+  },
+  {
+    "zipcode": "12785",
+    "income": 108267
+  },
+  {
+    "zipcode": "12786",
+    "income": 112279
+  },
+  {
+    "zipcode": "12787",
+    "income": 105000
+  },
+  {
+    "zipcode": "12788",
+    "income": 84423
+  },
+  {
+    "zipcode": "12789",
+    "income": 61956
+  },
+  {
+    "zipcode": "12790",
+    "income": 85219
+  },
+  {
+    "zipcode": "12791",
+    "income": 83576
+  },
+  {
+    "zipcode": "12792",
+    "income": null
+  },
+  {
+    "zipcode": "12801",
+    "income": 60700
+  },
+  {
+    "zipcode": "12803",
+    "income": 66449
+  },
+  {
+    "zipcode": "12804",
+    "income": 83204
+  },
+  {
+    "zipcode": "12808",
+    "income": 95250
+  },
+  {
+    "zipcode": "12809",
+    "income": 59669
+  },
+  {
+    "zipcode": "12810",
+    "income": 61691
+  },
+  {
+    "zipcode": "12811",
+    "income": 45096
+  },
+  {
+    "zipcode": "12812",
+    "income": 167984
+  },
+  {
+    "zipcode": "12814",
+    "income": 96328
+  },
+  {
+    "zipcode": "12815",
+    "income": 58125
+  },
+  {
+    "zipcode": "12816",
+    "income": 63739
+  },
+  {
+    "zipcode": "12817",
+    "income": 67332
+  },
+  {
+    "zipcode": "12819",
+    "income": 82813
+  },
+  {
+    "zipcode": "12821",
+    "income": null
+  },
+  {
+    "zipcode": "12822",
+    "income": 67558
+  },
+  {
+    "zipcode": "12823",
+    "income": 110081
+  },
+  {
+    "zipcode": "12824",
+    "income": 94861
+  },
+  {
+    "zipcode": "12827",
+    "income": 74596
+  },
+  {
+    "zipcode": "12828",
+    "income": 72813
+  },
+  {
+    "zipcode": "12831",
+    "income": 91827
+  },
+  {
+    "zipcode": "12832",
+    "income": 55383
+  },
+  {
+    "zipcode": "12833",
+    "income": 87669
+  },
+  {
+    "zipcode": "12834",
+    "income": 76681
+  },
+  {
+    "zipcode": "12835",
+    "income": 65307
+  },
+  {
+    "zipcode": "12836",
+    "income": 80320
+  },
+  {
+    "zipcode": "12837",
+    "income": 69130
+  },
+  {
+    "zipcode": "12838",
+    "income": 58476
+  },
+  {
+    "zipcode": "12839",
+    "income": 57248
+  },
+  {
+    "zipcode": "12841",
+    "income": 57130
+  },
+  {
+    "zipcode": "12842",
+    "income": 53875
+  },
+  {
+    "zipcode": "12843",
+    "income": 60000
+  },
+  {
+    "zipcode": "12844",
+    "income": 124226
+  },
+  {
+    "zipcode": "12845",
+    "income": 82857
+  },
+  {
+    "zipcode": "12846",
+    "income": 54565
+  },
+  {
+    "zipcode": "12847",
+    "income": 75167
+  },
+  {
+    "zipcode": "12849",
+    "income": null
+  },
+  {
+    "zipcode": "12850",
+    "income": 87619
+  },
+  {
+    "zipcode": "12851",
+    "income": 66667
+  },
+  {
+    "zipcode": "12852",
+    "income": 47000
+  },
+  {
+    "zipcode": "12853",
+    "income": 49440
+  },
+  {
+    "zipcode": "12855",
+    "income": 57500
+  },
+  {
+    "zipcode": "12856",
+    "income": 51402
+  },
+  {
+    "zipcode": "12857",
+    "income": 65000
+  },
+  {
+    "zipcode": "12858",
+    "income": 106250
+  },
+  {
+    "zipcode": "12859",
+    "income": 102625
+  },
+  {
+    "zipcode": "12860",
+    "income": 85556
+  },
+  {
+    "zipcode": "12861",
+    "income": 83929
+  },
+  {
+    "zipcode": "12862",
+    "income": null
+  },
+  {
+    "zipcode": "12863",
+    "income": 84514
+  },
+  {
+    "zipcode": "12864",
+    "income": null
+  },
+  {
+    "zipcode": "12865",
+    "income": 62381
+  },
+  {
+    "zipcode": "12866",
+    "income": 91935
+  },
+  {
+    "zipcode": "12870",
+    "income": 57643
+  },
+  {
+    "zipcode": "12871",
+    "income": 77500
+  },
+  {
+    "zipcode": "12872",
+    "income": null
+  },
+  {
+    "zipcode": "12873",
+    "income": 84671
+  },
+  {
+    "zipcode": "12874",
+    "income": 119375
+  },
+  {
+    "zipcode": "12878",
+    "income": 66591
+  },
+  {
+    "zipcode": "12883",
+    "income": 59591
+  },
+  {
+    "zipcode": "12884",
+    "income": 40703
+  },
+  {
+    "zipcode": "12885",
+    "income": 57579
+  },
+  {
+    "zipcode": "12886",
+    "income": 110417
+  },
+  {
+    "zipcode": "12887",
+    "income": 57279
+  },
+  {
+    "zipcode": "12901",
+    "income": 55588
+  },
+  {
+    "zipcode": "12903",
+    "income": 75060
+  },
+  {
+    "zipcode": "12910",
+    "income": 47396
+  },
+  {
+    "zipcode": "12911",
+    "income": null
+  },
+  {
+    "zipcode": "12912",
+    "income": 66667
+  },
+  {
+    "zipcode": "12913",
+    "income": 66012
+  },
+  {
+    "zipcode": "12914",
+    "income": 51458
+  },
+  {
+    "zipcode": "12916",
+    "income": 58125
+  },
+  {
+    "zipcode": "12917",
+    "income": 62684
+  },
+  {
+    "zipcode": "12918",
+    "income": 79455
+  },
+  {
+    "zipcode": "12919",
+    "income": 58641
+  },
+  {
+    "zipcode": "12920",
+    "income": 59688
+  },
+  {
+    "zipcode": "12921",
+    "income": 74574
+  },
+  {
+    "zipcode": "12922",
+    "income": null
+  },
+  {
+    "zipcode": "12923",
+    "income": 56364
+  },
+  {
+    "zipcode": "12924",
+    "income": null
+  },
+  {
+    "zipcode": "12926",
+    "income": 52875
+  },
+  {
+    "zipcode": "12927",
+    "income": 53125
+  },
+  {
+    "zipcode": "12928",
+    "income": 68669
+  },
+  {
+    "zipcode": "12929",
+    "income": 48571
+  },
+  {
+    "zipcode": "12930",
+    "income": 59050
+  },
+  {
+    "zipcode": "12932",
+    "income": 56000
+  },
+  {
+    "zipcode": "12933",
+    "income": null
+  },
+  {
+    "zipcode": "12934",
+    "income": 63468
+  },
+  {
+    "zipcode": "12935",
+    "income": 58320
+  },
+  {
+    "zipcode": "12936",
+    "income": 66010
+  },
+  {
+    "zipcode": "12937",
+    "income": 44688
+  },
+  {
+    "zipcode": "12939",
+    "income": null
+  },
+  {
+    "zipcode": "12941",
+    "income": 71500
+  },
+  {
+    "zipcode": "12942",
+    "income": 68333
+  },
+  {
+    "zipcode": "12943",
+    "income": 44750
+  },
+  {
+    "zipcode": "12944",
+    "income": 63242
+  },
+  {
+    "zipcode": "12945",
+    "income": 78810
+  },
+  {
+    "zipcode": "12946",
+    "income": 71061
+  },
+  {
+    "zipcode": "12950",
+    "income": 70063
+  },
+  {
+    "zipcode": "12952",
+    "income": 86786
+  },
+  {
+    "zipcode": "12953",
+    "income": 55906
+  },
+  {
+    "zipcode": "12955",
+    "income": 57188
+  },
+  {
+    "zipcode": "12956",
+    "income": 34181
+  },
+  {
+    "zipcode": "12957",
+    "income": 45324
+  },
+  {
+    "zipcode": "12958",
+    "income": 63664
+  },
+  {
+    "zipcode": "12959",
+    "income": 46502
+  },
+  {
+    "zipcode": "12960",
+    "income": 50813
+  },
+  {
+    "zipcode": "12961",
+    "income": null
+  },
+  {
+    "zipcode": "12962",
+    "income": 59492
+  },
+  {
+    "zipcode": "12964",
+    "income": 87188
+  },
+  {
+    "zipcode": "12965",
+    "income": 45625
+  },
+  {
+    "zipcode": "12966",
+    "income": 65417
+  },
+  {
+    "zipcode": "12967",
+    "income": 60515
+  },
+  {
+    "zipcode": "12969",
+    "income": 46563
+  },
+  {
+    "zipcode": "12970",
+    "income": 78750
+  },
+  {
+    "zipcode": "12972",
+    "income": 94899
+  },
+  {
+    "zipcode": "12973",
+    "income": 47813
+  },
+  {
+    "zipcode": "12974",
+    "income": 53259
+  },
+  {
+    "zipcode": "12975",
+    "income": 57455
+  },
+  {
+    "zipcode": "12976",
+    "income": 61719
+  },
+  {
+    "zipcode": "12977",
+    "income": null
+  },
+  {
+    "zipcode": "12978",
+    "income": 86219
+  },
+  {
+    "zipcode": "12979",
+    "income": 42267
+  },
+  {
+    "zipcode": "12980",
+    "income": 56411
+  },
+  {
+    "zipcode": "12981",
+    "income": 74583
+  },
+  {
+    "zipcode": "12983",
+    "income": 59573
+  },
+  {
+    "zipcode": "12985",
+    "income": 70247
+  },
+  {
+    "zipcode": "12986",
+    "income": 57578
+  },
+  {
+    "zipcode": "12987",
+    "income": 97857
+  },
+  {
+    "zipcode": "12989",
+    "income": 79896
+  },
+  {
+    "zipcode": "12992",
+    "income": 69981
+  },
+  {
+    "zipcode": "12993",
+    "income": 54886
+  },
+  {
+    "zipcode": "12996",
+    "income": 70163
+  },
+  {
+    "zipcode": "12997",
+    "income": 70703
+  },
+  {
+    "zipcode": "12998",
+    "income": 42644
+  },
+  {
+    "zipcode": "13020",
+    "income": 66458
+  },
+  {
+    "zipcode": "13021",
+    "income": 52836
+  },
+  {
+    "zipcode": "13024",
+    "income": null
+  },
+  {
+    "zipcode": "13026",
+    "income": 84077
+  },
+  {
+    "zipcode": "13027",
+    "income": 81806
+  },
+  {
+    "zipcode": "13028",
+    "income": 91833
+  },
+  {
+    "zipcode": "13029",
+    "income": 82056
+  },
+  {
+    "zipcode": "13030",
+    "income": 66696
+  },
+  {
+    "zipcode": "13031",
+    "income": 82289
+  },
+  {
+    "zipcode": "13032",
+    "income": 64358
+  },
+  {
+    "zipcode": "13033",
+    "income": 68565
+  },
+  {
+    "zipcode": "13034",
+    "income": 79028
+  },
+  {
+    "zipcode": "13035",
+    "income": 87546
+  },
+  {
+    "zipcode": "13036",
+    "income": 74762
+  },
+  {
+    "zipcode": "13037",
+    "income": 74785
+  },
+  {
+    "zipcode": "13039",
+    "income": 96111
+  },
+  {
+    "zipcode": "13040",
+    "income": 57688
+  },
+  {
+    "zipcode": "13041",
+    "income": 96793
+  },
+  {
+    "zipcode": "13042",
+    "income": 65179
+  },
+  {
+    "zipcode": "13044",
+    "income": 64441
+  },
+  {
+    "zipcode": "13045",
+    "income": 59385
+  },
+  {
+    "zipcode": "13051",
+    "income": null
+  },
+  {
+    "zipcode": "13052",
+    "income": 66181
+  },
+  {
+    "zipcode": "13053",
+    "income": 72188
+  },
+  {
+    "zipcode": "13054",
+    "income": 87625
+  },
+  {
+    "zipcode": "13057",
+    "income": 66404
+  },
+  {
+    "zipcode": "13060",
+    "income": 50417
+  },
+  {
+    "zipcode": "13061",
+    "income": 76818
+  },
+  {
+    "zipcode": "13062",
+    "income": null
+  },
+  {
+    "zipcode": "13063",
+    "income": 81607
+  },
+  {
+    "zipcode": "13066",
+    "income": 108293
+  },
+  {
+    "zipcode": "13068",
+    "income": 71335
+  },
+  {
+    "zipcode": "13069",
+    "income": 54754
+  },
+  {
+    "zipcode": "13071",
+    "income": 66250
+  },
+  {
+    "zipcode": "13072",
+    "income": 58295
+  },
+  {
+    "zipcode": "13073",
+    "income": 63692
+  },
+  {
+    "zipcode": "13074",
+    "income": 66786
+  },
+  {
+    "zipcode": "13076",
+    "income": 82021
+  },
+  {
+    "zipcode": "13077",
+    "income": 66002
+  },
+  {
+    "zipcode": "13078",
+    "income": 99628
+  },
+  {
+    "zipcode": "13080",
+    "income": 65559
+  },
+  {
+    "zipcode": "13081",
+    "income": 93295
+  },
+  {
+    "zipcode": "13082",
+    "income": 79045
+  },
+  {
+    "zipcode": "13083",
+    "income": 72607
+  },
+  {
+    "zipcode": "13084",
+    "income": 89375
+  },
+  {
+    "zipcode": "13087",
+    "income": 115417
+  },
+  {
+    "zipcode": "13088",
+    "income": 64647
+  },
+  {
+    "zipcode": "13090",
+    "income": 77273
+  },
+  {
+    "zipcode": "13092",
+    "income": 59620
+  },
+  {
+    "zipcode": "13101",
+    "income": 58878
+  },
+  {
+    "zipcode": "13102",
+    "income": null
+  },
+  {
+    "zipcode": "13103",
+    "income": 24712
+  },
+  {
+    "zipcode": "13104",
+    "income": 108705
+  },
+  {
+    "zipcode": "13108",
+    "income": 81663
+  },
+  {
+    "zipcode": "13110",
+    "income": 96250
+  },
+  {
+    "zipcode": "13111",
+    "income": 60845
+  },
+  {
+    "zipcode": "13112",
+    "income": 93500
+  },
+  {
+    "zipcode": "13113",
+    "income": 53750
+  },
+  {
+    "zipcode": "13114",
+    "income": 66765
+  },
+  {
+    "zipcode": "13115",
+    "income": 65000
+  },
+  {
+    "zipcode": "13116",
+    "income": 72500
+  },
+  {
+    "zipcode": "13117",
+    "income": 37841
+  },
+  {
+    "zipcode": "13118",
+    "income": 62708
+  },
+  {
+    "zipcode": "13120",
+    "income": 70966
+  },
+  {
+    "zipcode": "13122",
+    "income": 53617
+  },
+  {
+    "zipcode": "13123",
+    "income": null
+  },
+  {
+    "zipcode": "13124",
+    "income": 69000
+  },
+  {
+    "zipcode": "13126",
+    "income": 58378
+  },
+  {
+    "zipcode": "13131",
+    "income": 54779
+  },
+  {
+    "zipcode": "13132",
+    "income": 64656
+  },
+  {
+    "zipcode": "13134",
+    "income": 76750
+  },
+  {
+    "zipcode": "13135",
+    "income": 71000
+  },
+  {
+    "zipcode": "13136",
+    "income": 38333
+  },
+  {
+    "zipcode": "13138",
+    "income": null
+  },
+  {
+    "zipcode": "13140",
+    "income": 54954
+  },
+  {
+    "zipcode": "13141",
+    "income": 79000
+  },
+  {
+    "zipcode": "13142",
+    "income": 77803
+  },
+  {
+    "zipcode": "13143",
+    "income": 63343
+  },
+  {
+    "zipcode": "13144",
+    "income": 47813
+  },
+  {
+    "zipcode": "13145",
+    "income": 44167
+  },
+  {
+    "zipcode": "13146",
+    "income": 58194
+  },
+  {
+    "zipcode": "13147",
+    "income": 60833
+  },
+  {
+    "zipcode": "13148",
+    "income": 54294
+  },
+  {
+    "zipcode": "13152",
+    "income": 90781
+  },
+  {
+    "zipcode": "13153",
+    "income": null
+  },
+  {
+    "zipcode": "13155",
+    "income": 57941
+  },
+  {
+    "zipcode": "13156",
+    "income": 57857
+  },
+  {
+    "zipcode": "13157",
+    "income": 35906
+  },
+  {
+    "zipcode": "13158",
+    "income": 76154
+  },
+  {
+    "zipcode": "13159",
+    "income": 84618
+  },
+  {
+    "zipcode": "13160",
+    "income": 79125
+  },
+  {
+    "zipcode": "13162",
+    "income": 74417
+  },
+  {
+    "zipcode": "13163",
+    "income": 72500
+  },
+  {
+    "zipcode": "13164",
+    "income": 95924
+  },
+  {
+    "zipcode": "13165",
+    "income": 58870
+  },
+  {
+    "zipcode": "13166",
+    "income": 69283
+  },
+  {
+    "zipcode": "13167",
+    "income": 70104
+  },
+  {
+    "zipcode": "13202",
+    "income": 22465
+  },
+  {
+    "zipcode": "13203",
+    "income": 40118
+  },
+  {
+    "zipcode": "13204",
+    "income": 38050
+  },
+  {
+    "zipcode": "13205",
+    "income": 33874
+  },
+  {
+    "zipcode": "13206",
+    "income": 51360
+  },
+  {
+    "zipcode": "13207",
+    "income": 51902
+  },
+  {
+    "zipcode": "13208",
+    "income": 40868
+  },
+  {
+    "zipcode": "13209",
+    "income": 54833
+  },
+  {
+    "zipcode": "13210",
+    "income": 34277
+  },
+  {
+    "zipcode": "13211",
+    "income": 63258
+  },
+  {
+    "zipcode": "13212",
+    "income": 67719
+  },
+  {
+    "zipcode": "13214",
+    "income": 73929
+  },
+  {
+    "zipcode": "13215",
+    "income": 94331
+  },
+  {
+    "zipcode": "13219",
+    "income": 74679
+  },
+  {
+    "zipcode": "13224",
+    "income": 68203
+  },
+  {
+    "zipcode": "13290",
+    "income": null
+  },
+  {
+    "zipcode": "13301",
+    "income": 108162
+  },
+  {
+    "zipcode": "13302",
+    "income": 50536
+  },
+  {
+    "zipcode": "13303",
+    "income": 75469
+  },
+  {
+    "zipcode": "13304",
+    "income": 86667
+  },
+  {
+    "zipcode": "13305",
+    "income": 43523
+  },
+  {
+    "zipcode": "13308",
+    "income": 75018
+  },
+  {
+    "zipcode": "13309",
+    "income": 63306
+  },
+  {
+    "zipcode": "13310",
+    "income": 62857
+  },
+  {
+    "zipcode": "13312",
+    "income": 75231
+  },
+  {
+    "zipcode": "13313",
+    "income": 40833
+  },
+  {
+    "zipcode": "13314",
+    "income": null
+  },
+  {
+    "zipcode": "13315",
+    "income": 66413
+  },
+  {
+    "zipcode": "13316",
+    "income": 56582
+  },
+  {
+    "zipcode": "13317",
+    "income": 56271
+  },
+  {
+    "zipcode": "13318",
+    "income": 76295
+  },
+  {
+    "zipcode": "13319",
+    "income": 53456
+  },
+  {
+    "zipcode": "13320",
+    "income": 66750
+  },
+  {
+    "zipcode": "13321",
+    "income": 50798
+  },
+  {
+    "zipcode": "13322",
+    "income": 80609
+  },
+  {
+    "zipcode": "13323",
+    "income": 76032
+  },
+  {
+    "zipcode": "13324",
+    "income": 66974
+  },
+  {
+    "zipcode": "13325",
+    "income": 65000
+  },
+  {
+    "zipcode": "13326",
+    "income": 73889
+  },
+  {
+    "zipcode": "13327",
+    "income": 60750
+  },
+  {
+    "zipcode": "13328",
+    "income": 81898
+  },
+  {
+    "zipcode": "13329",
+    "income": 48945
+  },
+  {
+    "zipcode": "13331",
+    "income": 61607
+  },
+  {
+    "zipcode": "13332",
+    "income": 57232
+  },
+  {
+    "zipcode": "13333",
+    "income": 53636
+  },
+  {
+    "zipcode": "13334",
+    "income": 57778
+  },
+  {
+    "zipcode": "13335",
+    "income": 50694
+  },
+  {
+    "zipcode": "13337",
+    "income": 97670
+  },
+  {
+    "zipcode": "13338",
+    "income": 45455
+  },
+  {
+    "zipcode": "13339",
+    "income": 51506
+  },
+  {
+    "zipcode": "13340",
+    "income": 62206
+  },
+  {
+    "zipcode": "13342",
+    "income": 63958
+  },
+  {
+    "zipcode": "13343",
+    "income": 62969
+  },
+  {
+    "zipcode": "13345",
+    "income": 92778
+  },
+  {
+    "zipcode": "13346",
+    "income": 54966
+  },
+  {
+    "zipcode": "13348",
+    "income": 71468
+  },
+  {
+    "zipcode": "13350",
+    "income": 54792
+  },
+  {
+    "zipcode": "13352",
+    "income": null
+  },
+  {
+    "zipcode": "13353",
+    "income": null
+  },
+  {
+    "zipcode": "13354",
+    "income": 78388
+  },
+  {
+    "zipcode": "13355",
+    "income": 62917
+  },
+  {
+    "zipcode": "13357",
+    "income": 60908
+  },
+  {
+    "zipcode": "13360",
+    "income": 92857
+  },
+  {
+    "zipcode": "13361",
+    "income": 72083
+  },
+  {
+    "zipcode": "13363",
+    "income": 81357
+  },
+  {
+    "zipcode": "13364",
+    "income": 70288
+  },
+  {
+    "zipcode": "13365",
+    "income": 54940
+  },
+  {
+    "zipcode": "13367",
+    "income": 59655
+  },
+  {
+    "zipcode": "13368",
+    "income": 50880
+  },
+  {
+    "zipcode": "13402",
+    "income": 66019
+  },
+  {
+    "zipcode": "13403",
+    "income": 95700
+  },
+  {
+    "zipcode": "13404",
+    "income": 45000
+  },
+  {
+    "zipcode": "13406",
+    "income": 84861
+  },
+  {
+    "zipcode": "13407",
+    "income": 65434
+  },
+  {
+    "zipcode": "13408",
+    "income": 55556
+  },
+  {
+    "zipcode": "13409",
+    "income": 61026
+  },
+  {
+    "zipcode": "13410",
+    "income": 42500
+  },
+  {
+    "zipcode": "13411",
+    "income": 52500
+  },
+  {
+    "zipcode": "13413",
+    "income": 84262
+  },
+  {
+    "zipcode": "13415",
+    "income": 52250
+  },
+  {
+    "zipcode": "13416",
+    "income": 64000
+  },
+  {
+    "zipcode": "13417",
+    "income": 48260
+  },
+  {
+    "zipcode": "13418",
+    "income": null
+  },
+  {
+    "zipcode": "13420",
+    "income": 95700
+  },
+  {
+    "zipcode": "13421",
+    "income": 55652
+  },
+  {
+    "zipcode": "13424",
+    "income": 65875
+  },
+  {
+    "zipcode": "13425",
+    "income": 55795
+  },
+  {
+    "zipcode": "13428",
+    "income": 55677
+  },
+  {
+    "zipcode": "13431",
+    "income": 78370
+  },
+  {
+    "zipcode": "13433",
+    "income": 50417
+  },
+  {
+    "zipcode": "13435",
+    "income": 54500
+  },
+  {
+    "zipcode": "13436",
+    "income": 76875
+  },
+  {
+    "zipcode": "13437",
+    "income": 56528
+  },
+  {
+    "zipcode": "13438",
+    "income": 64583
+  },
+  {
+    "zipcode": "13439",
+    "income": 50833
+  },
+  {
+    "zipcode": "13440",
+    "income": 59486
+  },
+  {
+    "zipcode": "13441",
+    "income": null
+  },
+  {
+    "zipcode": "13450",
+    "income": 53333
+  },
+  {
+    "zipcode": "13452",
+    "income": 56307
+  },
+  {
+    "zipcode": "13454",
+    "income": 78250
+  },
+  {
+    "zipcode": "13456",
+    "income": 79625
+  },
+  {
+    "zipcode": "13459",
+    "income": 59349
+  },
+  {
+    "zipcode": "13460",
+    "income": 55422
+  },
+  {
+    "zipcode": "13461",
+    "income": 80179
+  },
+  {
+    "zipcode": "13464",
+    "income": 50377
+  },
+  {
+    "zipcode": "13468",
+    "income": 50521
+  },
+  {
+    "zipcode": "13469",
+    "income": 97361
+  },
+  {
+    "zipcode": "13470",
+    "income": 50625
+  },
+  {
+    "zipcode": "13471",
+    "income": 57035
+  },
+  {
+    "zipcode": "13472",
+    "income": null
+  },
+  {
+    "zipcode": "13473",
+    "income": 87727
+  },
+  {
+    "zipcode": "13475",
+    "income": 73542
+  },
+  {
+    "zipcode": "13476",
+    "income": 64899
+  },
+  {
+    "zipcode": "13477",
+    "income": 59922
+  },
+  {
+    "zipcode": "13478",
+    "income": 66139
+  },
+  {
+    "zipcode": "13480",
+    "income": 61964
+  },
+  {
+    "zipcode": "13483",
+    "income": 86976
+  },
+  {
+    "zipcode": "13484",
+    "income": null
+  },
+  {
+    "zipcode": "13485",
+    "income": 61076
+  },
+  {
+    "zipcode": "13486",
+    "income": 54514
+  },
+  {
+    "zipcode": "13488",
+    "income": 44375
+  },
+  {
+    "zipcode": "13489",
+    "income": 53333
+  },
+  {
+    "zipcode": "13490",
+    "income": 79700
+  },
+  {
+    "zipcode": "13491",
+    "income": 57156
+  },
+  {
+    "zipcode": "13492",
+    "income": 77143
+  },
+  {
+    "zipcode": "13493",
+    "income": 63333
+  },
+  {
+    "zipcode": "13494",
+    "income": 66389
+  },
+  {
+    "zipcode": "13495",
+    "income": 57581
+  },
+  {
+    "zipcode": "13501",
+    "income": 44904
+  },
+  {
+    "zipcode": "13502",
+    "income": 50220
+  },
+  {
+    "zipcode": "13601",
+    "income": 53813
+  },
+  {
+    "zipcode": "13602",
+    "income": null
+  },
+  {
+    "zipcode": "13603",
+    "income": 53392
+  },
+  {
+    "zipcode": "13605",
+    "income": 67162
+  },
+  {
+    "zipcode": "13606",
+    "income": 70833
+  },
+  {
+    "zipcode": "13607",
+    "income": 49427
+  },
+  {
+    "zipcode": "13608",
+    "income": 68450
+  },
+  {
+    "zipcode": "13612",
+    "income": 59063
+  },
+  {
+    "zipcode": "13613",
+    "income": 52098
+  },
+  {
+    "zipcode": "13614",
+    "income": null
+  },
+  {
+    "zipcode": "13615",
+    "income": 90978
+  },
+  {
+    "zipcode": "13616",
+    "income": 44348
+  },
+  {
+    "zipcode": "13617",
+    "income": 62692
+  },
+  {
+    "zipcode": "13618",
+    "income": 58750
+  },
+  {
+    "zipcode": "13619",
+    "income": 57343
+  },
+  {
+    "zipcode": "13620",
+    "income": 53484
+  },
+  {
+    "zipcode": "13621",
+    "income": 42031
+  },
+  {
+    "zipcode": "13622",
+    "income": 68664
+  },
+  {
+    "zipcode": "13623",
+    "income": 28750
+  },
+  {
+    "zipcode": "13624",
+    "income": 74450
+  },
+  {
+    "zipcode": "13625",
+    "income": 65781
+  },
+  {
+    "zipcode": "13626",
+    "income": 70134
+  },
+  {
+    "zipcode": "13628",
+    "income": 36458
+  },
+  {
+    "zipcode": "13630",
+    "income": 47955
+  },
+  {
+    "zipcode": "13633",
+    "income": 53333
+  },
+  {
+    "zipcode": "13634",
+    "income": 66753
+  },
+  {
+    "zipcode": "13635",
+    "income": 57292
+  },
+  {
+    "zipcode": "13636",
+    "income": 56250
+  },
+  {
+    "zipcode": "13637",
+    "income": 57899
+  },
+  {
+    "zipcode": "13638",
+    "income": null
+  },
+  {
+    "zipcode": "13639",
+    "income": null
+  },
+  {
+    "zipcode": "13640",
+    "income": 70139
+  },
+  {
+    "zipcode": "13641",
+    "income": 66250
+  },
+  {
+    "zipcode": "13642",
+    "income": 41835
+  },
+  {
+    "zipcode": "13643",
+    "income": null
+  },
+  {
+    "zipcode": "13646",
+    "income": 55441
+  },
+  {
+    "zipcode": "13647",
+    "income": null
+  },
+  {
+    "zipcode": "13648",
+    "income": 51339
+  },
+  {
+    "zipcode": "13650",
+    "income": 77554
+  },
+  {
+    "zipcode": "13651",
+    "income": 105694
+  },
+  {
+    "zipcode": "13652",
+    "income": 57936
+  },
+  {
+    "zipcode": "13654",
+    "income": 54583
+  },
+  {
+    "zipcode": "13655",
+    "income": null
+  },
+  {
+    "zipcode": "13656",
+    "income": 55000
+  },
+  {
+    "zipcode": "13658",
+    "income": 69228
+  },
+  {
+    "zipcode": "13659",
+    "income": 56094
+  },
+  {
+    "zipcode": "13660",
+    "income": 65000
+  },
+  {
+    "zipcode": "13661",
+    "income": 73690
+  },
+  {
+    "zipcode": "13662",
+    "income": 57844
+  },
+  {
+    "zipcode": "13664",
+    "income": 67000
+  },
+  {
+    "zipcode": "13665",
+    "income": 57963
+  },
+  {
+    "zipcode": "13666",
+    "income": 31833
+  },
+  {
+    "zipcode": "13667",
+    "income": 42457
+  },
+  {
+    "zipcode": "13668",
+    "income": 77986
+  },
+  {
+    "zipcode": "13669",
+    "income": 56869
+  },
+  {
+    "zipcode": "13670",
+    "income": 42250
+  },
+  {
+    "zipcode": "13672",
+    "income": 62738
+  },
+  {
+    "zipcode": "13673",
+    "income": 48250
+  },
+  {
+    "zipcode": "13674",
+    "income": null
+  },
+  {
+    "zipcode": "13675",
+    "income": null
+  },
+  {
+    "zipcode": "13676",
+    "income": 54597
+  },
+  {
+    "zipcode": "13678",
+    "income": 23639
+  },
+  {
+    "zipcode": "13679",
+    "income": 71196
+  },
+  {
+    "zipcode": "13680",
+    "income": 56442
+  },
+  {
+    "zipcode": "13681",
+    "income": 44315
+  },
+  {
+    "zipcode": "13682",
+    "income": 85089
+  },
+  {
+    "zipcode": "13684",
+    "income": 58125
+  },
+  {
+    "zipcode": "13685",
+    "income": 73875
+  },
+  {
+    "zipcode": "13687",
+    "income": 46094
+  },
+  {
+    "zipcode": "13690",
+    "income": 43106
+  },
+  {
+    "zipcode": "13691",
+    "income": 68208
+  },
+  {
+    "zipcode": "13692",
+    "income": 128333
+  },
+  {
+    "zipcode": "13693",
+    "income": 57614
+  },
+  {
+    "zipcode": "13694",
+    "income": 66406
+  },
+  {
+    "zipcode": "13695",
+    "income": 106094
+  },
+  {
+    "zipcode": "13696",
+    "income": 50804
+  },
+  {
+    "zipcode": "13697",
+    "income": 46852
+  },
+  {
+    "zipcode": "13730",
+    "income": 62730
+  },
+  {
+    "zipcode": "13731",
+    "income": 65417
+  },
+  {
+    "zipcode": "13732",
+    "income": 81765
+  },
+  {
+    "zipcode": "13733",
+    "income": 53625
+  },
+  {
+    "zipcode": "13734",
+    "income": 70479
+  },
+  {
+    "zipcode": "13736",
+    "income": 63050
+  },
+  {
+    "zipcode": "13739",
+    "income": 53542
+  },
+  {
+    "zipcode": "13740",
+    "income": 65938
+  },
+  {
+    "zipcode": "13743",
+    "income": 54250
+  },
+  {
+    "zipcode": "13744",
+    "income": 66985
+  },
+  {
+    "zipcode": "13746",
+    "income": 53525
+  },
+  {
+    "zipcode": "13748",
+    "income": 59107
+  },
+  {
+    "zipcode": "13750",
+    "income": 55500
+  },
+  {
+    "zipcode": "13751",
+    "income": null
+  },
+  {
+    "zipcode": "13752",
+    "income": 55598
+  },
+  {
+    "zipcode": "13753",
+    "income": 61875
+  },
+  {
+    "zipcode": "13754",
+    "income": 47159
+  },
+  {
+    "zipcode": "13755",
+    "income": 63355
+  },
+  {
+    "zipcode": "13756",
+    "income": 74792
+  },
+  {
+    "zipcode": "13757",
+    "income": 68125
+  },
+  {
+    "zipcode": "13760",
+    "income": 58202
+  },
+  {
+    "zipcode": "13774",
+    "income": 58688
+  },
+  {
+    "zipcode": "13775",
+    "income": 69643
+  },
+  {
+    "zipcode": "13776",
+    "income": 84286
+  },
+  {
+    "zipcode": "13777",
+    "income": 77857
+  },
+  {
+    "zipcode": "13778",
+    "income": 60139
+  },
+  {
+    "zipcode": "13780",
+    "income": 70529
+  },
+  {
+    "zipcode": "13782",
+    "income": 60500
+  },
+  {
+    "zipcode": "13783",
+    "income": 43702
+  },
+  {
+    "zipcode": "13784",
+    "income": 66436
+  },
+  {
+    "zipcode": "13786",
+    "income": 43850
+  },
+  {
+    "zipcode": "13787",
+    "income": 59504
+  },
+  {
+    "zipcode": "13788",
+    "income": 65833
+  },
+  {
+    "zipcode": "13790",
+    "income": 49959
+  },
+  {
+    "zipcode": "13795",
+    "income": 49393
+  },
+  {
+    "zipcode": "13796",
+    "income": 48412
+  },
+  {
+    "zipcode": "13797",
+    "income": 57027
+  },
+  {
+    "zipcode": "13801",
+    "income": 59964
+  },
+  {
+    "zipcode": "13802",
+    "income": null
+  },
+  {
+    "zipcode": "13803",
+    "income": 63500
+  },
+  {
+    "zipcode": "13804",
+    "income": 60568
+  },
+  {
+    "zipcode": "13806",
+    "income": 96000
+  },
+  {
+    "zipcode": "13807",
+    "income": 71131
+  },
+  {
+    "zipcode": "13808",
+    "income": 50917
+  },
+  {
+    "zipcode": "13809",
+    "income": 50139
+  },
+  {
+    "zipcode": "13810",
+    "income": 81042
+  },
+  {
+    "zipcode": "13811",
+    "income": 69519
+  },
+  {
+    "zipcode": "13812",
+    "income": 67361
+  },
+  {
+    "zipcode": "13813",
+    "income": 95208
+  },
+  {
+    "zipcode": "13815",
+    "income": 54018
+  },
+  {
+    "zipcode": "13820",
+    "income": 59604
+  },
+  {
+    "zipcode": "13825",
+    "income": 54139
+  },
+  {
+    "zipcode": "13826",
+    "income": 86703
+  },
+  {
+    "zipcode": "13827",
+    "income": 63392
+  },
+  {
+    "zipcode": "13830",
+    "income": 53554
+  },
+  {
+    "zipcode": "13832",
+    "income": 47841
+  },
+  {
+    "zipcode": "13833",
+    "income": 53529
+  },
+  {
+    "zipcode": "13834",
+    "income": 49878
+  },
+  {
+    "zipcode": "13835",
+    "income": 61923
+  },
+  {
+    "zipcode": "13838",
+    "income": 44727
+  },
+  {
+    "zipcode": "13839",
+    "income": 57000
+  },
+  {
+    "zipcode": "13841",
+    "income": 50125
+  },
+  {
+    "zipcode": "13842",
+    "income": 64000
+  },
+  {
+    "zipcode": "13843",
+    "income": 64931
+  },
+  {
+    "zipcode": "13844",
+    "income": 58466
+  },
+  {
+    "zipcode": "13846",
+    "income": 28971
+  },
+  {
+    "zipcode": "13847",
+    "income": null
+  },
+  {
+    "zipcode": "13849",
+    "income": 51493
+  },
+  {
+    "zipcode": "13850",
+    "income": 70760
+  },
+  {
+    "zipcode": "13856",
+    "income": 45262
+  },
+  {
+    "zipcode": "13859",
+    "income": 90208
+  },
+  {
+    "zipcode": "13860",
+    "income": null
+  },
+  {
+    "zipcode": "13861",
+    "income": 49712
+  },
+  {
+    "zipcode": "13862",
+    "income": 51972
+  },
+  {
+    "zipcode": "13863",
+    "income": 58750
+  },
+  {
+    "zipcode": "13864",
+    "income": 49041
+  },
+  {
+    "zipcode": "13865",
+    "income": 58813
+  },
+  {
+    "zipcode": "13901",
+    "income": 45070
+  },
+  {
+    "zipcode": "13902",
+    "income": null
+  },
+  {
+    "zipcode": "13903",
+    "income": 53804
+  },
+  {
+    "zipcode": "13904",
+    "income": 52678
+  },
+  {
+    "zipcode": "13905",
+    "income": 46999
+  },
+  {
+    "zipcode": "14001",
+    "income": 67832
+  },
+  {
+    "zipcode": "14004",
+    "income": 75568
+  },
+  {
+    "zipcode": "14005",
+    "income": 84297
+  },
+  {
+    "zipcode": "14006",
+    "income": 56949
+  },
+  {
+    "zipcode": "14008",
+    "income": 61691
+  },
+  {
+    "zipcode": "14009",
+    "income": 56160
+  },
+  {
+    "zipcode": "14011",
+    "income": 70233
+  },
+  {
+    "zipcode": "14012",
+    "income": 60250
+  },
+  {
+    "zipcode": "14013",
+    "income": 62634
+  },
+  {
+    "zipcode": "14020",
+    "income": 54581
+  },
+  {
+    "zipcode": "14024",
+    "income": 61466
+  },
+  {
+    "zipcode": "14025",
+    "income": 93200
+  },
+  {
+    "zipcode": "14026",
+    "income": 61058
+  },
+  {
+    "zipcode": "14028",
+    "income": 62849
+  },
+  {
+    "zipcode": "14030",
+    "income": 76406
+  },
+  {
+    "zipcode": "14031",
+    "income": 81339
+  },
+  {
+    "zipcode": "14032",
+    "income": 134256
+  },
+  {
+    "zipcode": "14033",
+    "income": 73750
+  },
+  {
+    "zipcode": "14034",
+    "income": 70296
+  },
+  {
+    "zipcode": "14035",
+    "income": 90500
+  },
+  {
+    "zipcode": "14036",
+    "income": 79268
+  },
+  {
+    "zipcode": "14037",
+    "income": 62054
+  },
+  {
+    "zipcode": "14039",
+    "income": 35833
+  },
+  {
+    "zipcode": "14040",
+    "income": 70865
+  },
+  {
+    "zipcode": "14041",
+    "income": null
+  },
+  {
+    "zipcode": "14042",
+    "income": 49483
+  },
+  {
+    "zipcode": "14043",
+    "income": 65289
+  },
+  {
+    "zipcode": "14047",
+    "income": 66882
+  },
+  {
+    "zipcode": "14048",
+    "income": 39604
+  },
+  {
+    "zipcode": "14051",
+    "income": 108065
+  },
+  {
+    "zipcode": "14052",
+    "income": 96802
+  },
+  {
+    "zipcode": "14054",
+    "income": 66563
+  },
+  {
+    "zipcode": "14055",
+    "income": 45347
+  },
+  {
+    "zipcode": "14057",
+    "income": 80319
+  },
+  {
+    "zipcode": "14058",
+    "income": 72857
+  },
+  {
+    "zipcode": "14059",
+    "income": 70596
+  },
+  {
+    "zipcode": "14060",
+    "income": 50000
+  },
+  {
+    "zipcode": "14061",
+    "income": 103571
+  },
+  {
+    "zipcode": "14062",
+    "income": 59375
+  },
+  {
+    "zipcode": "14063",
+    "income": 64157
+  },
+  {
+    "zipcode": "14065",
+    "income": 64395
+  },
+  {
+    "zipcode": "14066",
+    "income": 58558
+  },
+  {
+    "zipcode": "14067",
+    "income": 63701
+  },
+  {
+    "zipcode": "14068",
+    "income": 105698
+  },
+  {
+    "zipcode": "14069",
+    "income": 73693
+  },
+  {
+    "zipcode": "14070",
+    "income": 51988
+  },
+  {
+    "zipcode": "14072",
+    "income": 97128
+  },
+  {
+    "zipcode": "14075",
+    "income": 69876
+  },
+  {
+    "zipcode": "14080",
+    "income": 64511
+  },
+  {
+    "zipcode": "14081",
+    "income": 41719
+  },
+  {
+    "zipcode": "14082",
+    "income": 62375
+  },
+  {
+    "zipcode": "14085",
+    "income": 99728
+  },
+  {
+    "zipcode": "14086",
+    "income": 88615
+  },
+  {
+    "zipcode": "14091",
+    "income": 72031
+  },
+  {
+    "zipcode": "14092",
+    "income": 64370
+  },
+  {
+    "zipcode": "14094",
+    "income": 65812
+  },
+  {
+    "zipcode": "14098",
+    "income": 58955
+  },
+  {
+    "zipcode": "14101",
+    "income": 56094
+  },
+  {
+    "zipcode": "14102",
+    "income": 112424
+  },
+  {
+    "zipcode": "14103",
+    "income": 54387
+  },
+  {
+    "zipcode": "14105",
+    "income": 73125
+  },
+  {
+    "zipcode": "14108",
+    "income": 61159
+  },
+  {
+    "zipcode": "14109",
+    "income": null
+  },
+  {
+    "zipcode": "14111",
+    "income": 68519
+  },
+  {
+    "zipcode": "14112",
+    "income": null
+  },
+  {
+    "zipcode": "14113",
+    "income": 66563
+  },
+  {
+    "zipcode": "14120",
+    "income": 70248
+  },
+  {
+    "zipcode": "14125",
+    "income": 60536
+  },
+  {
+    "zipcode": "14126",
+    "income": 74205
+  },
+  {
+    "zipcode": "14127",
+    "income": 94558
+  },
+  {
+    "zipcode": "14129",
+    "income": 62857
+  },
+  {
+    "zipcode": "14130",
+    "income": 60114
+  },
+  {
+    "zipcode": "14131",
+    "income": 84085
+  },
+  {
+    "zipcode": "14132",
+    "income": 79725
+  },
+  {
+    "zipcode": "14134",
+    "income": null
+  },
+  {
+    "zipcode": "14135",
+    "income": null
+  },
+  {
+    "zipcode": "14136",
+    "income": 62500
+  },
+  {
+    "zipcode": "14138",
+    "income": 50000
+  },
+  {
+    "zipcode": "14139",
+    "income": 73393
+  },
+  {
+    "zipcode": "14141",
+    "income": 59439
+  },
+  {
+    "zipcode": "14143",
+    "income": 79000
+  },
+  {
+    "zipcode": "14145",
+    "income": 85714
+  },
+  {
+    "zipcode": "14150",
+    "income": 62852
+  },
+  {
+    "zipcode": "14167",
+    "income": 67961
+  },
+  {
+    "zipcode": "14168",
+    "income": null
+  },
+  {
+    "zipcode": "14169",
+    "income": 51589
+  },
+  {
+    "zipcode": "14170",
+    "income": 85755
+  },
+  {
+    "zipcode": "14171",
+    "income": 67604
+  },
+  {
+    "zipcode": "14172",
+    "income": 56625
+  },
+  {
+    "zipcode": "14173",
+    "income": 85547
+  },
+  {
+    "zipcode": "14174",
+    "income": 77601
+  },
+  {
+    "zipcode": "14201",
+    "income": 31942
+  },
+  {
+    "zipcode": "14202",
+    "income": 50526
+  },
+  {
+    "zipcode": "14203",
+    "income": 42067
+  },
+  {
+    "zipcode": "14204",
+    "income": 24518
+  },
+  {
+    "zipcode": "14206",
+    "income": 41741
+  },
+  {
+    "zipcode": "14207",
+    "income": 32186
+  },
+  {
+    "zipcode": "14208",
+    "income": 41084
+  },
+  {
+    "zipcode": "14209",
+    "income": 43891
+  },
+  {
+    "zipcode": "14210",
+    "income": 41678
+  },
+  {
+    "zipcode": "14211",
+    "income": 30003
+  },
+  {
+    "zipcode": "14212",
+    "income": 31376
+  },
+  {
+    "zipcode": "14213",
+    "income": 43650
+  },
+  {
+    "zipcode": "14214",
+    "income": 52144
+  },
+  {
+    "zipcode": "14215",
+    "income": 37974
+  },
+  {
+    "zipcode": "14216",
+    "income": 62243
+  },
+  {
+    "zipcode": "14217",
+    "income": 61885
+  },
+  {
+    "zipcode": "14218",
+    "income": 45236
+  },
+  {
+    "zipcode": "14219",
+    "income": 66763
+  },
+  {
+    "zipcode": "14220",
+    "income": 62643
+  },
+  {
+    "zipcode": "14221",
+    "income": 89001
+  },
+  {
+    "zipcode": "14222",
+    "income": 69739
+  },
+  {
+    "zipcode": "14223",
+    "income": 72939
+  },
+  {
+    "zipcode": "14224",
+    "income": 71537
+  },
+  {
+    "zipcode": "14225",
+    "income": 56632
+  },
+  {
+    "zipcode": "14226",
+    "income": 75690
+  },
+  {
+    "zipcode": "14227",
+    "income": 61510
+  },
+  {
+    "zipcode": "14228",
+    "income": 63670
+  },
+  {
+    "zipcode": "14261",
+    "income": null
+  },
+  {
+    "zipcode": "14301",
+    "income": 31406
+  },
+  {
+    "zipcode": "14302",
+    "income": 2499
+  },
+  {
+    "zipcode": "14303",
+    "income": 36808
+  },
+  {
+    "zipcode": "14304",
+    "income": 59431
+  },
+  {
+    "zipcode": "14305",
+    "income": 42754
+  },
+  {
+    "zipcode": "14411",
+    "income": 46929
+  },
+  {
+    "zipcode": "14414",
+    "income": 62589
+  },
+  {
+    "zipcode": "14415",
+    "income": 38750
+  },
+  {
+    "zipcode": "14416",
+    "income": 73516
+  },
+  {
+    "zipcode": "14418",
+    "income": 42432
+  },
+  {
+    "zipcode": "14420",
+    "income": 61554
+  },
+  {
+    "zipcode": "14422",
+    "income": 73966
+  },
+  {
+    "zipcode": "14423",
+    "income": 67614
+  },
+  {
+    "zipcode": "14424",
+    "income": 69879
+  },
+  {
+    "zipcode": "14425",
+    "income": 73750
+  },
+  {
+    "zipcode": "14427",
+    "income": 59145
+  },
+  {
+    "zipcode": "14428",
+    "income": 78322
+  },
+  {
+    "zipcode": "14432",
+    "income": 71589
+  },
+  {
+    "zipcode": "14433",
+    "income": 54859
+  },
+  {
+    "zipcode": "14435",
+    "income": 73125
+  },
+  {
+    "zipcode": "14437",
+    "income": 60044
+  },
+  {
+    "zipcode": "14441",
+    "income": 49750
+  },
+  {
+    "zipcode": "14445",
+    "income": 61380
+  },
+  {
+    "zipcode": "14450",
+    "income": 97268
+  },
+  {
+    "zipcode": "14454",
+    "income": 53288
+  },
+  {
+    "zipcode": "14456",
+    "income": 62789
+  },
+  {
+    "zipcode": "14462",
+    "income": 76600
+  },
+  {
+    "zipcode": "14464",
+    "income": 61422
+  },
+  {
+    "zipcode": "14466",
+    "income": 92590
+  },
+  {
+    "zipcode": "14467",
+    "income": 77944
+  },
+  {
+    "zipcode": "14468",
+    "income": 83543
+  },
+  {
+    "zipcode": "14469",
+    "income": 64500
+  },
+  {
+    "zipcode": "14470",
+    "income": 60313
+  },
+  {
+    "zipcode": "14471",
+    "income": 65682
+  },
+  {
+    "zipcode": "14472",
+    "income": 112958
+  },
+  {
+    "zipcode": "14475",
+    "income": 105469
+  },
+  {
+    "zipcode": "14476",
+    "income": 79196
+  },
+  {
+    "zipcode": "14477",
+    "income": 72778
+  },
+  {
+    "zipcode": "14478",
+    "income": 84485
+  },
+  {
+    "zipcode": "14479",
+    "income": 70872
+  },
+  {
+    "zipcode": "14480",
+    "income": 80013
+  },
+  {
+    "zipcode": "14481",
+    "income": 70250
+  },
+  {
+    "zipcode": "14482",
+    "income": 67159
+  },
+  {
+    "zipcode": "14485",
+    "income": 64229
+  },
+  {
+    "zipcode": "14486",
+    "income": 101250
+  },
+  {
+    "zipcode": "14487",
+    "income": 81875
+  },
+  {
+    "zipcode": "14489",
+    "income": 57925
+  },
+  {
+    "zipcode": "14502",
+    "income": 79578
+  },
+  {
+    "zipcode": "14504",
+    "income": 56833
+  },
+  {
+    "zipcode": "14505",
+    "income": 65172
+  },
+  {
+    "zipcode": "14506",
+    "income": 64688
+  },
+  {
+    "zipcode": "14507",
+    "income": 61429
+  },
+  {
+    "zipcode": "14510",
+    "income": 56753
+  },
+  {
+    "zipcode": "14511",
+    "income": 60541
+  },
+  {
+    "zipcode": "14512",
+    "income": 61723
+  },
+  {
+    "zipcode": "14513",
+    "income": 54072
+  },
+  {
+    "zipcode": "14514",
+    "income": 70804
+  },
+  {
+    "zipcode": "14516",
+    "income": 65238
+  },
+  {
+    "zipcode": "14517",
+    "income": 55302
+  },
+  {
+    "zipcode": "14519",
+    "income": 80125
+  },
+  {
+    "zipcode": "14521",
+    "income": 55801
+  },
+  {
+    "zipcode": "14522",
+    "income": 66943
+  },
+  {
+    "zipcode": "14525",
+    "income": 73730
+  },
+  {
+    "zipcode": "14526",
+    "income": 92273
+  },
+  {
+    "zipcode": "14527",
+    "income": 55109
+  },
+  {
+    "zipcode": "14529",
+    "income": null
+  },
+  {
+    "zipcode": "14530",
+    "income": 56142
+  },
+  {
+    "zipcode": "14532",
+    "income": 77105
+  },
+  {
+    "zipcode": "14533",
+    "income": 64896
+  },
+  {
+    "zipcode": "14534",
+    "income": 124152
+  },
+  {
+    "zipcode": "14536",
+    "income": 49167
+  },
+  {
+    "zipcode": "14537",
+    "income": null
+  },
+  {
+    "zipcode": "14539",
+    "income": null
+  },
+  {
+    "zipcode": "14541",
+    "income": 72463
+  },
+  {
+    "zipcode": "14542",
+    "income": null
+  },
+  {
+    "zipcode": "14543",
+    "income": 105575
+  },
+  {
+    "zipcode": "14544",
+    "income": 59615
+  },
+  {
+    "zipcode": "14545",
+    "income": 95938
+  },
+  {
+    "zipcode": "14546",
+    "income": 75641
+  },
+  {
+    "zipcode": "14548",
+    "income": 68399
+  },
+  {
+    "zipcode": "14549",
+    "income": null
+  },
+  {
+    "zipcode": "14550",
+    "income": 54107
+  },
+  {
+    "zipcode": "14551",
+    "income": 54782
+  },
+  {
+    "zipcode": "14555",
+    "income": 65875
+  },
+  {
+    "zipcode": "14559",
+    "income": 87077
+  },
+  {
+    "zipcode": "14560",
+    "income": 63730
+  },
+  {
+    "zipcode": "14561",
+    "income": 81065
+  },
+  {
+    "zipcode": "14564",
+    "income": 101125
+  },
+  {
+    "zipcode": "14568",
+    "income": 91726
+  },
+  {
+    "zipcode": "14569",
+    "income": 55059
+  },
+  {
+    "zipcode": "14571",
+    "income": 68250
+  },
+  {
+    "zipcode": "14572",
+    "income": 55565
+  },
+  {
+    "zipcode": "14580",
+    "income": 85473
+  },
+  {
+    "zipcode": "14585",
+    "income": 36992
+  },
+  {
+    "zipcode": "14586",
+    "income": 100542
+  },
+  {
+    "zipcode": "14588",
+    "income": null
+  },
+  {
+    "zipcode": "14589",
+    "income": 70098
+  },
+  {
+    "zipcode": "14590",
+    "income": 56225
+  },
+  {
+    "zipcode": "14591",
+    "income": 62955
+  },
+  {
+    "zipcode": "14592",
+    "income": 56250
+  },
+  {
+    "zipcode": "14604",
+    "income": 42574
+  },
+  {
+    "zipcode": "14605",
+    "income": 22523
+  },
+  {
+    "zipcode": "14606",
+    "income": 52264
+  },
+  {
+    "zipcode": "14607",
+    "income": 53054
+  },
+  {
+    "zipcode": "14608",
+    "income": 28901
+  },
+  {
+    "zipcode": "14609",
+    "income": 53422
+  },
+  {
+    "zipcode": "14610",
+    "income": 74013
+  },
+  {
+    "zipcode": "14611",
+    "income": 28806
+  },
+  {
+    "zipcode": "14612",
+    "income": 68421
+  },
+  {
+    "zipcode": "14613",
+    "income": 32308
+  },
+  {
+    "zipcode": "14614",
+    "income": 50333
+  },
+  {
+    "zipcode": "14615",
+    "income": 47477
+  },
+  {
+    "zipcode": "14616",
+    "income": 57819
+  },
+  {
+    "zipcode": "14617",
+    "income": 76365
+  },
+  {
+    "zipcode": "14618",
+    "income": 108665
+  },
+  {
+    "zipcode": "14619",
+    "income": 55732
+  },
+  {
+    "zipcode": "14620",
+    "income": 54363
+  },
+  {
+    "zipcode": "14621",
+    "income": 30296
+  },
+  {
+    "zipcode": "14622",
+    "income": 65850
+  },
+  {
+    "zipcode": "14623",
+    "income": 56533
+  },
+  {
+    "zipcode": "14624",
+    "income": 80325
+  },
+  {
+    "zipcode": "14625",
+    "income": 91282
+  },
+  {
+    "zipcode": "14626",
+    "income": 75188
+  },
+  {
+    "zipcode": "14627",
+    "income": null
+  },
+  {
+    "zipcode": "14701",
+    "income": 44462
+  },
+  {
+    "zipcode": "14706",
+    "income": 63301
+  },
+  {
+    "zipcode": "14707",
+    "income": 49167
+  },
+  {
+    "zipcode": "14708",
+    "income": 65455
+  },
+  {
+    "zipcode": "14709",
+    "income": 52188
+  },
+  {
+    "zipcode": "14710",
+    "income": 59135
+  },
+  {
+    "zipcode": "14711",
+    "income": 57813
+  },
+  {
+    "zipcode": "14712",
+    "income": 65179
+  },
+  {
+    "zipcode": "14714",
+    "income": 86250
+  },
+  {
+    "zipcode": "14715",
+    "income": 45110
+  },
+  {
+    "zipcode": "14716",
+    "income": 44050
+  },
+  {
+    "zipcode": "14717",
+    "income": 50568
+  },
+  {
+    "zipcode": "14718",
+    "income": 56313
+  },
+  {
+    "zipcode": "14719",
+    "income": 57208
+  },
+  {
+    "zipcode": "14720",
+    "income": 39167
+  },
+  {
+    "zipcode": "14721",
+    "income": 50556
+  },
+  {
+    "zipcode": "14722",
+    "income": null
+  },
+  {
+    "zipcode": "14723",
+    "income": 60272
+  },
+  {
+    "zipcode": "14724",
+    "income": 61875
+  },
+  {
+    "zipcode": "14726",
+    "income": 50764
+  },
+  {
+    "zipcode": "14727",
+    "income": 56741
+  },
+  {
+    "zipcode": "14728",
+    "income": 59271
+  },
+  {
+    "zipcode": "14729",
+    "income": 66083
+  },
+  {
+    "zipcode": "14731",
+    "income": 62024
+  },
+  {
+    "zipcode": "14732",
+    "income": 44688
+  },
+  {
+    "zipcode": "14733",
+    "income": 49286
+  },
+  {
+    "zipcode": "14735",
+    "income": 59625
+  },
+  {
+    "zipcode": "14736",
+    "income": 67679
+  },
+  {
+    "zipcode": "14737",
+    "income": 51227
+  },
+  {
+    "zipcode": "14738",
+    "income": 53724
+  },
+  {
+    "zipcode": "14739",
+    "income": 47672
+  },
+  {
+    "zipcode": "14740",
+    "income": 65163
+  },
+  {
+    "zipcode": "14741",
+    "income": 67230
+  },
+  {
+    "zipcode": "14742",
+    "income": null
+  },
+  {
+    "zipcode": "14743",
+    "income": 53250
+  },
+  {
+    "zipcode": "14744",
+    "income": 72417
+  },
+  {
+    "zipcode": "14747",
+    "income": 54444
+  },
+  {
+    "zipcode": "14748",
+    "income": 35313
+  },
+  {
+    "zipcode": "14750",
+    "income": 63580
+  },
+  {
+    "zipcode": "14752",
+    "income": null
+  },
+  {
+    "zipcode": "14753",
+    "income": 38472
+  },
+  {
+    "zipcode": "14754",
+    "income": 48409
+  },
+  {
+    "zipcode": "14755",
+    "income": 54200
+  },
+  {
+    "zipcode": "14756",
+    "income": null
+  },
+  {
+    "zipcode": "14757",
+    "income": 57316
+  },
+  {
+    "zipcode": "14760",
+    "income": 48948
+  },
+  {
+    "zipcode": "14767",
+    "income": 60556
+  },
+  {
+    "zipcode": "14769",
+    "income": 54917
+  },
+  {
+    "zipcode": "14770",
+    "income": 53992
+  },
+  {
+    "zipcode": "14772",
+    "income": 59653
+  },
+  {
+    "zipcode": "14774",
+    "income": null
+  },
+  {
+    "zipcode": "14775",
+    "income": 47101
+  },
+  {
+    "zipcode": "14777",
+    "income": 55268
+  },
+  {
+    "zipcode": "14778",
+    "income": null
+  },
+  {
+    "zipcode": "14779",
+    "income": 38059
+  },
+  {
+    "zipcode": "14781",
+    "income": 49605
+  },
+  {
+    "zipcode": "14782",
+    "income": 53730
+  },
+  {
+    "zipcode": "14783",
+    "income": 36818
+  },
+  {
+    "zipcode": "14784",
+    "income": 85298
+  },
+  {
+    "zipcode": "14787",
+    "income": 41035
+  },
+  {
+    "zipcode": "14788",
+    "income": null
+  },
+  {
+    "zipcode": "14801",
+    "income": 56944
+  },
+  {
+    "zipcode": "14802",
+    "income": 46111
+  },
+  {
+    "zipcode": "14803",
+    "income": 51344
+  },
+  {
+    "zipcode": "14804",
+    "income": 72656
+  },
+  {
+    "zipcode": "14805",
+    "income": 48393
+  },
+  {
+    "zipcode": "14806",
+    "income": 59107
+  },
+  {
+    "zipcode": "14807",
+    "income": 54899
+  },
+  {
+    "zipcode": "14808",
+    "income": 75313
+  },
+  {
+    "zipcode": "14809",
+    "income": 53697
+  },
+  {
+    "zipcode": "14810",
+    "income": 42302
+  },
+  {
+    "zipcode": "14812",
+    "income": 58000
+  },
+  {
+    "zipcode": "14813",
+    "income": 50000
+  },
+  {
+    "zipcode": "14814",
+    "income": 101658
+  },
+  {
+    "zipcode": "14815",
+    "income": 53068
+  },
+  {
+    "zipcode": "14816",
+    "income": null
+  },
+  {
+    "zipcode": "14817",
+    "income": 80259
+  },
+  {
+    "zipcode": "14818",
+    "income": 78177
+  },
+  {
+    "zipcode": "14819",
+    "income": 51071
+  },
+  {
+    "zipcode": "14820",
+    "income": 60521
+  },
+  {
+    "zipcode": "14821",
+    "income": 63190
+  },
+  {
+    "zipcode": "14822",
+    "income": 56111
+  },
+  {
+    "zipcode": "14823",
+    "income": 56611
+  },
+  {
+    "zipcode": "14824",
+    "income": 56875
+  },
+  {
+    "zipcode": "14825",
+    "income": 69526
+  },
+  {
+    "zipcode": "14826",
+    "income": 56683
+  },
+  {
+    "zipcode": "14827",
+    "income": 70238
+  },
+  {
+    "zipcode": "14830",
+    "income": 66366
+  },
+  {
+    "zipcode": "14836",
+    "income": 64747
+  },
+  {
+    "zipcode": "14837",
+    "income": 58896
+  },
+  {
+    "zipcode": "14838",
+    "income": 61587
+  },
+  {
+    "zipcode": "14839",
+    "income": 75893
+  },
+  {
+    "zipcode": "14840",
+    "income": 66136
+  },
+  {
+    "zipcode": "14841",
+    "income": 62083
+  },
+  {
+    "zipcode": "14842",
+    "income": 62358
+  },
+  {
+    "zipcode": "14843",
+    "income": 53247
+  },
+  {
+    "zipcode": "14845",
+    "income": 67026
+  },
+  {
+    "zipcode": "14846",
+    "income": 61528
+  },
+  {
+    "zipcode": "14847",
+    "income": 64779
+  },
+  {
+    "zipcode": "14850",
+    "income": 58846
+  },
+  {
+    "zipcode": "14853",
+    "income": null
+  },
+  {
+    "zipcode": "14854",
+    "income": null
+  },
+  {
+    "zipcode": "14855",
+    "income": 55000
+  },
+  {
+    "zipcode": "14856",
+    "income": null
+  },
+  {
+    "zipcode": "14858",
+    "income": 67273
+  },
+  {
+    "zipcode": "14859",
+    "income": 62344
+  },
+  {
+    "zipcode": "14860",
+    "income": 60391
+  },
+  {
+    "zipcode": "14861",
+    "income": 50156
+  },
+  {
+    "zipcode": "14864",
+    "income": 59375
+  },
+  {
+    "zipcode": "14865",
+    "income": 40417
+  },
+  {
+    "zipcode": "14867",
+    "income": 63161
+  },
+  {
+    "zipcode": "14869",
+    "income": 61188
+  },
+  {
+    "zipcode": "14870",
+    "income": 83929
+  },
+  {
+    "zipcode": "14871",
+    "income": 62306
+  },
+  {
+    "zipcode": "14872",
+    "income": 59375
+  },
+  {
+    "zipcode": "14873",
+    "income": 50197
+  },
+  {
+    "zipcode": "14874",
+    "income": 93750
+  },
+  {
+    "zipcode": "14877",
+    "income": 59500
+  },
+  {
+    "zipcode": "14878",
+    "income": 79107
+  },
+  {
+    "zipcode": "14879",
+    "income": 61250
+  },
+  {
+    "zipcode": "14880",
+    "income": 50000
+  },
+  {
+    "zipcode": "14881",
+    "income": 72206
+  },
+  {
+    "zipcode": "14882",
+    "income": 89519
+  },
+  {
+    "zipcode": "14883",
+    "income": 62183
+  },
+  {
+    "zipcode": "14884",
+    "income": 54833
+  },
+  {
+    "zipcode": "14885",
+    "income": 61324
+  },
+  {
+    "zipcode": "14886",
+    "income": 67895
+  },
+  {
+    "zipcode": "14889",
+    "income": 60625
+  },
+  {
+    "zipcode": "14891",
+    "income": 52663
+  },
+  {
+    "zipcode": "14892",
+    "income": 50038
+  },
+  {
+    "zipcode": "14893",
+    "income": null
+  },
+  {
+    "zipcode": "14894",
+    "income": 63173
+  },
+  {
+    "zipcode": "14895",
+    "income": 54385
+  },
+  {
+    "zipcode": "14897",
+    "income": 45862
+  },
+  {
+    "zipcode": "14898",
+    "income": 48281
+  },
+  {
+    "zipcode": "14901",
+    "income": 35417
+  },
+  {
+    "zipcode": "14903",
+    "income": 61418
+  },
+  {
+    "zipcode": "14904",
+    "income": 49963
+  },
+  {
+    "zipcode": "14905",
+    "income": 74386
+  }
+]
